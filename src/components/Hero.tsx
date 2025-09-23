@@ -1,17 +1,46 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-lights.jpg";
+import { useEffect, useState } from "react";
+import sunsetHouse from "@/assets/sunset-house.jpg";
+import sunsetHouseLit from "@/assets/sunset-house-lit.jpg";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [lightOpacity, setLightOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      // Calculate light opacity based on scroll position (0-500px scroll range)
+      const maxScroll = 500;
+      const opacity = Math.min(currentScrollY / maxScroll, 1);
+      setLightOpacity(opacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Unlit House */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300"
+        style={{ backgroundImage: `url(${sunsetHouse})` }}
+      />
+      
+      {/* Background Image - Lit House (appears on scroll) */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
+        style={{ 
+          backgroundImage: `url(${sunsetHouseLit})`,
+          opacity: lightOpacity
+        }}
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-navy opacity-80" />
+      <div className="absolute inset-0 bg-gradient-navy opacity-60" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
