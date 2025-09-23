@@ -42,7 +42,7 @@ const Hero = () => {
         className="fixed inset-0 -z-10 bg-cover bg-no-repeat transition-transform duration-100 ease-out pointer-events-none"
         style={{ 
           backgroundImage: `url(${sunsetHouse})`,
-          backgroundPosition: 'center bottom',
+          backgroundPosition: 'center 70%',
           transform: houseTransform
         }}
       />
@@ -52,7 +52,7 @@ const Hero = () => {
         className="fixed inset-0 -z-10 bg-cover bg-no-repeat transition-all duration-500 pointer-events-none"
         style={{ 
           backgroundImage: `url(${sunsetHouseLit})`,
-          backgroundPosition: 'center bottom',
+          backgroundPosition: 'center 70%',
           transform: houseTransform,
           opacity: lightOpacity
         }}
