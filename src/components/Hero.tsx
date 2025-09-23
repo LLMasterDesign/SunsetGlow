@@ -30,24 +30,29 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Sky - Always visible */}
       <div 
-        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat pointer-events-none"
-        style={{ backgroundImage: `url(${sunsetSky})` }}
+        className="fixed inset-0 -z-10 bg-cover bg-no-repeat pointer-events-none"
+        style={{ 
+          backgroundImage: `url(${sunsetSky})`,
+          backgroundPosition: 'center top'
+        }}
       />
       
       {/* House Layer - Slides up from bottom */}
       <div 
-        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out pointer-events-none"
+        className="fixed inset-0 -z-10 bg-cover bg-no-repeat transition-transform duration-100 ease-out pointer-events-none"
         style={{ 
           backgroundImage: `url(${sunsetHouse})`,
+          backgroundPosition: 'center bottom',
           transform: houseTransform
         }}
       />
       
       {/* Lit House Layer - Appears after house is visible */}
       <div 
-        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat transition-all duration-500 pointer-events-none"
+        className="fixed inset-0 -z-10 bg-cover bg-no-repeat transition-all duration-500 pointer-events-none"
         style={{ 
           backgroundImage: `url(${sunsetHouseLit})`,
+          backgroundPosition: 'center bottom',
           transform: houseTransform,
           opacity: lightOpacity
         }}
