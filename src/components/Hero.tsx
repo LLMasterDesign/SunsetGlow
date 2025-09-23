@@ -1,46 +1,60 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import sunsetSky from "@/assets/sunset-sky.jpg";
 import sunsetHouse from "@/assets/sunset-house.jpg";
 import sunsetHouseLit from "@/assets/sunset-house-lit.jpg";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [lightOpacity, setLightOpacity] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      
-      // Calculate light opacity based on scroll position (0-500px scroll range)
-      const maxScroll = 500;
-      const opacity = Math.min(currentScrollY / maxScroll, 1);
-      setLightOpacity(opacity);
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Calculate scroll-based transforms
+  const maxScroll = 800; // Total scroll distance for full effect
+  const scrollProgress = Math.min(scrollY / maxScroll, 1);
+  
+  // House reveals from bottom as you scroll
+  const houseTransform = `translateY(${100 - (scrollProgress * 100)}%)`;
+  
+  // Lights illuminate after house is partially revealed
+  const lightOpacity = Math.max(0, (scrollProgress - 0.3) / 0.7);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Unlit House */}
+      {/* Background Sky - Always visible */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-300"
-        style={{ backgroundImage: `url(${sunsetHouse})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${sunsetSky})` }}
       />
       
-      {/* Background Image - Lit House (appears on scroll) */}
+      {/* House Layer - Slides up from bottom */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-500"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-100 ease-out"
+        style={{ 
+          backgroundImage: `url(${sunsetHouse})`,
+          transform: houseTransform
+        }}
+      />
+      
+      {/* Lit House Layer - Appears after house is visible */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
         style={{ 
           backgroundImage: `url(${sunsetHouseLit})`,
+          transform: houseTransform,
           opacity: lightOpacity
         }}
       />
       
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-navy opacity-60" />
+      <div className="absolute inset-0 bg-gradient-navy opacity-40" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl">
