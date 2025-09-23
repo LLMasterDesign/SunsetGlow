@@ -39,7 +39,7 @@ const Services = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
-            <Card key={service.title} className="border-border/50 bg-white/10 backdrop-blur-sm hover:shadow-warm transition-all duration-300">
+            <Card key={service.title} className="border-border/50 bg-card/80 backdrop-blur-sm hover:shadow-warm transition-all duration-300">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-sunset rounded-full flex items-center justify-center shadow-glow">
                   <service.icon className="w-8 h-8 text-primary-foreground" />
