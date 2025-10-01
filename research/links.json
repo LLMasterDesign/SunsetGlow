@@ -1,0 +1,20 @@
+{
+  "businesses": [
+    { "name": "We Hang Christmas Lights", "url": "https://www.wehangchristmaslights.com/", "notes": "National installer; strong CTAs and service clarity." },
+    { "name": "Christmas Decor", "url": "https://www.christmasdecor.net/", "notes": "Franchise network; residential/commercial split; locator UX." },
+    { "name": "Extreme Lightscapes", "url": "https://extremelightscapes.com/", "notes": "Animated/synchronized shows; motion-first storytelling." },
+    { "name": "The Christmas Light Guy Co.", "url": "https://thechristmaslightguyco.com/videos/", "notes": "Video gallery builds trust; project breadth." },
+    { "name": "Light Up Your Holidays", "url": "https://lightupyourholidays.com/", "notes": "Tasteful design; process and before/after narrative." },
+    { "name": "Universal Concepts (Christmas Decor and More)", "url": "https://christmasdecorandmore.com/", "notes": "Commercial focus; large installations; videos." },
+    { "name": "Trimlight", "url": "https://trimlight.com/", "notes": "Permanent lighting; configurator ideas." },
+    { "name": "JellyFish Lighting", "url": "https://jellyfishlighting.com/", "notes": "Interactive demos; app story." }
+  ],
+  "immersive": [
+    { "name": "Twinbru", "url": "https://www.digitalsilk.com/digital-trends/website-animations/", "pattern": "3D + SVG line animation; layered scroll." },
+    { "name": "The Eames by Enso", "url": "https://www.ryviu.com/blog/interactive-websites-examples/", "pattern": "Scrollytelling narrative with pinned panels." },
+    { "name": "Waaark", "url": "https://www.designveloper.com/blog/website-animations/", "pattern": "Hover-reactive typography/cards; micro-interactions." },
+    { "name": "Corebook°", "url": "https://www.designveloper.com/blog/website-animations/", "pattern": "Masked shape reveals; sleek transitions." },
+    { "name": "Superlist", "url": "https://www.digitalsilk.com/digital-trends/website-animations/", "pattern": "Choreographed component motion; scroll sync." },
+    { "name": "Species in Pieces", "url": "https://ichirr.com/20-website-animation-examples-to-enhance-user-engagement-and-captivate-your-audience/", "pattern": "Shape morphs; generative motion." }
+  ]
+}
