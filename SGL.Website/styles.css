@@ -401,8 +401,9 @@ a:hover {
 .badge-group {
     display: flex;
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
-    flex-wrap: wrap;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 /* HERO */
