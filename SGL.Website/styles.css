@@ -1457,9 +1457,8 @@ section {
 
 .hero.festive {
     background:
-      radial-gradient(1200px 400px at 50% -10%, rgba(249, 211, 143, 0.25), transparent 60%),
-      radial-gradient(800px 300px at 20% 0%, rgba(255, 255, 255, 0.8), transparent 60%),
-      linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
+      linear-gradient(0deg, rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+      url('./images/08-43-26.jpeg') center/cover no-repeat;
 }
 
 .card:not(.card-testimonial) {
