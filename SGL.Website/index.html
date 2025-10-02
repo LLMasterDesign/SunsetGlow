@@ -50,23 +50,28 @@
 
     <main id="main">
         <!-- HOME PAGE -->
+        <div class="hero-banner">
+            <div class="container">
+                <div class="badge-group hero-badges">
+                    <span class="badge badge-veteran">Veteran-Owned</span>
+                    <span class="badge badge-insured">Insured</span>
+                    <span class="badge badge-insured">10 Years Experience</span>
+                </div>
+            </div>
+        </div>
+        <div class="string-lights" aria-hidden="true"></div>
         <section class="hero festive">
             <div class="container">
                 <div class="hero-content">
-                    <div class="badge-group">
-                        <span class="badge badge-veteran">Veteran-Owned</span>
-                        <span class="badge badge-insured">Insured</span>
-                    </div>
                     <h1 class="hero-title">Professional Holiday Lighting.<br>Military Precision.</h1>
                     <p class="hero-subtitle">Book early. Enjoy faster installs and free repair visits.</p>
                     <div class="hero-cta">
-                        <a href="#estimate-modal" class="btn btn-primary btn-lg" data-open-modal>Get Your Free Seasonal Estimate</a>
-                        <a href="services.html" class="btn btn-secondary btn-lg">View Services</a>
+                        <a href="#estimate-modal" class="btn btn-primary" data-open-modal>Get Your Free Estimate</a>
+                        <a href="services.html" class="btn btn-secondary">View Services</a>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="string-lights" aria-hidden="true"></div>
 
 
         <section class="value-props">
@@ -119,7 +124,7 @@
                 <div class="card-grid grid-3">
                     <div class="card card-package" data-open-package="basic" style="cursor: pointer;">
                         <div class="package-level">Tier 1</div>
-                        <h3 class="package-name">Basic</h3>
+                        <h3 class="package-name">🎄 Classic Glow</h3>
                         <p class="package-price"><strong>60 ft Coverage</strong></p>
                         <ul class="package-features">
                             <li>60 ft roofline lights</li>
@@ -132,7 +137,7 @@
                     <div class="card card-package card-featured" data-open-package="enhanced" style="cursor: pointer;">
                         <div class="package-badge">Most Popular</div>
                         <div class="package-level">Tier 2</div>
-                        <h3 class="package-name">Enhanced</h3>
+                        <h3 class="package-name">✨ Winter Wonderland</h3>
                         <p class="package-price"><strong>80 ft Coverage</strong></p>
                         <ul class="package-features">
                             <li>80 ft roofline lights</li>
@@ -145,7 +150,7 @@
                     </div>
                     <div class="card card-package" data-open-package="premium" style="cursor: pointer;">
                         <div class="package-level">Tier 3</div>
-                        <h3 class="package-name">Premium</h3>
+                        <h3 class="package-name">🌟 Holiday Spectacular</h3>
                         <p class="package-price"><strong>120 ft Coverage</strong></p>
                         <ul class="package-features">
                             <li>120 ft roofline lights</li>
@@ -161,7 +166,7 @@
                 <div class="card-grid" style="margin-top: var(--spacing-lg);">
                     <div class="card card-package" data-open-package="custom">
                         <div class="package-level">Level 4</div>
-                        <h3 class="package-name">Custom</h3>
+                        <h3 class="package-name">🎁 Custom Celebration</h3>
                         <p class="package-price"><strong>Tailored Design & Pricing</strong></p>
                         <p class="card-text">Perfect for complex roofs, estates, or unique themes. Click to customize.</p>
                         <button class="btn btn-outline" data-open-package="custom">Customize Package</button>
@@ -221,7 +226,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Light Up Your Holidays?</h2>
                     <p class="cta-text">Book your free estimate today. Limited slots available for the 2025 season.</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg">Get Your Free Seasonal Estimate</a>
+                    <a href="contact.html" class="btn btn-primary">Get Your Free Estimate</a>
                 </div>
             </div>
         </section>
@@ -305,26 +310,54 @@
                     <input type="text" id="m-address" name="address" class="form-input" required aria-required="true">
                     <span class="form-error" id="m-address-error"></span>
                 </div>
-                <div class="form-group">
-                    <label for="m-photo" class="form-label">Front of Home Photo (optional)</label>
-                    <input type="file" id="m-photo" name="photo" class="form-input" accept="image/*">
-                </div>
-                <!-- Property URL moved to internal backend lookup via address -->
-                <input type="hidden" id="m-propertyUrl" name="propertyUrl" value="">
-                <div class="form-group">
-                    <label for="m-estSqft" class="form-label">Estimated Square Footage (optional)</label>
-                    <input type="number" id="m-estSqft" name="estSqft" class="form-input" min="0" step="1" placeholder="e.g., 2400">
-                </div>
+                            <div class="form-group">
+                                <label for="m-photo" class="form-label">Front of Home Photo (optional)</label>
+                                <input type="file" id="m-photo" name="photo" class="form-input" accept="image/*">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-estSqft" class="form-label">Estimated Square Footage (optional)</label>
+                                <input type="number" id="m-estSqft" name="estSqft" class="form-input" min="0" step="1" placeholder="e.g., 2400">
+                            </div>
                 <div class="form-group">
                     <label for="m-package" class="form-label">Interested Package <span class="required">*</span></label>
                     <select id="m-package" name="package" class="form-input" required aria-required="true">
                         <option value="">Select a package</option>
-                        <option value="level-1">Level 1 - Basic</option>
-                        <option value="level-2">Level 2 - Enhanced</option>
-                        <option value="level-3">Level 3 - Premium</option>
+                        <option value="level-1">🎄 Classic Glow - Starting at $800</option>
+                        <option value="level-2">✨ Winter Wonderland - Starting at $1,400</option>
+                        <option value="level-3">🌟 Holiday Spectacular - Starting at $2,400</option>
+                        <option value="level-4">🎁 Custom Celebration</option>
                         <option value="not-sure">Not sure yet</option>
                     </select>
                     <span class="form-error" id="m-package-error"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Services Interested In:</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="roofline">
+                            <span>Roofline Lighting</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="tree-wrapping">
+                            <span>Tree Wrapping</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="backyard">
+                            <span>Backyard Lighting</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="pathway">
+                            <span>Pathway Lights</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="window-frames">
+                            <span>Window Frames</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="wreaths">
+                            <span>Wreaths & Garland</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="modal-actions">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Request Estimate</button>
@@ -338,7 +371,7 @@
         <div class="modal-backdrop" data-close-modal></div>
         <div class="modal-dialog" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
             <div class="modal-header">
-                <h2 class="modal-title">Tier 1: Basic Package</h2>
+                <h2 class="modal-title">🎄 Classic Glow</h2>
                 <button class="modal-close" aria-label="Close" data-close-modal>&times;</button>
             </div>
             <div class="modal-body">
@@ -368,7 +401,7 @@
         <div class="modal-backdrop" data-close-modal></div>
         <div class="modal-dialog" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
             <div class="modal-header">
-                <h2 class="modal-title">Tier 2: Enhanced Package</h2>
+                <h2 class="modal-title">✨ Winter Wonderland</h2>
                 <button class="modal-close" aria-label="Close" data-close-modal>&times;</button>
             </div>
             <div class="modal-body">
@@ -400,7 +433,7 @@
         <div class="modal-backdrop" data-close-modal></div>
         <div class="modal-dialog" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
             <div class="modal-header">
-                <h2 class="modal-title">Tier 3: Premium Package</h2>
+                <h2 class="modal-title">🌟 Holiday Spectacular</h2>
                 <button class="modal-close" aria-label="Close" data-close-modal>&times;</button>
             </div>
             <div class="modal-body">
@@ -433,7 +466,7 @@
         <div class="modal-backdrop" data-close-modal></div>
         <div class="modal-dialog">
             <div class="modal-header">
-                <h2 class="modal-title" id="pkgCustomTitle">Custom Package</h2>
+                <h2 class="modal-title" id="pkgCustomTitle">🎁 Custom Celebration</h2>
                 <button class="modal-close" aria-label="Close" data-close-modal>&times;</button>
             </div>
             <div class="modal-body">

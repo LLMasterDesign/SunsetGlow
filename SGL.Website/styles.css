@@ -405,11 +405,26 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.hero-banner {
+    background: var(--white);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.hero-badges {
+    justify-content: center;
+    margin-bottom: 0;
+}
+
 /* HERO */
 .hero {
     background: linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
     text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--spacing-3xl);
 }
 
 .hero-content {
@@ -419,6 +434,7 @@ a:hover {
 
 .hero-title {
     margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-3xl);
 }
 
 .hero-subtitle {
@@ -650,6 +666,13 @@ section {
 .package-header {
     text-align: center;
     margin-bottom: var(--spacing-lg);
+}
+
+.package-footer {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--gray-200);
 }
 
 .package-body {
@@ -1048,6 +1071,11 @@ section {
 .checkbox-label input[type="checkbox"] {
     margin-top: 0.25rem;
     cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label span {
+    flex: 1;
 }
 
 .form-privacy {
@@ -1457,7 +1485,7 @@ section {
 
 .hero.festive {
     background:
-      linear-gradient(0deg, rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+      linear-gradient(0deg, rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
       url('./images/08-43-26.jpeg') center/cover no-repeat;
 }
 

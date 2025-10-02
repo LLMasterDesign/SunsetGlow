@@ -11,10 +11,13 @@
     const mainNav = document.querySelector('.main-nav');
     
     if (navToggle && mainNav) {
-        navToggle.addEventListener('click', function() {
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
             mainNav.classList.toggle('active');
+            console.log('Nav toggle clicked, active:', !isExpanded);
         });
     }
 
