@@ -1,0 +1,14 @@
+/// SPEC for Service Book single-file generator (internal)
+
+Paste the latest ops prompt here when updating. Keep brand vars, catalog, and pricing authoritative in this file.
+
+[BRAND.VARS]
+[PRICING.CONFIG]
+[SERVICE.CATALOG]
+[PRICING.MATH]
+[BUNDLES]
+[COPY.TONE]
+[SEO.DATA]
+[A11Y.RULES]
+[PERF.RULES]
+[RENDER.SPEC]
