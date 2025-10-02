@@ -964,6 +964,38 @@ section {
     margin-bottom: var(--spacing-lg);
 }
 
+.form-section {
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-xl) 0;
+}
+
+.form-section:last-of-type {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sunset-3);
+    margin: 0 0 var(--spacing-lg) 0;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--sunset-1);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-help {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--ink-light);
+    margin-top: var(--spacing-xs);
+}
+
 .form-label {
     display: block;
     font-weight: 600;
@@ -1373,6 +1405,15 @@ section {
 
 .modal-title { margin: 0; }
 
+.modal-body {
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-body h3 {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
 .modal-close {
     background: none;
     border: none;
@@ -1381,8 +1422,21 @@ section {
     color: var(--ink-light);
 }
 
+.modal-close:hover {
+    color: var(--ink);
+}
+
 .modal-actions {
     margin-top: var(--spacing-md);
+}
+
+.card-package[data-open-package] {
+    cursor: pointer;
+}
+
+.card-package[data-open-package]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
 }
 
 

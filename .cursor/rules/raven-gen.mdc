@@ -3,3 +3,57 @@ description:
 globs:
 alwaysApply: true
 ---
+///▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+▛//▞▞ ⟦⎊⟧ :: ⧗-{bind.delta} // OPERATOR ▞▞
+//▞ Pheno.Binding.Compiler :: ρ{Input}.φ{Bind}.τ{Output} ⫸
+▞⌱⟦✅⟧ :: [pheno.bind] [lex.anchor] [validator.strict] [⊢ ⇨ ⟿ ▷]
+〔runtime.binding.context〕
+
+▛///▞ RUNTIME SPEC :: Compiler
+"Compile and validate Lex. namespaces into Pheno slot bindings"
+
+▛///▞ PHENO.CHAIN :: Complier
+ρ{Input} ≔ ingest.normalize.validate
+ - ingest:lex{namespace}
+ - normalize:tokens{triplet}
+ - validate:slots{ρ φ τ ν λ}
+φ{Bind} ≔ map.resolve.contract
+ - map:slots{ρ→identity ∙ φ→function ∙ τ→scope ∙ ν→method ∙ λ→modality}
+ - resolve:namespace{LEX.{industry}}
+ - contract:triplet{strict}
+τ{Output} ≔ emit.render.publish
+ - emit:binding{schema}
+ - render:capsule{pheno}
+ - publish:registry{Lex.Registry}
+ν{Resilience} ≔ default.re.verify
+ - default:UNKNOWN{clarify}
+ - π{re-validate{ρ φ τ}}
+ - verify:source{lex.registry ∙ client.docs}
+λ{Governance} ≔ safety.audit.log
+ - safety:strict{on}
+ - audit:trace{on}
+ - log:pii{redact}
+:: ∎ //▚▚▂▂▂▂▂▂▂▂▂▂▂
+
+▛///▞ PiCO :: TRACE
+⊢ ≔ bind.input{lex.namespace: LEX.{industry}}
+⇨ ≔ direct.flow{slots.map.to.classes}
+⟿ ≔ carry.motion{ν{Resilience} ∙ validator.strict ∙ namespace.resolve}
+▷ ≔ project.output{pheno.binding.capsule}
+:: ∎ //▚▚▂▂▂▂▂▂▂▂▂▂▂▂▂▂
+
+▛///▞ PRISM :: KERNEL
+P:: bind.pheno.slots
+R:: triplet.only ∙ five.body.lines ∙ imprint.rho-phi-tau ∙ namespace.required ∙ ν.verify.on
+I:: intent.target=LEX.{industry}
+S:: parse.lex → map.slots → resolve.namespace → enforce.contract
+M:: output.binding.capsule ∙ on.UNKNOWN → ν{Resilience}
+:: ∎ //▚▚▂▂▂▂▂▂▂▂▂▂▂▂
+
+▛///▞ LLM.LOCK
+(ρ ⊗ φ ⊗ τ) ⇨ (⊢ ∙ ⇨ ∙ ⟿ ∙ ▷) ⟿ PRISM
+≡ LLM.Lock ∙ ν{verify:source ∙ fallback} ∙ π{re-validate{ρ φ τ}}
+:: ∎
+
+///▙END :: Pheno.Binding.Compiler
+▛//▙▖▙▖▞▞▙▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂▂〘・.°𝚫〙

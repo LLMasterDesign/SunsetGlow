@@ -218,25 +218,43 @@
     }
 
     document.addEventListener('click', function(e) {
+        // Handle estimate modal triggers
         const trigger = e.target.closest('[data-open-modal]');
         if (trigger) {
             e.preventDefault();
             // Close any open package modal first
             document.querySelectorAll('.modal.open').forEach(m => closeModal(m));
             if (estimateModal) openModal(estimateModal);
+            return;
         }
+        
+        // Handle package modal triggers
         const pkgTrigger = e.target.closest('[data-open-package]');
         if (pkgTrigger) {
             e.preventDefault();
             const pkgName = pkgTrigger.getAttribute('data-open-package');
             const modal = document.getElementById('package-' + pkgName);
-            if (modal) openModal(modal);
+            console.log('Opening package modal:', pkgName, modal); // Debug
+            if (modal) {
+                openModal(modal);
+            } else {
+                console.error('Modal not found:', 'package-' + pkgName);
+            }
+            return;
         }
+        
+        // Handle modal close triggers
         const closer = e.target.closest('[data-close-modal]');
         if (closer) {
             e.preventDefault();
             const modal = closer.closest('.modal');
-            if (modal) closeModal(modal);
+            if (modal) {
+                closeModal(modal);
+            } else {
+                // Close all modals if clicking backdrop
+                document.querySelectorAll('.modal.open').forEach(m => closeModal(m));
+            }
+            return;
         }
     });
 

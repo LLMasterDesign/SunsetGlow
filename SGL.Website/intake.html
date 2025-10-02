@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer intake form for Sunset Glow Lighting clients. Complete your service details for installation scheduling.">
+    <title>Customer Intake Form | Sunset Glow Lighting</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="blog.html" class="nav-link">Resources</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Customer Intake Form</h1>
+                <p class="page-subtitle">Let's get all the details for your installation</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <h2>Welcome to Sunset Glow Lighting!</h2>
+                        <p>This form helps us prepare for your installation. We'll gather property access details, scheduling preferences, and design choices so your installation goes smoothly.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>What happens next?</strong>
+                                <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+                                    <li>We'll review your information within 24 hours</li>
+                                    <li>Confirm your installation date</li>
+                                    <li>Send a final service agreement</li>
+                                    <li>Schedule your lighting transformation!</li>
+                                </ul>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Questions?</strong>
+                                <p>Call us at <a href="tel:+15555550199">(555) 555-0199</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="intakeForm" name="Customer Intake" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" novalidate>
+                            <input type="hidden" name="form-name" value="Customer Intake">
+                            <p hidden>
+                                <label>Don't fill this out: <input name="bot-field"></label>
+                            </p>
+
+                            <!-- CUSTOMER INFORMATION -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Customer Information</legend>
+                                
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-input" required aria-required="true">
+                                    <span class="form-error" id="name-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-input" required aria-required="true">
+                                    <span class="form-error" id="email-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required aria-required="true" placeholder="(555) 555-0199">
+                                    <span class="form-error" id="phone-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="altPhone" class="form-label">Alternate Phone (optional)</label>
+                                    <input type="tel" id="altPhone" name="altPhone" class="form-input" placeholder="(555) 555-0199">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="preferredContact" class="form-label">Preferred Contact Method <span class="required">*</span></label>
+                                    <select id="preferredContact" name="preferredContact" class="form-input" required aria-required="true">
+                                        <option value="">Select method</option>
+                                        <option value="phone">Phone Call</option>
+                                        <option value="text">Text Message</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                    <span class="form-error" id="preferredContact-error"></span>
+                                </div>
+                            </fieldset>
+
+                            <!-- PROPERTY INFORMATION -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Property Information</legend>
+                                
+                                <div class="form-group">
+                                    <label for="address" class="form-label">Service Address <span class="required">*</span></label>
+                                    <input type="text" id="address" name="address" class="form-input" required aria-required="true" placeholder="123 Main St, Princeton, TX 75407">
+                                    <span class="form-error" id="address-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="propertyType" class="form-label">Property Type <span class="required">*</span></label>
+                                    <select id="propertyType" name="propertyType" class="form-input" required aria-required="true">
+                                        <option value="">Select type</option>
+                                        <option value="single-family">Single Family Home</option>
+                                        <option value="townhouse">Townhouse</option>
+                                        <option value="commercial">Commercial Building</option>
+                                        <option value="hoa">HOA/Community</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <span class="form-error" id="propertyType-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="stories" class="form-label">Number of Stories</label>
+                                    <select id="stories" name="stories" class="form-input">
+                                        <option value="">Select</option>
+                                        <option value="1">1 Story</option>
+                                        <option value="2">2 Stories</option>
+                                        <option value="3+">3+ Stories</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="roofType" class="form-label">Roof Type</label>
+                                    <select id="roofType" name="roofType" class="form-input">
+                                        <option value="">Select</option>
+                                        <option value="asphalt">Asphalt Shingle</option>
+                                        <option value="tile">Tile</option>
+                                        <option value="metal">Metal</option>
+                                        <option value="slate">Slate</option>
+                                        <option value="flat">Flat</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Property Features (check all that apply)</label>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="gatedCommunity" name="features" value="gated-community">
+                                            <label for="gatedCommunity">Gated Community</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="pets" name="features" value="pets">
+                                            <label for="pets">Pets on Property</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="securitySystem" name="features" value="security-system">
+                                            <label for="securitySystem">Security System/Cameras</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="ladder" name="features" value="ladder">
+                                            <label for="ladder">Ladder Access Available</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gateCode" class="form-label">Gate/Access Code (if applicable)</label>
+                                    <input type="text" id="gateCode" name="gateCode" class="form-input" placeholder="Enter code or 'N/A'">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="parkingInfo" class="form-label">Parking & Access Instructions</label>
+                                    <textarea id="parkingInfo" name="parkingInfo" class="form-input form-textarea" rows="3" placeholder="Where should we park? Any special access instructions?"></textarea>
+                                </div>
+                            </fieldset>
+
+                            <!-- SERVICE PACKAGE & PREFERENCES -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Service Details</legend>
+                                
+                                <div class="form-group">
+                                    <label for="package" class="form-label">Selected Package <span class="required">*</span></label>
+                                    <select id="package" name="package" class="form-input" required aria-required="true">
+                                        <option value="">Select package</option>
+                                        <option value="level-1">Level 1 - Basic</option>
+                                        <option value="level-2">Level 2 - Enhanced</option>
+                                        <option value="level-3">Level 3 - Premium</option>
+                                        <option value="custom">Custom Package</option>
+                                    </select>
+                                    <span class="form-error" id="package-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="colorPreference" class="form-label">Light Color Preference <span class="required">*</span></label>
+                                    <select id="colorPreference" name="colorPreference" class="form-input" required aria-required="true">
+                                        <option value="">Select color</option>
+                                        <option value="warm-white">Warm White (Classic)</option>
+                                        <option value="cool-white">Cool White (Modern)</option>
+                                        <option value="multicolor">Multicolor (Traditional)</option>
+                                        <option value="red-green">Red & Green</option>
+                                        <option value="custom">Custom Colors (explain in notes)</option>
+                                    </select>
+                                    <span class="form-error" id="colorPreference-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Additional Services</label>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="storageService" name="additionalServices" value="storage">
+                                            <label for="storageService">Off-Season Storage</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="multiYear" name="additionalServices" value="multi-year">
+                                            <label for="multiYear">Multi-Year Contract (10% savings)</label>
+                                        </div>
+                                        <div class="checkbox-label">
+                                            <input type="checkbox" id="maintenance" name="additionalServices" value="maintenance">
+                                            <label for="maintenance">Unlimited Repair Visits</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- SCHEDULING -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Installation Scheduling</legend>
+                                
+                                <div class="form-group">
+                                    <label for="preferredDate" class="form-label">Preferred Installation Date <span class="required">*</span></label>
+                                    <input type="date" id="preferredDate" name="preferredDate" class="form-input" required aria-required="true">
+                                    <span class="form-error" id="preferredDate-error"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="alternateDate" class="form-label">Alternate Date (if first choice unavailable)</label>
+                                    <input type="date" id="alternateDate" name="alternateDate" class="form-input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="timePreference" class="form-label">Time Preference</label>
+                                    <select id="timePreference" name="timePreference" class="form-input">
+                                        <option value="">No preference</option>
+                                        <option value="morning">Morning (8am-12pm)</option>
+                                        <option value="afternoon">Afternoon (12pm-4pm)</option>
+                                        <option value="flexible">Flexible</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="removalDate" class="form-label">Preferred Removal Date (approximate)</label>
+                                    <input type="date" id="removalDate" name="removalDate" class="form-input">
+                                    <small class="form-help">Typically early January</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="homePresence" class="form-label">Will someone be home during installation?</label>
+                                    <select id="homePresence" name="homePresence" class="form-input">
+                                        <option value="">Select</option>
+                                        <option value="yes">Yes, someone will be home</option>
+                                        <option value="no">No, please work independently</option>
+                                        <option value="check-in">No, but please check in upon arrival</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <!-- PAYMENT & BILLING -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Payment Information</legend>
+                                
+                                <div class="form-group">
+                                    <label for="paymentMethod" class="form-label">Preferred Payment Method</label>
+                                    <select id="paymentMethod" name="paymentMethod" class="form-input">
+                                        <option value="">Select method</option>
+                                        <option value="credit-card">Credit Card</option>
+                                        <option value="check">Check</option>
+                                        <option value="venmo">Venmo</option>
+                                        <option value="zelle">Zelle</option>
+                                        <option value="cash">Cash</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="billingAddress" class="form-label">Billing Address (if different from service address)</label>
+                                    <input type="text" id="billingAddress" name="billingAddress" class="form-input" placeholder="Leave blank if same as service address">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="invoiceEmail" class="form-label">Invoice Email (if different from above)</label>
+                                    <input type="email" id="invoiceEmail" name="invoiceEmail" class="form-input" placeholder="Leave blank to use primary email">
+                                </div>
+                            </fieldset>
+
+                            <!-- EMERGENCY CONTACT -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Emergency Contact (Optional)</legend>
+                                
+                                <div class="form-group">
+                                    <label for="emergencyName" class="form-label">Emergency Contact Name</label>
+                                    <input type="text" id="emergencyName" name="emergencyName" class="form-input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="emergencyPhone" class="form-label">Emergency Contact Phone</label>
+                                    <input type="tel" id="emergencyPhone" name="emergencyPhone" class="form-input" placeholder="(555) 555-0199">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="emergencyRelation" class="form-label">Relationship</label>
+                                    <input type="text" id="emergencyRelation" name="emergencyRelation" class="form-input" placeholder="e.g., Spouse, Neighbor">
+                                </div>
+                            </fieldset>
+
+                            <!-- ADDITIONAL NOTES -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Additional Information</legend>
+                                
+                                <div class="form-group">
+                                    <label for="specialRequests" class="form-label">Special Requests or Instructions</label>
+                                    <textarea id="specialRequests" name="specialRequests" class="form-input form-textarea" rows="4" placeholder="Any special requests, concerns, or details we should know?"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="referralSource" class="form-label">How did you hear about us?</label>
+                                    <select id="referralSource" name="referralSource" class="form-input">
+                                        <option value="">Select source</option>
+                                        <option value="google">Google Search</option>
+                                        <option value="facebook">Facebook</option>
+                                        <option value="nextdoor">Nextdoor</option>
+                                        <option value="friend">Friend/Family Referral</option>
+                                        <option value="neighbor">Saw neighbor's lights</option>
+                                        <option value="sign">Yard Sign</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <!-- CONSENT & AGREEMENT -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Consent & Agreement</legend>
+                                
+                                <div class="form-group">
+                                    <div class="checkbox-label">
+                                        <input type="checkbox" id="photoConsent" name="photoConsent" value="yes">
+                                        <div>
+                                            <strong>Photo Consent</strong>
+                                            <div>I allow Sunset Glow Lighting to photograph my property for portfolio and marketing purposes.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="checkbox-label">
+                                        <input type="checkbox" id="termsAccept" name="termsAccept" value="yes" required>
+                                        <div>
+                                            <strong>Terms & Conditions <span class="required">*</span></strong>
+                                            <div>I understand the service terms and agree to the quoted pricing. Final pricing will be confirmed in writing.</div>
+                                        </div>
+                                    </div>
+                                    <span class="form-error" id="termsAccept-error"></span>
+                                </div>
+                            </fieldset>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit Intake Form</button>
+
+                            <p class="form-privacy">We respect your privacy. Your information is never shared or sold and is used only for service delivery.</p>
+                        </form>
+
+                        <div class="form-success" id="formSuccess" hidden>
+                            <div class="success-icon" aria-hidden="true">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="32" r="30" fill="currentColor"/>
+                                    <path d="M20 32L28 40L44 24" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h3>Thank You!</h3>
+                            <p>Your intake form has been received. We'll review everything and confirm your installation schedule within 24 hours.</p>
+                            <a href="index.html" class="btn btn-outline">Return to Home</a>
+                        </div>
+
+                        <noscript>
+                            <p class="form-notice">JavaScript is required for form validation. Please enable JavaScript or call us directly at (555) 555-0199.</p>
+                        </noscript>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Sunset Glow Lighting</h3>
+                    <p class="footer-text">Veteran-owned holiday lighting serving Princeton and surrounding communities.</p>
+                    <div class="footer-badges">
+                        <span class="badge badge-sm">Veteran-Owned</span>
+                        <span class="badge badge-sm">Insured</span>
+                        <span class="badge badge-sm">10 Years Experience</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Service Area</h3>
+                    <ul class="footer-list">
+                        <li>Princeton, TX</li>
+                        <li>Melissa, TX</li>
+                        <li>Anna, TX</li>
+                        <li>McKinney, TX</li>
+                        <li>Lucas, TX</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-list">
+                        <li><a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></li>
+                        <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sunset Glow Lighting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
