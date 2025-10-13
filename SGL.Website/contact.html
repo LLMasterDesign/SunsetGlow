@@ -10,103 +10,117 @@
 </head>
 <body>
 
-  <!-- =========================
-       NAVBAR (banner)
-       ========================= -->
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a href="index.html" class="navbar-brand">Sunset Glow Lighting</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <ul class="navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Resources</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-      </ul>
-      <!-- Always-visible CTA in banner (desktop & mobile) -->
-      <a href="contact.html" class="btn btn-primary nav-cta">Get Quote</a>
-    </div>
-  </nav>
-
-  <!-- =========================
-       HERO
-       ========================= -->
-  <header class="hero hero-contact">
-    <div class="container">
-      <h1>Get Your Free Estimate</h1>
-      <p class="hero-subtitle">
-        Service area: Princeton · Melissa · Anna · McKinney · Lucas, TX (and nearby)
-      </p>
-    </div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <!-- Sticky Get Quote Button -->
+  <a href="contact.html" class="sticky-cta">Get Quote</a>
+  
+  <header class="site-header">
+      <div class="container">
+          <div class="header-content">
+              <a href="index.html" class="logo">
+                  <span class="logo-text">Sunset Glow Lighting</span>
+              </a>
+              <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  <span class="hamburger"></span>
+              </button>
+              <nav class="main-nav" aria-label="Main navigation">
+                  <ul class="nav-list">
+                      <li><a href="index.html" class="nav-link">Home</a></li>
+                      <li><a href="services.html" class="nav-link">Services</a></li>
+                      <li><a href="about.html" class="nav-link">About</a></li>
+                      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                      <li><a href="blog.html" class="nav-link">Resources</a></li>
+                  </ul>
+                  <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+              </nav>
+          </div>
+      </div>
   </header>
 
-  <!-- =========================
-       CONTACT / QUOTE FORM
-       ========================= -->
-  <main class="section contact-section">
-    <div class="container">
-      <div class="contact-grid">
-        <section class="contact-form-card">
-          <h2>Request a Holiday Lighting Quote</h2>
-          <p class="muted">
-            Tell us where and when, then what you'd like lit. We'll follow up quickly with a quote and scheduling options.
-          </p>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Get Your Free Estimate</h1>
+        <p class="page-subtitle">
+          Service area: Princeton · Melissa · Anna · McKinney · Lucas, TX (and nearby)
+        </p>
+      </div>
+    </section>
 
-          <!-- FORM BEGIN -->
-          <form name="Quote"
-                method="POST"
-                action="/thanks.html"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                id="quoteForm">
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2>Request a Holiday Lighting Quote</h2>
+            <p class="section-text">
+              Tell us where and when, then what you'd like lit. We'll follow up quickly with a quote and scheduling options.
+            </p>
+
+            <!-- FORM BEGIN -->
+            <form class="contact-form" name="Quote"
+                  method="POST"
+                  action="/thanks.html"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  id="quoteForm">
 
             <!-- Netlify required hidden -->
             <input type="hidden" name="form-name" value="Quote">
             <!-- Honeypot -->
             <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
 
-            <!-- CONTACT / ADDRESS -->
-            <div class="form-row">
+            <!-- CONTACT INFORMATION -->
+            <fieldset class="form-section">
+              <legend class="form-section-title">Contact Information</legend>
+              
               <div class="form-group">
                 <label for="name" class="form-label">Full Name <span class="required">*</span></label>
                 <input type="text" id="name" name="name" class="form-input" required>
+                <span class="form-error" id="name-error"></span>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="address" class="form-label">Street Address <span class="required">*</span></label>
-              <input type="text" id="address" name="address" class="form-input" required autocomplete="street-address">
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="city" class="form-label">City <span class="required">*</span></label>
-                <input type="text" id="city" name="city" class="form-input" required>
-              </div>
-              <div class="form-group">
-                <label for="state" class="form-label">State <span class="required">*</span></label>
-                <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
-              </div>
-              <div class="form-group">
-                <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
-                <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}" inputmode="numeric">
-              </div>
-            </div>
-
-            <div class="form-row">
               <div class="form-group">
                 <label for="phone" class="form-label">Phone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" class="form-input" required inputmode="tel">
+                <input type="tel" id="phone" name="phone" class="form-input" required inputmode="tel" placeholder="(555) 555-0199">
+                <span class="form-error" id="phone-error"></span>
               </div>
+
               <div class="form-group">
                 <label for="email" class="form-label">Email <span class="required">*</span></label>
                 <input type="email" id="email" name="email" class="form-input" required>
+                <span class="form-error" id="email-error"></span>
               </div>
+            </fieldset>
+
+            <!-- PROPERTY INFORMATION -->
+            <fieldset class="form-section">
+              <legend class="form-section-title">Property Information</legend>
+              
+              <div class="form-group">
+                <label for="address" class="form-label">Street Address <span class="required">*</span></label>
+                <input type="text" id="address" name="address" class="form-input" required autocomplete="street-address">
+                <span class="form-error" id="address-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="city" class="form-label">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" class="form-input" required>
+                <span class="form-error" id="city-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="state" class="form-label">State <span class="required">*</span></label>
+                <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
+                <span class="form-error" id="state-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
+                <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}" inputmode="numeric">
+                <span class="form-error" id="zip-error"></span>
+              </div>
+
               <div class="form-group">
                 <label for="home_type" class="form-label">Home Type <span class="required">*</span></label>
                 <select id="home_type" name="home_type" class="form-input" required>
@@ -116,15 +130,20 @@
                   <option>3-Story</option>
                   <option>Ranch</option>
                 </select>
+                <span class="form-error" id="home_type-error"></span>
               </div>
-            </div>
+            </fieldset>
 
             <!-- SCHEDULING -->
-            <div class="form-row">
+            <fieldset class="form-section">
+              <legend class="form-section-title">Scheduling</legend>
+              
               <div class="form-group">
                 <label for="install_date" class="form-label">Preferred Install Date <span class="required">*</span></label>
                 <input type="date" id="install_date" name="install_date" class="form-input" required>
+                <span class="form-error" id="install_date-error"></span>
               </div>
+              
               <div class="form-group">
                 <label for="timeframe_flex" class="form-label">Date Flexibility</label>
                 <select id="timeframe_flex" name="timeframe_flex" class="form-input">
@@ -134,65 +153,81 @@
                   <option>First available</option>
                 </select>
               </div>
-            </div>
+            </fieldset>
 
             <!-- PROJECT INTENT -->
-            <div class="form-group">
-              <p class="form-label">Tell us what you're looking for <span class="required">*</span></p>
-              <div class="checkbox-grid">
-                <label><input type="checkbox" name="intent_scope[]" value="Roofline" required> Roofline</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Trees"> Trees</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Bushes/Shrubs"> Bushes/Shrubs</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Windows/Doors"> Windows/Doors</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Pathway/Stakes"> Pathway/Stakes</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Wreaths/Garland"> Wreaths/Garland</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Take-down + Storage"> Take-down + Storage</label>
-                <label><input type="checkbox" name="intent_scope[]" value="Custom" id="intentCustom"> Custom</label>
-              </div>
-            </div>
-
-            <div class="form-group" id="customDetailsGroup" hidden>
-              <label for="details" class="form-label">Details</label>
-              <textarea id="details" name="details" class="form-input" rows="4" placeholder="Describe your custom request or special notes."></textarea>
-            </div>
-
-            <!-- MEDIA (multi-photo via separate inputs; Netlify supports one file per field) -->
-            <div class="form-group">
-              <label class="form-label">Upload photos of your home (optional)</label>
-              <div class="photo-inputs">
-                <input type="file" name="photo1" accept="image/*">
-                <input type="file" name="photo2" accept="image/*">
-                <input type="file" name="photo3" accept="image/*">
-              </div>
-              <p class="form-hint">Tip: Add details above so we know what to look for.</p>
-            </div>
-
-            <!-- MULTI-YEAR DISCOUNT -->
-            <div class="form-group multi-year-section">
-              <div class="discount-card">
-                <h3>💰 Multi-Year Discount Available</h3>
-                <p>Save 15% on year 2, 25% on year 3+ when you commit to multiple seasons!</p>
-                <div class="discount-options">
-                  <label class="discount-option">
-                    <input type="radio" name="multi_year" value="1-year" checked>
-                    <span>1 Year (Standard pricing)</span>
-                  </label>
-                  <label class="discount-option">
-                    <input type="radio" name="multi_year" value="2-year">
-                    <span>2 Years (15% off year 2)</span>
-                  </label>
-                  <label class="discount-option">
-                    <input type="radio" name="multi_year" value="3-year">
-                    <span>3+ Years (25% off year 3+)</span>
-                  </label>
+            <fieldset class="form-section">
+              <legend class="form-section-title">What You're Looking For <span class="required">*</span></legend>
+              
+              <div class="form-group">
+                <div class="checkbox-group">
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Roofline" required> Roofline</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Trees"> Trees</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Bushes/Shrubs"> Bushes/Shrubs</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Windows/Doors"> Windows/Doors</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Pathway/Stakes"> Pathway/Stakes</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Wreaths/Garland"> Wreaths/Garland</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Take-down + Storage"> Take-down + Storage</label>
+                  <label class="checkbox-label"><input type="checkbox" name="intent_scope[]" value="Custom" id="intentCustom"> Custom</label>
                 </div>
               </div>
-            </div>
+
+              <div class="form-group" id="customDetailsGroup" hidden>
+                <label for="details" class="form-label">Custom Details</label>
+                <textarea id="details" name="details" class="form-input form-textarea" rows="4" placeholder="Describe your custom request or special notes."></textarea>
+              </div>
+            </fieldset>
+
+            <!-- PHOTOS -->
+            <fieldset class="form-section">
+              <legend class="form-section-title">Photos (Optional)</legend>
+              
+              <div class="form-group">
+                <label class="form-label">Upload photos of your home</label>
+                <input type="file" name="photo1" accept="image/*" class="form-input">
+                <input type="file" name="photo2" accept="image/*" class="form-input">
+                <input type="file" name="photo3" accept="image/*" class="form-input">
+                <div class="form-help">Tip: Add details above so we know what to look for.</div>
+              </div>
+            </fieldset>
+
+            <!-- MULTI-YEAR DISCOUNT -->
+            <fieldset class="form-section">
+              <legend class="form-section-title">Multi-Year Discount</legend>
+              
+              <div class="multi-year-section">
+                <div class="discount-card">
+                  <h3>💰 Multi-Year Discount Available</h3>
+                  <p>Save 15% on year 2, 25% on year 3+ when you commit to multiple seasons!</p>
+                  <div class="discount-options">
+                    <label class="discount-option">
+                      <input type="radio" name="multi_year" value="1-year" checked>
+                      <span>1 Year (Standard pricing)</span>
+                    </label>
+                    <label class="discount-option">
+                      <input type="radio" name="multi_year" value="2-year">
+                      <span>2 Years (15% off year 2)</span>
+                    </label>
+                    <label class="discount-option">
+                      <input type="radio" name="multi_year" value="3-year">
+                      <span>3+ Years (25% off year 3+)</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
 
             <!-- CONSENT -->
-            <div class="form-group">
-              <label><input type="checkbox" id="sms_ok" name="sms_ok" value="yes"> I agree to receive scheduling updates by SMS</label>
-            </div>
+            <fieldset class="form-section">
+              <legend class="form-section-title">Preferences</legend>
+              
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="sms_ok" name="sms_ok" value="yes">
+                  I agree to receive scheduling updates by SMS
+                </label>
+              </div>
+            </fieldset>
 
             <!-- Hidden attribution hooks -->
             <input type="hidden" name="utm_source" id="utm_source">
@@ -206,40 +241,87 @@
             <input type="hidden" name="lat" id="lat">
             <input type="hidden" name="lng" id="lng">
 
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Request Quote</button>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Request Quote</button>
+            </div>
+            
+            <div class="form-privacy">
+              <p>By submitting this form, you agree to our privacy policy and terms of service.</p>
             </div>
           </form>
           <!-- FORM END -->
-        </section>
-
-        <!-- Optional sidebar contact info -->
-        <aside class="contact-aside">
-          <div class="card">
-            <h3>Questions?</h3>
-            <p>We serve Princeton, Melissa, Anna, McKinney, Lucas — and nearby Texas cities.</p>
-            <p><strong>Veteran owned.</strong> Insured at job start.</p>
-            <p><a class="link" href="tel:">Call</a> · <a class="link" href="mailto:">Email</a></p>
           </div>
-        </aside>
+
+          <!-- Contact Information Sidebar -->
+          <div class="contact-info">
+            <h3>Questions?</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <strong>Service Area</strong>
+                <p>We serve Princeton, Melissa, Anna, McKinney, Lucas — and nearby Texas cities.</p>
+              </div>
+              <div class="contact-item">
+                <strong>Veteran Owned</strong>
+                <p>Insured at job start. 10 years of experience.</p>
+              </div>
+              <div class="contact-item">
+                <strong>Contact</strong>
+                <p><a href="tel:+15555550199">(555) 555-0199</a> · <a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Sunset Glow Lighting</p>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3 class="footer-heading">Sunset Glow Lighting</h3>
+          <p class="footer-text">Veteran-owned holiday lighting serving Princeton and surrounding communities.</p>
+          <div class="footer-badges">
+            <span class="badge badge-sm">Veteran-Owned</span>
+            <span class="badge badge-sm">Insured</span>
+            <span class="badge badge-sm">10 Years Experience</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Service Area</h3>
+          <ul class="footer-list">
+            <li>Princeton, TX</li>
+            <li>Melissa, TX</li>
+            <li>Anna, TX</li>
+            <li>McKinney, TX</li>
+            <li>Lucas, TX</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></li>
+            <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sunset Glow Lighting. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
   <script>
-    // Keep year current
-    document.getElementById('year').textContent = new Date().getFullYear();
-
     // Show custom details when "Custom" is checked
     (function () {
       const custom = document.getElementById('intentCustom');
