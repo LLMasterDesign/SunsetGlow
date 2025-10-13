@@ -92,7 +92,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 :focus-visible {
-    outline: 3px solid var(--sunset-2);
+    outline: 3px solid var(--orange-light);
     outline-offset: 2px;
 }
 
@@ -168,7 +168,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%);
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%);
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius);
@@ -183,7 +183,7 @@ a:hover {
 }
 
 .sticky-cta:hover {
-    background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
+    background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     color: var(--white);
@@ -246,7 +246,7 @@ a:hover {
         top: 1rem;
         right: 1rem;
         z-index: 1000;
-        background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%) !important;
+        background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%) !important;
         color: var(--white) !important;
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--border-radius);
@@ -260,7 +260,7 @@ a:hover {
     }
     
     .nav-cta:hover {
-        background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
+        background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
@@ -367,8 +367,8 @@ a:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--white);
-    border-top: 1px solid var(--gray-200);
+    background: var(--charcoal-blue);
+    border-top: 1px solid var(--grey);
     padding: var(--spacing-md);
     display: none;
     box-shadow: var(--shadow-md);
@@ -450,7 +450,7 @@ a:hover {
         margin-top: 0;
         position: static;
         display: inline-block;
-        background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%) !important;
+        background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%) !important;
         color: var(--white) !important;
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--border-radius);
@@ -462,7 +462,7 @@ a:hover {
     }
     
     .nav-cta:hover {
-        background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
+        background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
         transform: translateY(-1px);
     }
 }
@@ -566,7 +566,7 @@ a:hover {
 }
 
 .badge-veteran {
-    background: var(--sunset-2);
+    background: var(--orange-light);
     color: var(--white);
 }
 
@@ -935,7 +935,7 @@ section {
 .step-number {
     width: 60px;
     height: 60px;
-    background: var(--sunset-2);
+    background: var(--orange-light);
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -1861,7 +1861,7 @@ p[hidden] {
 }
 
 .footer-text {
-    color: var(--gray-300);
+    color: var(--grey-light);
     margin-bottom: var(--spacing-md);
 }
 
@@ -1880,7 +1880,7 @@ p[hidden] {
 }
 
 .footer-list a {
-    color: var(--gray-300);
+    color: var(--grey-light);
 }
 
 .footer-list a:hover {
@@ -1888,10 +1888,10 @@ p[hidden] {
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--gray-800);
+    border-top: 1px solid var(--grey);
     padding-top: var(--spacing-lg);
     text-align: center;
-    color: var(--gray-300);
+    color: var(--grey-light);
     font-size: 0.875rem;
 }
 
@@ -1990,7 +1990,7 @@ p[hidden] {
 /* === Festive accents (no external assets) === */
 .string-lights {
     --bulb: var(--sunset-1);
-    --bulb2: var(--sunset-2);
+    --bulb2: var(--orange-light);
     --bulb3: var(--orange);
     height: 16px;
     background:
