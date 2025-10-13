@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Burger Test</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="blog.html" class="nav-link">Resources</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 40px 20px;">
+        <h1>Simple Burger Menu Test</h1>
+        <p>Test the burger menu by clicking the hamburger icon.</p>
+        <p>Current screen width: <span id="width"></span>px</p>
+        <p>Menu state: <span id="state">Closed</span></p>
+    </main>
+
+    <script src="./script.js"></script>
+    <script>
+        function updateInfo() {
+            document.getElementById('width').textContent = window.innerWidth;
+            const navToggle = document.querySelector('.nav-toggle');
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            document.getElementById('state').textContent = isExpanded ? 'Open' : 'Closed';
+        }
+        
+        window.addEventListener('load', updateInfo);
+        window.addEventListener('resize', updateInfo);
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            setTimeout(updateInfo, 100);
+        });
+    </script>
+</body>
+</html>

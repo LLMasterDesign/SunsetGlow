@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Menu Test</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body { margin: 0; padding: 20px; }
+        .test-info { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px;
+        }
+        .test-info h2 { margin-top: 0; }
+        .test-steps { 
+            background: #e8f4f8; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 15px;
+        }
+        .test-steps ol { margin: 10px 0; }
+        .test-steps li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="test-info">
+        <h2>🍔 Burger Menu Test Page</h2>
+        <p>This page tests the burger menu functionality. The burger menu should work on mobile devices (screen width < 768px).</p>
+        
+        <div class="test-steps">
+            <h3>Test Steps:</h3>
+            <ol>
+                <li>Resize your browser window to mobile size (less than 768px wide)</li>
+                <li>Click the hamburger menu button (three lines) in the top right</li>
+                <li>The navigation menu should slide down from the top</li>
+                <li>Click the hamburger button again to close the menu</li>
+                <li>Click outside the menu to close it</li>
+                <li>Press Escape key to close the menu</li>
+            </ol>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="blog.html" class="nav-link">Resources</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding: 40px 20px;">
+        <h1>Burger Menu Test</h1>
+        <p>This is a test page to verify the burger menu functionality.</p>
+        <p>On mobile devices, you should see a hamburger menu button that toggles the navigation menu.</p>
+        
+        <h2>Current Status:</h2>
+        <div id="status" style="padding: 10px; background: #f9f9f9; border-radius: 4px; margin: 10px 0;">
+            <p>Screen width: <span id="screen-width"></span>px</p>
+            <p>Menu state: <span id="menu-state">Closed</span></p>
+            <p>Menu display: <span id="menu-display">none</span></p>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script>
+        // Test script to monitor burger menu state
+        function updateStatus() {
+            const screenWidth = window.innerWidth;
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+            const navDisplay = window.getComputedStyle(mainNav).display;
+            
+            document.getElementById('screen-width').textContent = screenWidth;
+            document.getElementById('menu-state').textContent = isExpanded ? 'Open' : 'Closed';
+            document.getElementById('menu-display').textContent = navDisplay;
+        }
+        
+        // Update status on load and resize
+        window.addEventListener('load', updateStatus);
+        window.addEventListener('resize', updateStatus);
+        
+        // Monitor nav toggle clicks
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            setTimeout(updateStatus, 100); // Small delay to let the state update
+        });
+        
+        // Monitor nav clicks
+        document.querySelector('.main-nav').addEventListener('click', () => {
+            setTimeout(updateStatus, 100);
+        });
+    </script>
+</body>
+</html>
