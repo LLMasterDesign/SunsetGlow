@@ -32,37 +32,213 @@
     <main id="main">
         <section class="page-hero">
             <div class="container">
-                <h1 class="page-title">Service Book</h1>
-                <p class="page-subtitle">What we do, how we do it, and what to expect.</p>
+                <h1 class="page-title">Service Details & Pricing</h1>
+                <p class="page-subtitle">Transparent pricing for every service level. Choose the package that fits your vision and budget, then explore detailed pricing for each lighting style.</p>
             </div>
         </section>
 
-        <section>
+        <!-- Service Overview -->
+        <section class="service-overview">
             <div class="container">
-                <div class="card-grid grid-3">
-                    <div class="card">
-                        <h3 class="card-title">Design & Consultation</h3>
-                        <p class="card-text">On-site or virtual consult to align on goals, style, and budget. We map your roofline and key features.</p>
+                <div class="section-header">
+                    <h2 class="section-title">What We Do</h2>
+                    <p class="section-subtitle">From initial consultation to final removal, we handle every detail so you can focus on enjoying the magic.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3 class="service-title">Design & Consultation</h3>
+                        <p class="service-description">On-site or virtual consultation to understand your vision, assess your property, and create a custom lighting plan that perfectly complements your home's architecture.</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Professional Installation</h3>
-                        <p class="card-text">Insured, ladder-trained teams install commercial-grade LEDs with clean lines and secure clips.</p>
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3 class="service-title">Professional Installation</h3>
+                        <p class="service-description">Our insured, experienced team installs commercial-grade LED lights with precision and care. Clean lines, secure clips, and attention to every detail.</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Maintenance & Support</h3>
-                        <p class="card-text">Enhanced/Premium include unlimited repair visits. Basic includes one complimentary visit.</p>
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3 class="service-title">Maintenance & Support</h3>
+                        <p class="service-description">We keep your display shining bright all season long. Enhanced and Premium packages include unlimited repair visits, while Essential includes one complimentary visit.</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Seasonal Takedown</h3>
-                        <p class="card-text">Safe removal after the season ends, scheduled to minimize disruption and preserve hardware.</p>
+                    <div class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3 class="service-title">Seasonal Takedown</h3>
+                        <p class="service-description">Safe, careful removal after the season ends. We schedule takedowns to minimize disruption and preserve all hardware for next year's installation.</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Off‑Season Storage</h3>
-                        <p class="card-text">Optional storage to keep your garage clutter-free and your lights organized for next year.</p>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3 class="service-title">Off-Season Storage</h3>
+                        <p class="service-description">Optional storage service to keep your garage clutter-free. We organize and safely store your lights until next season, ready for quick installation.</p>
                     </div>
-                    <div class="card">
-                        <h3 class="card-title">Multi‑Year Benefits</h3>
-                        <p class="card-text">Lock in 10% savings, priority scheduling, and a yearly design refresh consult.</p>
+                    <div class="service-card">
+                        <div class="service-icon">💎</div>
+                        <h3 class="service-title">Multi-Year Benefits</h3>
+                        <p class="service-description">Commit to 2+ years and enjoy 10% savings, priority scheduling, and annual design refresh consultations to keep your display fresh and exciting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Structure -->
+        <section class="pricing-structure">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pricing by Service Level</h2>
+                    <p class="section-subtitle">Choose your service level, then select your preferred lighting style. All prices include professional installation, maintenance, and removal.</p>
+                </div>
+                
+                <div class="pricing-tabs">
+                    <button class="pricing-tab active" data-package="essential">Essential</button>
+                    <button class="pricing-tab" data-package="enhanced">Enhanced</button>
+                    <button class="pricing-tab" data-package="premium">Premium</button>
+                </div>
+
+                <div class="pricing-content">
+                    <!-- Essential Package -->
+                    <div class="package-pricing active" data-package="essential">
+                        <div class="package-header">
+                            <h3 class="package-name">Essential Package</h3>
+                            <p class="package-description">Perfect for first-time customers or smaller homes. Clean, professional roofline lighting that highlights your home's architecture.</p>
+                        </div>
+                        
+                        <div class="style-pricing-grid">
+                            <div class="style-pricing-card">
+                                <div class="style-preview heritage-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="roofline-demo"></div>
+                                </div>
+                                <h4 class="style-name">Heritage Style</h4>
+                                <p class="style-description">Classic red and white lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $800</span>
+                                    <span class="price-note">*Pricing varies by home size</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview laurie-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="multicolor-demo"></div>
+                                </div>
+                                <h4 class="style-name">Laurie Style</h4>
+                                <p class="style-description">Vibrant multicolored lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $850</span>
+                                    <span class="price-note">*Includes icicle effects</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview woodstock-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="reindeer-demo"></div>
+                                </div>
+                                <h4 class="style-name">Woodstock Style</h4>
+                                <p class="style-description">Rustic charm with reindeer</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $900</span>
+                                    <span class="price-note">*Includes reindeer installation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Package -->
+                    <div class="package-pricing" data-package="enhanced">
+                        <div class="package-header">
+                            <h3 class="package-name">Enhanced Package</h3>
+                            <p class="package-description">Our most popular choice. Roofline lighting plus tree wrapping and accent lighting for a complete holiday transformation.</p>
+                        </div>
+                        
+                        <div class="style-pricing-grid">
+                            <div class="style-pricing-card">
+                                <div class="style-preview heritage-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="roofline-demo"></div>
+                                </div>
+                                <h4 class="style-name">Heritage Style</h4>
+                                <p class="style-description">Classic red and white lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $1,400</span>
+                                    <span class="price-note">*Includes tree wrapping</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview laurie-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="multicolor-demo"></div>
+                                </div>
+                                <h4 class="style-name">Laurie Style</h4>
+                                <p class="style-description">Vibrant multicolored lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $1,500</span>
+                                    <span class="price-note">*Includes icicle effects</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview woodstock-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="reindeer-demo"></div>
+                                </div>
+                                <h4 class="style-name">Woodstock Style</h4>
+                                <p class="style-description">Rustic charm with reindeer</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $1,600</span>
+                                    <span class="price-note">*Includes reindeer installation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="package-pricing" data-package="premium">
+                        <div class="package-header">
+                            <h3 class="package-name">Premium Package</h3>
+                            <p class="package-description">Complete property transformation with custom design, animations, and extensive coverage. The ultimate holiday lighting experience.</p>
+                        </div>
+                        
+                        <div class="style-pricing-grid">
+                            <div class="style-pricing-card">
+                                <div class="style-preview heritage-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="roofline-demo"></div>
+                                </div>
+                                <h4 class="style-name">Heritage Style</h4>
+                                <p class="style-description">Classic red and white lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $2,400</span>
+                                    <span class="price-note">*Full property design</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview laurie-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="multicolor-demo"></div>
+                                </div>
+                                <h4 class="style-name">Laurie Style</h4>
+                                <p class="style-description">Vibrant multicolored lights</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $2,600</span>
+                                    <span class="price-note">*Includes animations</span>
+                                </div>
+                            </div>
+                            
+                            <div class="style-pricing-card">
+                                <div class="style-preview woodstock-preview">
+                                    <div class="string-lights string-lights-top"></div>
+                                    <div class="reindeer-demo"></div>
+                                </div>
+                                <h4 class="style-name">Woodstock Style</h4>
+                                <p class="style-description">Rustic charm with reindeer</p>
+                                <div class="pricing-info">
+                                    <span class="starting-price">Starting at $2,800</span>
+                                    <span class="price-note">*Includes custom elements</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
