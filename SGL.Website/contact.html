@@ -67,8 +67,15 @@
 
             <!-- Netlify required hidden -->
             <input type="hidden" name="form-name" value="Quote">
-            <!-- Honeypot -->
-            <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+            
+            <!-- Honeypot field for spam protection -->
+            <p hidden>
+                <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+            
+            <!-- Additional spam protection -->
+            <input type="hidden" name="timestamp" value="">
+            <input type="hidden" name="form-submitted" value="true">
 
             <!-- CONTACT INFORMATION -->
             <fieldset class="form-section">
@@ -348,6 +355,44 @@
         referrer: document.referrer || ''
       };
       Object.entries(map).forEach(([k,v]) => { const el = byId(k); if (el && !el.value) el.value = v; });
+    })();
+
+    // Honeypot and spam protection
+    (function () {
+      // Set timestamp when form loads
+      const timestampField = document.querySelector('input[name="timestamp"]');
+      if (timestampField) {
+        timestampField.value = new Date().toISOString();
+      }
+
+      // Form submission validation
+      const form = document.getElementById('quoteForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          const botField = document.querySelector('input[name="bot-field"]');
+          const timestampField = document.querySelector('input[name="timestamp"]');
+          
+          // Check if honeypot was filled (spam)
+          if (botField && botField.value !== '') {
+            e.preventDefault();
+            console.log('Spam detected - honeypot field filled');
+            return false;
+          }
+          
+          // Check if form was submitted too quickly (less than 5 seconds)
+          if (timestampField && timestampField.value) {
+            const submitTime = new Date().getTime();
+            const loadTime = new Date(timestampField.value).getTime();
+            const timeDiff = (submitTime - loadTime) / 1000;
+            
+            if (timeDiff < 5) {
+              e.preventDefault();
+              console.log('Spam detected - form submitted too quickly');
+              return false;
+            }
+          }
+        });
+      }
     })();
   </script>
 </body>
