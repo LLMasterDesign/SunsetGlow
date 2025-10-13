@@ -5,9 +5,11 @@
 
 /* CSS VARIABLES */
 :root {
-    --sunset-1: #F8C36A;
-    --sunset-2: #F39A54;
-    --sunset-3: #D9663A;
+    --sunset-1: #FFB347; /* Warm peach-orange */
+    --sunset-2: #FF8C42; /* Rich orange */
+    --sunset-3: #D2691E; /* Sunset orange */
+    --royal-blue: #1E3A8A; /* Royal blue accent */
+    --gold: #DAA520; /* Gold accent */
     --ink: #171717;
     --ink-light: #525252;
     --cloud: #FAFAFA;
@@ -20,7 +22,7 @@
     --success: #22C55E;
     --error: #EF4444;
     
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-sans: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -112,11 +114,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     color: var(--ink);
+    letter-spacing: -0.02em;
 }
 
 h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: var(--spacing-md);
+    font-weight: 800;
 }
 
 h2 {
@@ -384,13 +388,13 @@ a:hover {
 }
 
 .badge-veteran {
-    background: var(--sunset-2);
+    background: var(--royal-blue);
     color: var(--white);
 }
 
 .badge-insured {
-    background: var(--gray-800);
-    color: var(--white);
+    background: var(--gold);
+    color: var(--ink);
 }
 
 .badge-sm {
@@ -409,7 +413,7 @@ a:hover {
 /* HERO */
 .hero {
     background: linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
-    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    padding: var(--spacing-2xl) 0 var(--spacing-xl);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -454,7 +458,7 @@ a:hover {
 /* PAGE HERO */
 .page-hero {
     background: var(--cloud);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
     text-align: center;
 }
 
@@ -469,7 +473,7 @@ a:hover {
 
 /* SECTIONS */
 section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
 }
 
 .section-header {
@@ -603,18 +607,18 @@ section {
 }
 
 .package-name {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .package-price {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--ink-light);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .package-price strong {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--sunset-3);
     display: block;
 }
@@ -1479,7 +1483,7 @@ section {
 
 .hero.festive {
     background:
-      linear-gradient(0deg, rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+      linear-gradient(0deg, rgba(255,255,255,0.45), rgba(255,255,255,0.45)),
       url('./images/08-43-26.jpeg') center/cover no-repeat;
 }
 
