@@ -129,7 +129,7 @@
                             <li>Professional installation</li>
                             <li>End-of-season removal</li>
                         </ul>
-                        <button class="btn btn-outline" data-open-package="basic">See Details & Pricing</button>
+                        <button class="btn btn-outline" data-open-package="basic">Learn More</button>
                     </div>
                     <div class="card card-package card-featured" data-open-package="enhanced" style="cursor: pointer;">
                         <div class="package-badge">Most Popular</div>
@@ -143,7 +143,7 @@
                             <li>Removal + optional storage</li>
                             <li>Unlimited repair visits</li>
                         </ul>
-                        <button class="btn btn-primary" data-open-package="enhanced">See Details & Pricing</button>
+                        <button class="btn btn-primary" data-open-package="enhanced">Learn More</button>
                     </div>
                     <div class="card card-package" data-open-package="premium" style="cursor: pointer;">
                         <div class="package-level">Tier 3</div>
@@ -157,7 +157,7 @@
                             <li>Priority scheduling</li>
                             <li>Year-round support</li>
                         </ul>
-                        <button class="btn btn-outline" data-open-package="premium">See Details & Pricing</button>
+                        <button class="btn btn-outline" data-open-package="premium">Learn More</button>
                     </div>
                 </div>
                 <div class="card-grid" style="margin-top: var(--spacing-lg);">
@@ -166,7 +166,7 @@
                         <h3 class="package-name">Custom</h3>
                         <p class="package-price"><strong>Tailored Design & Pricing</strong></p>
                         <p class="card-text">Perfect for complex roofs, estates, or unique themes. Click to customize.</p>
-                        <button class="btn btn-outline" data-open-package="custom">Customize Package</button>
+                        <button class="btn btn-outline" data-open-package="custom">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -328,6 +328,15 @@
                     </select>
                     <span class="form-error" id="m-package-error"></span>
                 </div>
+                <div class="form-group">
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="m-multiYear" name="multiYear" value="yes">
+                        <div>
+                            <strong>Multi-Year Discount</strong>
+                            <div class="form-help">Lock in 10% savings and priority scheduling for 2+ year contracts.</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal-actions">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Request Estimate</button>
                 </div>
@@ -355,10 +364,11 @@
                     <li>End-of-season takedown and storage</li>
                     <li>One complimentary repair visit</li>
                 </ul>
-                <p style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius);">
-                    <strong>Pricing starts around $800.</strong><br>
-                    Final price depends on your home's layout and any add-ons. Get your exact quote below.
-                </p>
+                <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius); border-left: 4px solid var(--sunset-3);">
+                    <h4 style="color: var(--sunset-3); margin-bottom: var(--spacing-sm);">Pricing</h4>
+                    <p><strong>Starting at $800</strong><br>
+                    Final price depends on your home's layout and any add-ons. Get your exact quote below.</p>
+                </div>
                 <div class="modal-actions">
                     <a href="#estimate-modal" class="btn btn-primary" data-open-modal data-close-modal>Get My Free Estimate</a>
                 </div>
@@ -387,10 +397,11 @@
                     <li><strong>Unlimited</strong> repair visits during the season</li>
                     <li>Priority scheduling for multi-year contracts</li>
                 </ul>
-                <p style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius);">
-                    <strong>Pricing starts around $1,400.</strong><br>
-                    Final price depends on your property size and tree count. Get your exact quote below.
-                </p>
+                <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius); border-left: 4px solid var(--sunset-3);">
+                    <h4 style="color: var(--sunset-3); margin-bottom: var(--spacing-sm);">Pricing</h4>
+                    <p><strong>Starting at $1,400</strong><br>
+                    Final price depends on your property size and tree count. Get your exact quote below.</p>
+                </div>
                 <div class="modal-actions">
                     <a href="#estimate-modal" class="btn btn-primary" data-open-modal data-close-modal>Get My Free Estimate</a>
                 </div>
@@ -420,10 +431,11 @@
                     <li>Unlimited repair visits and year-round support</li>
                     <li>Priority scheduling and yearly design refresh consult</li>
                 </ul>
-                <p style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius);">
-                    <strong>Pricing starts around $2,400.</strong><br>
-                    Final price depends on your property's complexity and design preferences. Get your custom proposal below.
-                </p>
+                <div style="margin-top: var(--spacing-lg); padding: var(--spacing-md); background: var(--cloud); border-radius: var(--border-radius); border-left: 4px solid var(--sunset-3);">
+                    <h4 style="color: var(--sunset-3); margin-bottom: var(--spacing-sm);">Pricing</h4>
+                    <p><strong>Starting at $2,400</strong><br>
+                    Final price depends on your property's complexity and design preferences. Get your custom proposal below.</p>
+                </div>
                 <div class="modal-actions">
                     <a href="#estimate-modal" class="btn btn-primary" data-open-modal data-close-modal>Get My Free Estimate</a>
                 </div>
