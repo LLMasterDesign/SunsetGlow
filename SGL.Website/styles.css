@@ -20,10 +20,10 @@
     --gray-300: #DEE2E6;
     --gray-800: #495057;
     
-    --primary: #1e40af;
-    --primary-dark: #1e3a8a;
+    --primary: #1e3a8a;
+    --primary-dark: #1e40af;
     --primary-light: #dbeafe;
-    --secondary: #3b82f6;
+    --secondary: #1e3a8a;
     
     --success: #22C55E;
     --error: #EF4444;
@@ -302,7 +302,7 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-md) 0;
-    padding-right: 120px; /* Space for sticky button */
+    position: relative;
 }
 
 .logo {
