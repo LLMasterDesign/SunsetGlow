@@ -605,8 +605,13 @@ a:hover {
 
 .badge-section {
     background: var(--white);
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
     text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* HERO */
@@ -616,7 +621,6 @@ a:hover {
     text-align: center;
     position: relative;
     overflow: visible;
-    margin-top: 1rem;
 }
 
 .hero-container {
