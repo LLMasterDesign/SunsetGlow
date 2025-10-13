@@ -1401,6 +1401,14 @@ section {
     background: var(--primary-light);
 }
 
+.discount-disclaimer {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    margin: var(--spacing-md) 0 0 0;
+    font-style: italic;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
     .discount-options {
         flex-direction: row;
