@@ -21,7 +21,6 @@
               <a href="index.html" class="logo">
                   <span class="logo-text">Sunset Glow Lighting</span>
               </a>
-              <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
               <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                   <span class="hamburger"></span>
               </button>
@@ -46,7 +45,7 @@
           Service area: Princeton · Melissa · Anna · McKinney · Lucas, TX (and nearby)
         </p>
         <p class="business-link">
-          <a href="#business-consultation" class="business-consultation-link">Need lighting for your business? Click here for a consultation</a>
+          <a href="business-contact.html" class="business-consultation-link">Need lighting for your business? Click here for a consultation</a>
         </p>
       </div>
     </section>
@@ -113,22 +112,24 @@
                 <span class="form-error" id="address-error"></span>
               </div>
 
-              <div class="form-group">
-                <label for="city" class="form-label">City <span class="required">*</span></label>
-                <input type="text" id="city" name="city" class="form-input" required>
-                <span class="form-error" id="city-error"></span>
-              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="city" class="form-label">City <span class="required">*</span></label>
+                  <input type="text" id="city" name="city" class="form-input" required>
+                  <span class="form-error" id="city-error"></span>
+                </div>
 
-              <div class="form-group">
-                <label for="state" class="form-label">State <span class="required">*</span></label>
-                <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
-                <span class="form-error" id="state-error"></span>
-              </div>
+                <div class="form-group">
+                  <label for="state" class="form-label">State <span class="required">*</span></label>
+                  <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
+                  <span class="form-error" id="state-error"></span>
+                </div>
 
-              <div class="form-group">
-                <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
-                <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}" inputmode="numeric">
-                <span class="form-error" id="zip-error"></span>
+                <div class="form-group">
+                  <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
+                  <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}" inputmode="numeric">
+                  <span class="form-error" id="zip-error"></span>
+                </div>
               </div>
 
               <div class="form-group">
@@ -301,141 +302,6 @@
       </div>
     </section>
 
-    <!-- Business Consultation Section -->
-    <section id="business-consultation" class="business-consultation">
-      <div class="container">
-        <div class="business-content">
-          <h2>Business Holiday Lighting Consultation</h2>
-          <p class="business-subtitle">Professional commercial lighting solutions for your business</p>
-          
-          <div class="business-form-wrapper">
-            <form class="contact-form business-form" name="Business Consultation"
-                  method="POST"
-                  action="/thanks.html"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
-                  id="businessForm">
-              
-              <!-- Netlify required hidden -->
-              <input type="hidden" name="form-name" value="Business Consultation">
-              
-              <!-- Honeypot field for spam protection -->
-              <p hidden>
-                <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
-              </p>
-              
-              <!-- Business Information -->
-              <fieldset class="form-section">
-                <legend class="form-section-title">Business Information</legend>
-                
-                <div class="form-group">
-                  <label for="b-company" class="form-label">Company Name <span class="required">*</span></label>
-                  <input type="text" id="b-company" name="company" class="form-input" required>
-                  <span class="form-error" id="b-company-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-contact" class="form-label">Contact Name <span class="required">*</span></label>
-                  <input type="text" id="b-contact" name="contact_name" class="form-input" required>
-                  <span class="form-error" id="b-contact-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-phone" class="form-label">Phone <span class="required">*</span></label>
-                  <input type="tel" id="b-phone" name="phone" class="form-input" required inputmode="tel" placeholder="(555) 555-0199">
-                  <span class="form-error" id="b-phone-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-email" class="form-label">Email <span class="required">*</span></label>
-                  <input type="email" id="b-email" name="email" class="form-input" required>
-                  <span class="form-error" id="b-email-error"></span>
-                </div>
-              </fieldset>
-
-              <!-- Business Details -->
-              <fieldset class="form-section">
-                <legend class="form-section-title">Business Details</legend>
-                
-                <div class="form-group">
-                  <label for="b-address" class="form-label">Business Address <span class="required">*</span></label>
-                  <input type="text" id="b-address" name="address" class="form-input" required autocomplete="street-address">
-                  <span class="form-error" id="b-address-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-type" class="form-label">Business Type <span class="required">*</span></label>
-                  <select id="b-type" name="business_type" class="form-input" required>
-                    <option value="">Select business type</option>
-                    <option>Retail Store</option>
-                    <option>Restaurant</option>
-                    <option>Office Building</option>
-                    <option>Medical/Dental</option>
-                    <option>Automotive</option>
-                    <option>Other</option>
-                  </select>
-                  <span class="form-error" id="b-type-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-size" class="form-label">Property Size</label>
-                  <select id="b-size" name="property_size" class="form-input">
-                    <option value="">Select size</option>
-                    <option>Small (under 2,000 sq ft)</option>
-                    <option>Medium (2,000-5,000 sq ft)</option>
-                    <option>Large (5,000-10,000 sq ft)</option>
-                    <option>Very Large (over 10,000 sq ft)</option>
-                  </select>
-                </div>
-              </fieldset>
-
-              <!-- Lighting Requirements -->
-              <fieldset class="form-section">
-                <legend class="form-section-title">Lighting Requirements</legend>
-                
-                <div class="form-group">
-                  <label for="b-timeline" class="form-label">Installation Timeline <span class="required">*</span></label>
-                  <select id="b-timeline" name="timeline" class="form-input" required>
-                    <option value="">Select timeline</option>
-                    <option>ASAP</option>
-                    <option>Within 2 weeks</option>
-                    <option>Within 1 month</option>
-                    <option>Flexible</option>
-                  </select>
-                  <span class="form-error" id="b-timeline-error"></span>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-budget" class="form-label">Budget Range</label>
-                  <select id="b-budget" name="budget" class="form-input">
-                    <option value="">Select budget range</option>
-                    <option>Under $2,000</option>
-                    <option>$2,000 - $5,000</option>
-                    <option>$5,000 - $10,000</option>
-                    <option>$10,000 - $20,000</option>
-                    <option>Over $20,000</option>
-                    <option>Need consultation first</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="b-requirements" class="form-label">Specific Requirements</label>
-                  <textarea id="b-requirements" name="requirements" class="form-input form-textarea" rows="4" placeholder="Describe your lighting needs, any specific requirements, or questions..."></textarea>
-                </div>
-              </fieldset>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Request Business Consultation</button>
-              </div>
-              
-              <div class="form-privacy">
-                <p>By submitting this form, you agree to our privacy policy and terms of service.</p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
