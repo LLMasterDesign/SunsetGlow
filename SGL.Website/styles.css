@@ -624,6 +624,17 @@ a:hover {
     margin-top: 1rem;
 }
 
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6,
+.hero p,
+.hero a {
+    color: var(--white);
+}
+
 .hero-container {
     position: relative;
     z-index: 2;
