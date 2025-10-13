@@ -229,7 +229,7 @@ a:hover {
 
 /* HEADER */
 .site-header {
-    background: var(--white);
+    background: #2C3E50;
     border-bottom: 1px solid var(--gray-200);
     position: sticky;
     top: 0;
@@ -1843,7 +1843,7 @@ p[hidden] {
 
 /* FOOTER */
 .site-footer {
-    background: var(--ink);
+    background: #2C3E50;
     color: var(--white);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
 }
