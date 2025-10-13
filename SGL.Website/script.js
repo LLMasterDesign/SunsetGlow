@@ -537,8 +537,186 @@
     */
 
     // ===== LOG INITIALIZATION =====
+    // ===== LIGHTBOX FUNCTIONALITY =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    
+    let currentImageIndex = 0;
+    let galleryImages = [];
+    
+    // Initialize lightbox
+    function initLightbox() {
+        if (!lightbox) return;
+        
+        // Get all gallery images
+        galleryImages = Array.from(document.querySelectorAll('.gallery-image[data-lightbox="gallery"]'));
+        
+        if (galleryImages.length === 0) return;
+        
+        // Add click listeners to gallery images
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => openLightbox(index));
+        });
+        
+        // Close lightbox events
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', closeLightbox);
+        }
+        
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+        }
+        
+        // Navigation events
+        if (lightboxPrev) {
+            lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+        }
+        
+        if (lightboxNext) {
+            lightboxNext.addEventListener('click', () => navigateLightbox(1));
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    navigateLightbox(-1);
+                    break;
+                case 'ArrowRight':
+                    navigateLightbox(1);
+                    break;
+            }
+        });
+    }
+    
+    function openLightbox(index) {
+        if (!lightbox || !lightboxImage || !lightboxCaption) return;
+        
+        currentImageIndex = index;
+        const img = galleryImages[index];
+        
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = img.getAttribute('data-title') || img.alt;
+        
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Update navigation button visibility
+        updateLightboxNavigation();
+    }
+    
+    function closeLightbox() {
+        if (!lightbox) return;
+        
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+    
+    function navigateLightbox(direction) {
+        if (galleryImages.length === 0) return;
+        
+        currentImageIndex += direction;
+        
+        if (currentImageIndex < 0) {
+            currentImageIndex = galleryImages.length - 1;
+        } else if (currentImageIndex >= galleryImages.length) {
+            currentImageIndex = 0;
+        }
+        
+        const img = galleryImages[currentImageIndex];
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightboxCaption.textContent = img.getAttribute('data-title') || img.alt;
+        
+        updateLightboxNavigation();
+    }
+    
+    function updateLightboxNavigation() {
+        if (galleryImages.length <= 1) {
+            if (lightboxPrev) lightboxPrev.style.display = 'none';
+            if (lightboxNext) lightboxNext.style.display = 'none';
+        } else {
+            if (lightboxPrev) lightboxPrev.style.display = 'flex';
+            if (lightboxNext) lightboxNext.style.display = 'flex';
+        }
+    }
+    
+    // ===== LAZY LOADING =====
+    function initLazyLoading() {
+        const images = document.querySelectorAll('img[data-src]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.01
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            images.forEach(img => {
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                img.classList.add('loaded');
+            });
+        }
+    }
+    
+    // Add lazy loading styles
+    function addLazyLoadingStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .lazy {
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            .loaded {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Initialize lazy loading when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            addLazyLoadingStyles();
+            initLazyLoading();
+            initLightbox();
+        });
+    } else {
+        addLazyLoadingStyles();
+        initLazyLoading();
+        initLightbox();
+    }
+
     console.log('Sunset Glow Lighting - Site initialized');
     console.log('Environment: Production');
     console.log('Form validation: Active');
+    console.log('Lightbox: Active');
 
 })();

@@ -25,6 +25,9 @@
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
     
+    <!-- Sticky Get Quote Button -->
+    <a href="contact.html" class="sticky-cta">Get Quote</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -50,7 +53,7 @@
 
     <main id="main">
         <!-- HOME PAGE -->
-        <section class="hero festive">
+        <section class="hero blue-theme">
             <div class="string-lights string-lights-top" aria-hidden="true"></div>
             <div class="container hero-container">
                 <div class="hero-content">
@@ -179,21 +182,20 @@
                     <p class="section-subtitle">Before & after transformations across Princeton and McKinney</p>
                 </div>
                 <div class="gallery-grid">
-                    <!-- TODO: Replace with actual install photos -->
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Install Photo 1</div>
+                        <img data-src="./images/2025-10-02 08-43-26.jpeg" alt="Classic roofline lighting installation" class="gallery-image lazy" data-lightbox="gallery" data-title="Classic roofline in Princeton">
                         <p class="gallery-caption">Classic roofline in Princeton</p>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Install Photo 2</div>
+                        <img data-src="./images/2025-10-02 08-43-41.jpeg" alt="Enhanced package lighting installation" class="gallery-image lazy" data-lightbox="gallery" data-title="Enhanced package in Melissa">
                         <p class="gallery-caption">Enhanced package in Melissa</p>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Install Photo 3</div>
+                        <img data-src="./images/2025-10-02 08-44-19.jpeg" alt="Premium design lighting installation" class="gallery-image lazy" data-lightbox="gallery" data-title="Premium design in McKinney">
                         <p class="gallery-caption">Premium design in McKinney</p>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-placeholder">Install Photo 4</div>
+                        <img data-src="./images/2025-10-02 08-45-12.jpeg" alt="Tree wrapping lighting installation" class="gallery-image lazy" data-lightbox="gallery" data-title="Tree wrapping in Anna">
                         <p class="gallery-caption">Tree wrapping in Anna</p>
                     </div>
                 </div>
@@ -466,6 +468,17 @@
                     <a href="#estimate-modal" class="btn btn-primary" data-open-modal data-close-modal>Start Your Custom Estimate</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <img id="lightbox-image" src="" alt="" class="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <button class="lightbox-prev" aria-label="Previous image">&larr;</button>
+            <button class="lightbox-next" aria-label="Next image">&rarr;</button>
         </div>
     </div>
 
