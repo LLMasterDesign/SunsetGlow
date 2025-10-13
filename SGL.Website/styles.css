@@ -310,6 +310,7 @@ a:hover {
 
 .nav-cta {
     margin-top: var(--spacing-md);
+    display: inline-block !important; /* Ensure visibility on mobile */
 }
 
 @media (min-width: 768px) {
@@ -1364,11 +1365,10 @@ section {
 
 /* PRINT STYLES */
 @media print {
-    .site-header,
     .site-footer,
     .nav-toggle,
     .final-cta,
-    .btn {
+    .btn:not(.nav-cta) {
         display: none;
     }
     
