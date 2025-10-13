@@ -714,9 +714,78 @@
         initLightbox();
     }
 
+    // ===== PRICING TABS FUNCTIONALITY =====
+    function initPricingTabs() {
+        const pricingTabs = document.querySelectorAll('.pricing-tab');
+        const packagePricings = document.querySelectorAll('.package-pricing');
+        
+        if (pricingTabs.length === 0 || packagePricings.length === 0) return;
+        
+        pricingTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const packageType = this.getAttribute('data-package');
+                
+                // Remove active class from all tabs
+                pricingTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Hide all package pricing sections
+                packagePricings.forEach(p => p.classList.remove('active'));
+                
+                // Show the selected package pricing section
+                const targetPricing = document.querySelector(`.package-pricing[data-package="${packageType}"]`);
+                if (targetPricing) {
+                    targetPricing.classList.add('active');
+                }
+            });
+        });
+    }
+    
+    // ===== STYLE EXPLORE BUTTONS =====
+    function initStyleExploreButtons() {
+        const styleButtons = document.querySelectorAll('.style-explore-btn');
+        
+        styleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const style = this.getAttribute('data-style');
+                // For now, just scroll to the pricing section
+                // In a full implementation, this could open a modal or navigate to a detailed page
+                const pricingSection = document.querySelector('.pricing-structure');
+                if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    }
+    
+    // ===== PACKAGE DETAILS BUTTONS =====
+    function initPackageDetailsButtons() {
+        const packageButtons = document.querySelectorAll('.package-details-btn');
+        
+        packageButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const package = this.getAttribute('data-package');
+                // For now, just scroll to the pricing section
+                // In a full implementation, this could open a modal or navigate to a detailed page
+                const pricingSection = document.querySelector('.pricing-structure');
+                if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    }
+
+    // Initialize all new functionality
+    initPricingTabs();
+    initStyleExploreButtons();
+    initPackageDetailsButtons();
+
     console.log('Sunset Glow Lighting - Site initialized');
     console.log('Environment: Production');
     console.log('Form validation: Active');
     console.log('Lightbox: Active');
+    console.log('Pricing tabs: Active');
 
 })();
