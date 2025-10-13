@@ -1,120 +1,249 @@
-<!-- Contact/Quote Form -->
-<form name="Quote"
-      method="POST"
-      action="/thanks.html"
-      data-netlify="true"
-      netlify-honeypot="bot-field">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Get Your Free Holiday Lighting Quote | Sunset Glow Lighting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional holiday lighting in Princeton, Melissa, Anna, McKinney, Lucas and nearby Texas cities. Veteran owned.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body>
 
-  <!-- Netlify internal fields -->
-  <input type="hidden" name="form-name" value="Quote">
-  <p class="hidden">
-    <label>Don’t fill this out: <input name="bot-field"></label>
-  </p>
-
-  <!-- Contact / Address -->
-  <div class="form-group">
-    <label for="name" class="form-label">Full Name <span class="required">*</span></label>
-    <input type="text" id="name" name="name" class="form-input" required>
-  </div>
-
-  <div class="form-group">
-    <label for="address" class="form-label">Street Address <span class="required">*</span></label>
-    <input type="text" id="address" name="address" class="form-input" required>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="city" class="form-label">City <span class="required">*</span></label>
-      <input type="text" id="city" name="city" class="form-input" required>
+  <!-- =========================
+       NAVBAR (banner)
+       ========================= -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="navbar-brand">Sunset Glow Lighting</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Resources</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <!-- Always-visible CTA in banner (desktop & mobile) -->
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Quote</a>
     </div>
-    <div class="form-group">
-      <label for="state" class="form-label">State <span class="required">*</span></label>
-      <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
+  </nav>
+
+  <!-- =========================
+       HERO
+       ========================= -->
+  <header class="hero hero-contact">
+    <div class="container">
+      <h1>Get Your Free Estimate</h1>
+      <p class="hero-subtitle">
+        Service area: Princeton · Melissa · Anna · McKinney · Lucas, TX (and nearby)
+      </p>
     </div>
-    <div class="form-group">
-      <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
-      <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}">
+  </header>
+
+  <!-- =========================
+       CONTACT / QUOTE FORM
+       ========================= -->
+  <main class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <section class="contact-form-card">
+          <h2>Request a Holiday Lighting Quote</h2>
+          <p class="muted">
+            Tell us where and when, then what you’d like lit. We’ll follow up quickly with a quote and scheduling options.
+          </p>
+
+          <!-- FORM BEGIN -->
+          <form name="Quote"
+                method="POST"
+                action="/thanks.html"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                id="quoteForm">
+
+            <!-- Netlify required hidden -->
+            <input type="hidden" name="form-name" value="Quote">
+            <!-- Honeypot -->
+            <p class="sr-only"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+            <!-- CONTACT / ADDRESS -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="form-label">Street Address <span class="required">*</span></label>
+              <input type="text" id="address" name="address" class="form-input" required autocomplete="street-address">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city" class="form-label">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="state" class="form-label">State <span class="required">*</span></label>
+                <input type="text" id="state" name="state" class="form-input" value="TX" maxlength="2" required>
+              </div>
+              <div class="form-group">
+                <label for="zip" class="form-label">ZIP <span class="required">*</span></label>
+                <input type="text" id="zip" name="zip" class="form-input" required pattern="\d{5}" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-input" required inputmode="tel">
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="home_type" class="form-label">Home Type <span class="required">*</span></label>
+                <select id="home_type" name="home_type" class="form-input" required>
+                  <option value="">Select…</option>
+                  <option>1-Story</option>
+                  <option>2-Story</option>
+                  <option>3-Story</option>
+                  <option>Ranch</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- SCHEDULING -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="install_date" class="form-label">Preferred Install Date <span class="required">*</span></label>
+                <input type="date" id="install_date" name="install_date" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="timeframe_flex" class="form-label">Date Flexibility</label>
+                <select id="timeframe_flex" name="timeframe_flex" class="form-input">
+                  <option value="">Select…</option>
+                  <option>Exact date</option>
+                  <option>±3 days OK</option>
+                  <option>First available</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- PROJECT INTENT -->
+            <div class="form-group">
+              <p class="form-label">Tell us what you’re looking for <span class="required">*</span></p>
+              <div class="checkbox-grid">
+                <label><input type="checkbox" name="intent_scope[]" value="Roofline" required> Roofline</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Trees"> Trees</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Bushes/Shrubs"> Bushes/Shrubs</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Windows/Doors"> Windows/Doors</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Pathway/Stakes"> Pathway/Stakes</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Wreaths/Garland"> Wreaths/Garland</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Take-down + Storage"> Take-down + Storage</label>
+                <label><input type="checkbox" name="intent_scope[]" value="Custom" id="intentCustom"> Custom</label>
+              </div>
+            </div>
+
+            <div class="form-group" id="customDetailsGroup" hidden>
+              <label for="details" class="form-label">Details</label>
+              <textarea id="details" name="details" class="form-input" rows="4" placeholder="Describe your custom request or special notes."></textarea>
+            </div>
+
+            <!-- MEDIA (multi-photo via separate inputs; Netlify supports one file per field) -->
+            <div class="form-group">
+              <label class="form-label">Upload photos of your home (optional)</label>
+              <div class="photo-inputs">
+                <input type="file" name="photo1" accept="image/*">
+                <input type="file" name="photo2" accept="image/*">
+                <input type="file" name="photo3" accept="image/*">
+              </div>
+              <p class="form-hint">Tip: Add details above so we know what to look for.</p>
+            </div>
+
+            <!-- CONSENT -->
+            <div class="form-group">
+              <label><input type="checkbox" id="sms_ok" name="sms_ok" value="yes"> I agree to receive scheduling updates by SMS</label>
+            </div>
+
+            <!-- Hidden attribution hooks -->
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="gclid" id="gclid">
+            <input type="hidden" name="fbclid" id="fbclid">
+            <input type="hidden" name="page_url" id="page_url">
+            <input type="hidden" name="referrer" id="referrer">
+            <!-- Geo hooks for future automation -->
+            <input type="hidden" name="lat" id="lat">
+            <input type="hidden" name="lng" id="lng">
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Request Quote</button>
+            </div>
+          </form>
+          <!-- FORM END -->
+        </section>
+
+        <!-- Optional sidebar contact info -->
+        <aside class="contact-aside">
+          <div class="card">
+            <h3>Questions?</h3>
+            <p>We serve Princeton, Melissa, Anna, McKinney, Lucas — and nearby Texas cities.</p>
+            <p><strong>Veteran owned.</strong> Insured at job start.</p>
+            <p><a class="link" href="tel:">Call</a> · <a class="link" href="mailto:">Email</a></p>
+          </div>
+        </aside>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <div class="form-group">
-    <label for="home_type" class="form-label">Home Type <span class="required">*</span></label>
-    <select id="home_type" name="home_type" class="form-input" required>
-      <option value="">Select…</option>
-      <option>1-Story</option>
-      <option>2-Story</option>
-      <option>3-Story</option>
-      <option>Ranch</option>
-    </select>
-  </div>
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Sunset Glow Lighting</p>
+    </div>
+  </footer>
 
-  <div class="form-group">
-    <label for="phone" class="form-label">Phone <span class="required">*</span></label>
-    <input type="tel" id="phone" name="phone" class="form-input" required>
-  </div>
+  <script src="script.js"></script>
+  <script>
+    // Keep year current
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <div class="form-group">
-    <label for="email" class="form-label">Email <span class="required">*</span></label>
-    <input type="email" id="email" name="email" class="form-input" required>
-  </div>
+    // Show custom details when "Custom" is checked
+    (function () {
+      const custom = document.getElementById('intentCustom');
+      const group  = document.getElementById('customDetailsGroup');
+      if (custom && group) {
+        const toggle = () => group.hidden = !custom.checked;
+        custom.addEventListener('change', toggle);
+        toggle();
+      }
+    })();
 
-  <!-- Scheduling -->
-  <div class="form-group">
-    <label for="install_date" class="form-label">Preferred Install Date <span class="required">*</span></label>
-    <input type="date" id="install_date" name="install_date" class="form-input" required>
-  </div>
-
-  <div class="form-group">
-    <label for="timeframe_flex" class="form-label">Date Flexibility</label>
-    <select id="timeframe_flex" name="timeframe_flex" class="form-input">
-      <option value="">Select…</option>
-      <option>Exact date</option>
-      <option>±3 days OK</option>
-      <option>First available</option>
-    </select>
-  </div>
-
-  <!-- Project Intent -->
-  <div class="form-group">
-    <p class="form-label">Tell us what you’re looking for <span class="required">*</span></p>
-    <label><input type="checkbox" name="intent_scope[]" value="Roofline" required> Roofline</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Trees"> Trees</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Bushes/Shrubs"> Bushes/Shrubs</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Windows/Doors"> Windows/Doors</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Pathway/Stakes"> Pathway/Stakes</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Wreaths/Garland"> Wreaths/Garland</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Take-down + Storage"> Take-down + Storage</label>
-    <label><input type="checkbox" name="intent_scope[]" value="Custom"> Custom</label>
-  </div>
-
-  <div class="form-group">
-    <label for="details" class="form-label">Describe your custom request or special notes</label>
-    <textarea id="details" name="details" class="form-input" rows="4"></textarea>
-  </div>
-
-  <!-- Photo uploads (Netlify: one file per field [oai_citation:1‡docs.netlify.com](https://docs.netlify.com/manage/forms/setup/#:~:text=Keep%20the%20following%20considerations%20in,with%20file%20uploads%20in%20forms)) -->
-  <div class="form-group">
-    <label class="form-label">Upload photos of your home (optional)</label>
-    <input type="file" name="photo1" accept="image/*">
-    <input type="file" name="photo2" accept="image/*">
-    <input type="file" name="photo3" accept="image/*">
-  </div>
-
-  <!-- Consent -->
-  <div class="form-group">
-    <label><input type="checkbox" id="sms_ok" name="sms_ok" value="yes"> I agree to receive scheduling updates by SMS</label>
-  </div>
-
-  <!-- Hidden attribution fields for marketing and geo-hooks -->
-  <input type="hidden" name="utm_source" id="utm_source">
-  <input type="hidden" name="utm_medium" id="utm_medium">
-  <input type="hidden" name="utm_campaign" id="utm_campaign">
-  <input type="hidden" name="gclid" id="gclid">
-  <input type="hidden" name="fbclid" id="fbclid">
-  <input type="hidden" name="page_url" id="page_url">
-  <input type="hidden" name="referrer" id="referrer">
-  <input type="hidden" name="lat" id="lat">
-  <input type="hidden" name="lng" id="lng">
-
-  <button type="submit" class="btn btn-primary">Request Quote</button>
-</form>
+    // Fill attribution fields
+    (function () {
+      const byId = id => document.getElementById(id);
+      const qs = new URLSearchParams(location.search);
+      const map = {
+        utm_source: qs.get('utm_source') || '',
+        utm_medium: qs.get('utm_medium') || '',
+        utm_campaign: qs.get('utm_campaign') || '',
+        gclid: qs.get('gclid') || '',
+        fbclid: qs.get('fbclid') || '',
+        page_url: location.href,
+        referrer: document.referrer || ''
+      };
+      Object.entries(map).forEach(([k,v]) => { const el = byId(k); if (el && !el.value) el.value = v; });
+    })();
+  </script>
+</body>
+</html>
