@@ -15,6 +15,13 @@
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', !isExpanded);
             mainNav.classList.toggle('active');
+            
+            // Prevent body scroll when mobile nav is open
+            if (!isExpanded) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
     }
 
@@ -445,8 +452,26 @@
                 if (navToggle) {
                     navToggle.setAttribute('aria-expanded', 'false');
                 }
+                // Restore body scroll
+                document.body.style.overflow = '';
             }
         }
+    });
+    
+    // ===== MOBILE NAV LINK CLICK HANDLER =====
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Close mobile nav when link is clicked
+            if (mainNav && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                if (navToggle) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+                // Restore body scroll
+                document.body.style.overflow = '';
+            }
+        });
     });
 
     // ===== FORM FIELD FOCUS EFFECTS =====
@@ -536,6 +561,57 @@
     });
     */
 
+    // ===== MOBILE PERFORMANCE OPTIMIZATIONS =====
+    // Add touch-friendly interactions
+    if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+        
+        // Improve touch scrolling
+        document.body.style.webkitOverflowScrolling = 'touch';
+        
+        // Add touch feedback for buttons
+        const buttons = document.querySelectorAll('.btn, .nav-link, .card-package');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.transform = '';
+            });
+        });
+    }
+    
+    // ===== MOBILE VIEWPORT HEIGHT FIX =====
+    // Fix mobile viewport height issues
+    function setViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+    window.addEventListener('orientationchange', setViewportHeight);
+    
+    // ===== MOBILE FORM OPTIMIZATION =====
+    // Improve mobile form experience
+    const mobileFormInputs = document.querySelectorAll('input, select, textarea');
+    mobileFormInputs.forEach(input => {
+        // Prevent zoom on focus for iOS
+        if (input.type === 'text' || input.type === 'email' || input.type === 'tel') {
+            input.addEventListener('focus', function() {
+                if (window.innerWidth < 768) {
+                    this.style.fontSize = '16px';
+                }
+            });
+        }
+        
+        // Add better touch targets
+        if (window.innerWidth < 768) {
+            input.style.minHeight = '44px';
+        }
+    });
+    
     // ===== LOG INITIALIZATION =====
     // ===== LIGHTBOX FUNCTIONALITY =====
     const lightbox = document.getElementById('lightbox');
