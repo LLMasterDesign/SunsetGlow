@@ -56,8 +56,8 @@ body {
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--white);
-    background: var(--charcoal-blue);
+    color: var(--charcoal-blue);
+    background: var(--white);
     overflow-x: hidden;
     touch-action: manipulation;
 }
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--white);
+    color: var(--charcoal-blue);
     letter-spacing: -0.02em;
 }
 
@@ -223,6 +223,18 @@ a:hover {
     top: 0;
     z-index: 50;
     box-shadow: var(--shadow-sm);
+}
+
+.site-header h1,
+.site-header h2,
+.site-header h3,
+.site-header h4,
+.site-header h5,
+.site-header h6,
+.site-header p,
+.site-header a,
+.site-header .logo {
+    color: var(--white);
 }
 
 /* Sticky CTA button for mobile */
@@ -1839,6 +1851,17 @@ p[hidden] {
     background: var(--charcoal-blue);
     color: var(--white);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4,
+.site-footer h5,
+.site-footer h6,
+.site-footer p,
+.site-footer a {
+    color: var(--white);
 }
 
 .footer-content {
