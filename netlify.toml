@@ -1,10 +1,9 @@
 # Netlify Configuration for Sunset Glow Lighting
 
 [build]
-  # No build command needed for static HTML site
+  base    = "SGL.Website"  # cd into this folder
+  publish = "."            # publish THIS folder (not /dist)
   command = "echo 'Deploying static site...'"
-  # Directory containing the website files
-  publish = "SGL.Website"
 
 [build.environment]
   # Ensure Node.js is available if needed in the future
