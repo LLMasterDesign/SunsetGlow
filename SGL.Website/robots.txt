@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /thanks.html
+
+# Sitemaps
 Sitemap: https://sunsetglowlighting.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
 
