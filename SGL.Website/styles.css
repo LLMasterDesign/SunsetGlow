@@ -212,10 +212,20 @@ a:hover {
         min-width: 100px;
         left: auto;
         transform: none;
+        z-index: 1000;
     }
     
     .header-content {
         padding-right: 120px; /* More space for thicker button */
+        padding-left: 60px; /* Space for hamburger menu */
+    }
+    
+    .nav-toggle {
+        position: absolute;
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
     }
 }
 
@@ -317,6 +327,15 @@ a:hover {
     text-decoration: none;
     z-index: 20;
     position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .logo {
+        text-align: left;
+        margin-left: 2rem;
+    }
 }
 
 .logo:hover {
@@ -329,6 +348,8 @@ a:hover {
     border: none;
     cursor: pointer;
     padding: var(--spacing-xs);
+    z-index: 1001;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -600,18 +621,37 @@ a:hover {
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+    .badge-group {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+    }
 }
 
 .badge-section {
     background: var(--white);
-    padding: var(--spacing-md) 0;
-    text-align: center;
+    padding: var(--spacing-sm) 0;
+    text-align: left;
     border-bottom: 1px solid var(--gray-200);
     position: sticky;
     top: 0;
     z-index: 40;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-section .container {
+    padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .badge-section .container {
+        padding: 0 var(--spacing-md);
+    }
 }
 
 /* HERO */
