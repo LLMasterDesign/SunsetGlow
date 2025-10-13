@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Business Holiday Lighting Consultation | Sunset Glow Lighting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Professional commercial holiday lighting consultation for businesses in Princeton, Melissa, Anna, McKinney, Lucas and nearby Texas cities. Veteran owned.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/favicon.png">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+  
+  <!-- Sticky Get Quote Button -->
+  <a href="contact.html" class="sticky-cta">Get Quote</a>
+  
+  <header class="site-header">
+      <div class="container">
+          <div class="header-content">
+              <a href="index.html" class="logo">
+                  <span class="logo-text">Sunset Glow Lighting</span>
+              </a>
+              <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+              <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                  <span class="hamburger"></span>
+              </button>
+              <nav class="main-nav" aria-label="Main navigation">
+                  <ul class="nav-list">
+                      <li><a href="index.html" class="nav-link">Home</a></li>
+                      <li><a href="services.html" class="nav-link">Services</a></li>
+                      <li><a href="about.html" class="nav-link">About</a></li>
+                      <li><a href="contact.html" class="nav-link">Contact</a></li>
+                      <li><a href="business-contact.html" class="nav-link active">Business</a></li>
+                      <li><a href="blog.html" class="nav-link">Resources</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Business Holiday Lighting Consultation</h1>
+        <p class="page-subtitle">
+          Professional commercial lighting solutions for your business
+        </p>
+        <p class="business-link">
+          <a href="contact.html" class="business-consultation-link">Need residential lighting? Click here for homeowner services</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2>Transform Your Business with Professional Holiday Lighting</h2>
+            <p class="section-text">
+              Stand out this holiday season with custom commercial lighting that attracts customers and creates memorable experiences. Our veteran-owned team delivers professional installations tailored to your business needs.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <strong>Why Choose Us for Business Lighting?</strong>
+                <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+                  <li>Veteran-owned with military precision</li>
+                  <li>Fully insured and ladder-trained teams</li>
+                  <li>Flexible scheduling around business hours</li>
+                  <li>Custom designs for any property type</li>
+                  <li>Competitive commercial pricing</li>
+                </ul>
+              </div>
+              <div class="contact-item">
+                <strong>Service Area</strong>
+                <p>We serve Princeton, Melissa, Anna, McKinney, Lucas — and nearby Texas cities.</p>
+              </div>
+              <div class="contact-item">
+                <strong>Contact</strong>
+                <p><a href="tel:+15555550199">(555) 555-0199</a> · <a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <!-- BUSINESS FORM BEGIN -->
+            <form class="contact-form business-form" name="Business Consultation"
+                  method="POST"
+                  action="/thanks.html"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  id="businessForm">
+              
+              <!-- Netlify required hidden -->
+              <input type="hidden" name="form-name" value="Business Consultation">
+              
+              <!-- Honeypot field for spam protection -->
+              <p hidden>
+                <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+              </p>
+              
+              <!-- Business Information -->
+              <fieldset class="form-section">
+                <legend class="form-section-title">Business Information</legend>
+                
+                <div class="form-group">
+                  <label for="b-company" class="form-label">Company Name <span class="required">*</span></label>
+                  <input type="text" id="b-company" name="company" class="form-input" required>
+                  <span class="form-error" id="b-company-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-contact" class="form-label">Contact Name <span class="required">*</span></label>
+                  <input type="text" id="b-contact" name="contact_name" class="form-input" required>
+                  <span class="form-error" id="b-contact-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-phone" class="form-label">Phone <span class="required">*</span></label>
+                  <input type="tel" id="b-phone" name="phone" class="form-input" required inputmode="tel" placeholder="(555) 555-0199">
+                  <span class="form-error" id="b-phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-email" class="form-label">Email <span class="required">*</span></label>
+                  <input type="email" id="b-email" name="email" class="form-input" required>
+                  <span class="form-error" id="b-email-error"></span>
+                </div>
+              </fieldset>
+
+              <!-- Business Details -->
+              <fieldset class="form-section">
+                <legend class="form-section-title">Business Details</legend>
+                
+                <div class="form-group">
+                  <label for="b-address" class="form-label">Business Address <span class="required">*</span></label>
+                  <input type="text" id="b-address" name="address" class="form-input" required autocomplete="street-address">
+                  <span class="form-error" id="b-address-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-type" class="form-label">Business Type <span class="required">*</span></label>
+                  <select id="b-type" name="business_type" class="form-input" required>
+                    <option value="">Select business type</option>
+                    <option>Retail Store</option>
+                    <option>Restaurant</option>
+                    <option>Office Building</option>
+                    <option>Medical/Dental</option>
+                    <option>Automotive</option>
+                    <option>Other</option>
+                  </select>
+                  <span class="form-error" id="b-type-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-size" class="form-label">Property Size</label>
+                  <select id="b-size" name="property_size" class="form-input">
+                    <option value="">Select size</option>
+                    <option>Small (under 2,000 sq ft)</option>
+                    <option>Medium (2,000-5,000 sq ft)</option>
+                    <option>Large (5,000-10,000 sq ft)</option>
+                    <option>Very Large (over 10,000 sq ft)</option>
+                  </select>
+                </div>
+              </fieldset>
+
+              <!-- Lighting Requirements -->
+              <fieldset class="form-section">
+                <legend class="form-section-title">Lighting Requirements</legend>
+                
+                <div class="form-group">
+                  <label for="b-timeline" class="form-label">Installation Timeline <span class="required">*</span></label>
+                  <select id="b-timeline" name="timeline" class="form-input" required>
+                    <option value="">Select timeline</option>
+                    <option>ASAP</option>
+                    <option>Within 2 weeks</option>
+                    <option>Within 1 month</option>
+                    <option>Flexible</option>
+                  </select>
+                  <span class="form-error" id="b-timeline-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-budget" class="form-label">Budget Range</label>
+                  <select id="b-budget" name="budget" class="form-input">
+                    <option value="">Select budget range</option>
+                    <option>Under $2,000</option>
+                    <option>$2,000 - $5,000</option>
+                    <option>$5,000 - $10,000</option>
+                    <option>$10,000 - $20,000</option>
+                    <option>Over $20,000</option>
+                    <option>Need consultation first</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="b-requirements" class="form-label">Specific Requirements</label>
+                  <textarea id="b-requirements" name="requirements" class="form-input form-textarea" rows="4" placeholder="Describe your lighting needs, any specific requirements, or questions..."></textarea>
+                </div>
+              </fieldset>
+
+              <!-- Hidden attribution hooks -->
+              <input type="hidden" name="utm_source" id="utm_source">
+              <input type="hidden" name="utm_medium" id="utm_medium">
+              <input type="hidden" name="utm_campaign" id="utm_campaign">
+              <input type="hidden" name="gclid" id="gclid">
+              <input type="hidden" name="fbclid" id="fbclid">
+              <input type="hidden" name="page_url" id="page_url">
+              <input type="hidden" name="referrer" id="referrer">
+              <!-- Geo hooks for future automation -->
+              <input type="hidden" name="lat" id="lat">
+              <input type="hidden" name="lng" id="lng">
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Request Business Consultation</button>
+              </div>
+              
+              <div class="form-privacy">
+                <p>By submitting this form, you agree to our privacy policy and terms of service.</p>
+              </div>
+            </form>
+            <!-- BUSINESS FORM END -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3 class="footer-heading">Sunset Glow Lighting</h3>
+          <p class="footer-text">Veteran-owned holiday lighting serving Princeton and surrounding communities.</p>
+          <div class="footer-badges">
+            <span class="badge badge-sm">Veteran-Owned</span>
+            <span class="badge badge-sm">Insured</span>
+            <span class="badge badge-sm">10 Years Experience</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Service Area</h3>
+          <ul class="footer-list">
+            <li>Princeton, TX</li>
+            <li>Melissa, TX</li>
+            <li>Anna, TX</li>
+            <li>McKinney, TX</li>
+            <li>Lucas, TX</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="business-contact.html">Business</a></li>
+            <li><a href="blog.html">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-list">
+            <li><a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></li>
+            <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Sunset Glow Lighting. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Fill attribution fields
+    (function () {
+      const byId = id => document.getElementById(id);
+      const qs = new URLSearchParams(location.search);
+      const map = {
+        utm_source: qs.get('utm_source') || '',
+        utm_medium: qs.get('utm_medium') || '',
+        utm_campaign: qs.get('utm_campaign') || '',
+        gclid: qs.get('gclid') || '',
+        fbclid: qs.get('fbclid') || '',
+        page_url: location.href,
+        referrer: document.referrer || ''
+      };
+      Object.entries(map).forEach(([k,v]) => { const el = byId(k); if (el && !el.value) el.value = v; });
+    })();
+  </script>
+</body>
+</html>
