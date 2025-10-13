@@ -1250,6 +1250,55 @@ section {
     background: var(--white);
 }
 
+.business-link {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+.business-consultation-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--primary);
+    transition: var(--transition);
+}
+
+.business-consultation-link:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+}
+
+.business-consultation {
+    background: var(--cloud);
+    padding: var(--spacing-2xl) 0;
+}
+
+.business-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.business-content h2 {
+    color: var(--ink);
+    margin-bottom: var(--spacing-sm);
+}
+
+.business-subtitle {
+    color: var(--ink-light);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.business-form-wrapper {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-top: var(--spacing-lg);
+}
+
 .contact-layout {
     display: grid;
     gap: var(--spacing-xl);
