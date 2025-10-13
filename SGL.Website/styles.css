@@ -5,14 +5,14 @@
 
 /* CSS VARIABLES */
 :root {
-    --sunset-1: #FFB84D;
-    --sunset-2: #FF8C42;
-    --sunset-3: #E67E22;
+    --sunset-1: #FFCC33;
+    --sunset-2: #FF9933;
+    --sunset-3: #FF9933;
     --gold: #F4D03F;
-    --royal-blue: #2E86AB;
+    --royal-blue: #2C3E50;
     --warm-gray: #8B7355;
-    --ink: #2C3E50;
-    --ink-light: #5D6D7E;
+    --ink: #FFFFFF;
+    --ink-light: #E8F0F4;
     --cloud: #FEF9E7;
     --white: #FFFFFF;
     --gray-100: #F8F9FA;
@@ -20,10 +20,10 @@
     --gray-300: #DEE2E6;
     --gray-800: #495057;
     
-    --primary: #1e40af;
-    --primary-dark: #1e3a8a;
-    --primary-light: #dbeafe;
-    --secondary: #3b82f6;
+    --primary: #2C3E50;
+    --primary-dark: #1a2d3a;
+    --primary-light: #e8f0f4;
+    --secondary: #2C3E50;
     
     --success: #22C55E;
     --error: #EF4444;
@@ -69,7 +69,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--ink);
-    background: var(--white);
+    background: #2C3E50;
     overflow-x: hidden;
     touch-action: manipulation;
 }
@@ -1807,7 +1807,7 @@ p[hidden] {
 
 /* FINAL CTA */
 .final-cta {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    background: linear-gradient(135deg, #2C3E50 0%, #2C3E50 50%, #2C3E50 100%);
     color: var(--white);
     text-align: center;
 }
@@ -2044,7 +2044,7 @@ p[hidden] {
 
 /* Blue-themed banner */
 .hero.blue-theme {
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    background: linear-gradient(135deg, #2C3E50 0%, #2C3E50 50%, #2C3E50 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -2073,7 +2073,7 @@ p[hidden] {
 
 .hero.blue-theme .btn-primary {
     background: var(--white);
-    color: #1e40af;
+    color: #2C3E50;
     border: 2px solid var(--white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
