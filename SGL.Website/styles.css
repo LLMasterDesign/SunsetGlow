@@ -23,7 +23,7 @@
     --primary: #1e40af;
     --primary-dark: #1e3a8a;
     --primary-light: #dbeafe;
-    --secondary: #1e40af;
+    --secondary: #3b82f6;
     
     --success: #22C55E;
     --error: #EF4444;
@@ -1803,7 +1803,7 @@ p[hidden] {
 
 /* FINAL CTA */
 .final-cta {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
     color: var(--white);
     text-align: center;
 }
@@ -2040,7 +2040,7 @@ p[hidden] {
 
 /* Blue-themed banner */
 .hero.blue-theme {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary) 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
     color: var(--white);
     position: relative;
     overflow: hidden;
@@ -2069,7 +2069,7 @@ p[hidden] {
 
 .hero.blue-theme .btn-primary {
     background: var(--white);
-    color: var(--primary);
+    color: #1e40af;
     border: 2px solid var(--white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
