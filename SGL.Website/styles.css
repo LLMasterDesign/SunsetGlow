@@ -976,11 +976,11 @@ section {
 }
 
 .contact-details {
-    margin: var(--spacing-xl) 0;
+    margin: var(--spacing-lg) 0;
 }
 
 .contact-item {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .contact-item strong {
@@ -999,7 +999,7 @@ section {
 }
 
 .service-area-map {
-    margin-top: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
 }
 
 .map-placeholder {
@@ -1017,24 +1017,36 @@ section {
     position: relative;
 }
 
+/* Hide honeypot fields properly */
+p[hidden] {
+    position: absolute !important;
+    left: -9999px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
 .contact-form {
     background: var(--cloud);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius-lg);
 }
 
 .form-group {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .form-section {
     border: none;
     padding: 0;
-    margin: 0 0 var(--spacing-xl) 0;
+    margin: 0 0 var(--spacing-lg) 0;
 }
 
 .form-section:last-of-type {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .form-section-title {
