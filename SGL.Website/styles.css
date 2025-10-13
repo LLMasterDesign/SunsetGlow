@@ -663,7 +663,7 @@ a:hover {
 /* PAGE HERO */
 .page-hero {
     background: var(--cloud);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-lg) 0;
     text-align: center;
 }
 
