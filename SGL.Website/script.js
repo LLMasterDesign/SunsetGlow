@@ -129,6 +129,31 @@
                 isValid = false;
             }
 
+            const cityEl = form.querySelector('[name="city"]');
+            if (cityEl && !cityEl.value.trim()) {
+                showFieldErrorFor(cityEl, 'Please enter your city');
+                isValid = false;
+            }
+
+            const stateEl = form.querySelector('[name="state"]');
+            if (stateEl && !stateEl.value) {
+                showFieldErrorFor(stateEl, 'Please select your state');
+                isValid = false;
+            }
+
+            const zipEl = form.querySelector('[name="zip"]');
+            if (zipEl) {
+                const zipValue = zipEl.value.trim();
+                const zipRegex = /^\d{5}(-\d{4})?$/;
+                if (!zipValue) {
+                    showFieldErrorFor(zipEl, 'Please enter your ZIP code');
+                    isValid = false;
+                } else if (!zipRegex.test(zipValue)) {
+                    showFieldErrorFor(zipEl, 'Please enter a valid ZIP code');
+                    isValid = false;
+                }
+            }
+
             const packageEl = form.querySelector('[name="package"]');
             if (packageEl && !packageEl.value) {
                 showFieldErrorFor(packageEl, 'Please select a package');
@@ -360,13 +385,190 @@
         alert(message);
     }
 
-    // ===== ADDRESS AUTOCOMPLETE STUB =====
-    // TODO: Integrate Google Places API or similar for address autocomplete
-    const addressInput = document.getElementById('address');
-    if (addressInput) {
-        // Placeholder for future autocomplete integration
-        // Example: initAutocomplete(addressInput);
+    // ===== ADDRESS AUTOCOMPLETE =====
+    class AddressAutocomplete {
+        constructor(inputId, suggestionsId, cityId, stateId, zipId) {
+            this.input = document.getElementById(inputId);
+            this.suggestions = document.getElementById(suggestionsId);
+            this.cityInput = document.getElementById(cityId);
+            this.stateInput = document.getElementById(stateId);
+            this.zipInput = document.getElementById(zipId);
+            this.debounceTimer = null;
+            this.selectedIndex = -1;
+            
+            if (this.input) {
+                this.init();
+            }
+        }
+        
+        init() {
+            this.input.addEventListener('input', (e) => this.handleInput(e));
+            this.input.addEventListener('keydown', (e) => this.handleKeydown(e));
+            this.input.addEventListener('blur', () => this.hideSuggestions());
+            this.input.addEventListener('focus', () => {
+                if (this.input.value.length > 2) {
+                    this.showSuggestions();
+                }
+            });
+        }
+        
+        handleInput(e) {
+            const query = e.target.value.trim();
+            
+            if (query.length < 3) {
+                this.hideSuggestions();
+                return;
+            }
+            
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => {
+                this.searchAddresses(query);
+            }, 300);
+        }
+        
+        async searchAddresses(query) {
+            try {
+                this.showLoading();
+                
+                // Use a free geocoding service (Nominatim) for address lookup
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=us&limit=5&addressdetails=1`
+                );
+                
+                const data = await response.json();
+                this.displaySuggestions(data);
+            } catch (error) {
+                console.error('Address lookup failed:', error);
+                this.hideSuggestions();
+            }
+        }
+        
+        displaySuggestions(addresses) {
+            if (addresses.length === 0) {
+                this.hideSuggestions();
+                return;
+            }
+            
+            this.suggestions.innerHTML = '';
+            this.selectedIndex = -1;
+            
+            addresses.forEach((address, index) => {
+                const suggestion = document.createElement('div');
+                suggestion.className = 'address-suggestion';
+                suggestion.tabIndex = 0;
+                
+                const mainAddress = this.formatMainAddress(address);
+                const secondaryInfo = this.formatSecondaryInfo(address);
+                
+                suggestion.innerHTML = `
+                    <div class="main-address">${mainAddress}</div>
+                    <div class="secondary-info">${secondaryInfo}</div>
+                `;
+                
+                suggestion.addEventListener('click', () => this.selectAddress(address));
+                suggestion.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        this.selectAddress(address);
+                    }
+                });
+                
+                this.suggestions.appendChild(suggestion);
+            });
+            
+            this.showSuggestions();
+        }
+        
+        formatMainAddress(address) {
+            const parts = [];
+            if (address.address.house_number) parts.push(address.address.house_number);
+            if (address.address.road) parts.push(address.address.road);
+            return parts.join(' ');
+        }
+        
+        formatSecondaryInfo(address) {
+            const parts = [];
+            if (address.address.city) parts.push(address.address.city);
+            if (address.address.state) parts.push(address.address.state);
+            if (address.address.postcode) parts.push(address.address.postcode);
+            return parts.join(', ');
+        }
+        
+        selectAddress(address) {
+            this.input.value = this.formatMainAddress(address);
+            
+            if (this.cityInput && address.address.city) {
+                this.cityInput.value = address.address.city;
+            }
+            
+            if (this.stateInput && address.address.state) {
+                this.stateInput.value = address.address.state;
+            }
+            
+            if (this.zipInput && address.address.postcode) {
+                this.zipInput.value = address.address.postcode;
+            }
+            
+            this.hideSuggestions();
+            this.input.focus();
+        }
+        
+        handleKeydown(e) {
+            if (!this.suggestions.style.display || this.suggestions.style.display === 'none') {
+                return;
+            }
+            
+            const suggestions = this.suggestions.querySelectorAll('.address-suggestion');
+            
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    this.selectedIndex = Math.min(this.selectedIndex + 1, suggestions.length - 1);
+                    this.updateSelection(suggestions);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    this.selectedIndex = Math.max(this.selectedIndex - 1, -1);
+                    this.updateSelection(suggestions);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    if (this.selectedIndex >= 0 && suggestions[this.selectedIndex]) {
+                        suggestions[this.selectedIndex].click();
+                    }
+                    break;
+                case 'Escape':
+                    this.hideSuggestions();
+                    break;
+            }
+        }
+        
+        updateSelection(suggestions) {
+            suggestions.forEach((suggestion, index) => {
+                suggestion.classList.toggle('selected', index === this.selectedIndex);
+            });
+        }
+        
+        showSuggestions() {
+            this.suggestions.style.display = 'block';
+        }
+        
+        hideSuggestions() {
+            this.suggestions.style.display = 'none';
+            this.selectedIndex = -1;
+        }
+        
+        showLoading() {
+            this.input.classList.add('address-loading');
+        }
+        
+        hideLoading() {
+            this.input.classList.remove('address-loading');
+        }
     }
+    
+    // Initialize address autocomplete for both forms
+    const addressAutocomplete = new AddressAutocomplete('address', 'address-suggestions', 'city', 'state', 'zip');
+    const modalAddressAutocomplete = new AddressAutocomplete('m-address', 'm-address-suggestions', 'm-city', 'm-state', 'm-zip');
 
     // ===== NEWSLETTER FORM =====
     const newsletterForm = document.getElementById('newsletterForm');
@@ -458,8 +660,66 @@
         
         input.addEventListener('blur', function() {
             this.parentElement.classList.remove('focused');
+            // Real-time validation on blur
+            validateField(this);
+        });
+
+        // Real-time validation on input
+        input.addEventListener('input', function() {
+            clearFieldError(this);
+            if (this.value.trim() !== '') {
+                validateField(this);
+            }
         });
     });
+
+    // Real-time field validation
+    function validateField(field) {
+        const value = field.value.trim();
+        const fieldName = field.name;
+        
+        // Clear previous errors
+        clearFieldError(field);
+        
+        switch (fieldName) {
+            case 'email':
+                if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                    showFieldError(field, 'Please enter a valid email address');
+                }
+                break;
+            case 'phone':
+                const phoneDigits = value.replace(/\D/g, '');
+                if (value && phoneDigits.length !== 10) {
+                    showFieldError(field, 'Please enter a 10-digit phone number');
+                }
+                break;
+            case 'zip':
+                if (value && !/^\d{5}(-\d{4})?$/.test(value)) {
+                    showFieldError(field, 'Please enter a valid ZIP code');
+                }
+                break;
+        }
+    }
+
+    function clearFieldError(field) {
+        field.classList.remove('error');
+        field.removeAttribute('aria-invalid');
+        const group = field.closest('.form-group');
+        if (group) {
+            const errorSpan = group.querySelector('.form-error');
+            if (errorSpan) errorSpan.textContent = '';
+        }
+    }
+
+    function showFieldError(field, message) {
+        field.classList.add('error');
+        field.setAttribute('aria-invalid', 'true');
+        const group = field.closest('.form-group');
+        if (group) {
+            const errorSpan = group.querySelector('.form-error');
+            if (errorSpan) errorSpan.textContent = message;
+        }
+    }
 
     // ===== LAZY LOADING IMAGES (WHEN REAL IMAGES ADDED) =====
     // TODO: Add intersection observer for lazy loading when real images are added

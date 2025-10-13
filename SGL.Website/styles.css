@@ -1029,6 +1029,158 @@ p[hidden] {
     overflow: hidden !important;
 }
 
+/* Form row layout for address fields */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+    .form-row {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* Address autocomplete suggestions */
+.address-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    border-top: none;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.address-suggestion {
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    border-bottom: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+.address-suggestion:hover,
+.address-suggestion:focus {
+    background: var(--cloud);
+}
+
+.address-suggestion:last-child {
+    border-bottom: none;
+}
+
+.address-suggestion .main-address {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.address-suggestion .secondary-info {
+    font-size: 0.875rem;
+    color: var(--ink-light);
+}
+
+/* Enhanced form input states */
+.form-input:focus {
+    border-color: var(--sunset-3);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--error);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.form-input:valid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--success);
+    background-color: rgba(34, 197, 94, 0.05);
+}
+
+/* Form group focus state */
+.form-group.focused .form-label {
+    color: var(--sunset-3);
+    transform: translateY(-2px);
+    transition: var(--transition);
+}
+
+/* Selected address suggestion */
+.address-suggestion.selected {
+    background: var(--sunset-1);
+    border-left: 3px solid var(--sunset-3);
+}
+
+/* Form submission states */
+.form-submitting {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.form-submitting .btn {
+    position: relative;
+    color: transparent;
+}
+
+.form-submitting .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Success state for individual fields */
+.form-input.success {
+    border-color: var(--success);
+    background-color: rgba(34, 197, 94, 0.05);
+}
+
+.form-input.success::after {
+    content: '✓';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* Loading state for address lookup */
+.address-loading {
+    position: relative;
+}
+
+.address-loading::after {
+    content: '';
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-300);
+    border-top: 2px solid var(--sunset-3);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
 .contact-form {
     background: var(--cloud);
     padding: var(--spacing-lg);

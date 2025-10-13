@@ -304,8 +304,35 @@
                 </div>
                 <div class="form-group">
                     <label for="m-address" class="form-label">Property Address <span class="required">*</span></label>
-                    <input type="text" id="m-address" name="address" class="form-input" required aria-required="true">
+                    <input type="text" id="m-address" name="address" class="form-input" required aria-required="true" 
+                           placeholder="123 Main St, Princeton, TX 75407" 
+                           autocomplete="street-address"
+                           data-address-autocomplete>
                     <span class="form-error" id="m-address-error"></span>
+                    <div class="address-suggestions" id="m-address-suggestions" style="display: none;"></div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="m-city" class="form-label">City <span class="required">*</span></label>
+                        <input type="text" id="m-city" name="city" class="form-input" required aria-required="true" 
+                               placeholder="Princeton" autocomplete="address-level2">
+                        <span class="form-error" id="m-city-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="m-state" class="form-label">State <span class="required">*</span></label>
+                        <select id="m-state" name="state" class="form-input" required aria-required="true" autocomplete="address-level1">
+                            <option value="">Select State</option>
+                            <option value="TX" selected>Texas</option>
+                        </select>
+                        <span class="form-error" id="m-state-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="m-zip" class="form-label">ZIP Code <span class="required">*</span></label>
+                        <input type="text" id="m-zip" name="zip" class="form-input" required aria-required="true" 
+                               placeholder="75407" autocomplete="postal-code" pattern="[0-9]{5}(-[0-9]{4})?">
+                        <span class="form-error" id="m-zip-error"></span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="m-photo" class="form-label">Front of Home Photo (optional)</label>
