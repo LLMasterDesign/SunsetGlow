@@ -182,16 +182,17 @@ a:hover {
     z-index: 1000;
     background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%);
     color: var(--white);
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--border-radius);
     text-decoration: none;
     font-weight: 600;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    font-size: 0.875rem;
+    font-size: 1rem;
     display: none;
-    min-width: 100px;
+    min-width: 140px;
     text-align: center;
+    line-height: 1.2;
 }
 
 .sticky-cta:hover {
@@ -206,13 +207,15 @@ a:hover {
         display: inline-block;
         right: 0.5rem;
         top: 0.75rem;
-        font-size: 0.8rem;
-        padding: 0.5rem 0.75rem;
-        min-width: 80px;
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+        min-width: 100px;
+        left: auto;
+        transform: none;
     }
     
     .header-content {
-        padding-right: 100px; /* Less space needed on mobile */
+        padding-right: 120px; /* More space for thicker button */
     }
 }
 
@@ -598,20 +601,12 @@ a:hover {
     margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
-    top: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
 }
 
-@media (max-width: 767px) {
-    .badge-group {
-        position: static;
-        transform: none;
-        margin-top: var(--spacing-md);
-        margin-bottom: var(--spacing-lg);
-    }
+.badge-section {
+    background: var(--white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
 }
 
 /* HERO */
@@ -2027,19 +2022,20 @@ p[hidden] {
 }
 
 .hero.festive {
-    background:
-      linear-gradient(0deg, rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
-      url('./images/08-43-26.jpeg') center/cover no-repeat;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero.festive .hero-title {
-    color: var(--ink);
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero.festive .hero-subtitle {
-    color: var(--ink);
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Blue-themed banner */
@@ -2071,17 +2067,28 @@ p[hidden] {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.hero.blue-theme .btn-primary {
+.hero.festive .btn-primary {
     background: var(--white);
     color: #1e40af;
     border: 2px solid var(--white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero.blue-theme .btn-primary:hover {
+.hero.festive .btn-primary:hover {
     background: rgba(255, 255, 255, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero.festive .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.hero.festive .btn-secondary:hover {
+    background: var(--white);
+    color: #1e40af;
 }
 
 .card:not(.card-testimonial) {
