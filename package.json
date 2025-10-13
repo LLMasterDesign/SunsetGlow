@@ -1,0 +1,28 @@
+{
+  "name": "sunset-glow-lighting-backend",
+  "version": "1.0.0",
+  "description": "Backend functions for Sunset Glow Lighting website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build step required'",
+    "test": "echo 'No tests specified'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.0",
+    "nodemailer": "^6.9.7",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": [
+    "netlify",
+    "functions",
+    "calendly",
+    "webhooks",
+    "forms"
+  ],
+  "author": "Sunset Glow Lighting",
+  "license": "MIT"
+}

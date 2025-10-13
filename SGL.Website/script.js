@@ -156,32 +156,57 @@
             const formData = new FormData(form);
 
             try {
-                // If Netlify form is enabled, post to current path
-                const isNetlify = form.hasAttribute('data-netlify');
-                if (isNetlify) {
-                    const fileInput = form.querySelector('input[type="file"]');
-                    const hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
-                    if (hasFile) {
-                        if (!formData.get('form-name')) {
-                            formData.set('form-name', form.getAttribute('name') || 'Quote');
-                        }
-                        const response = await fetch('/', { method: 'POST', body: formData });
-                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
-                    } else {
-                        const encoded = new URLSearchParams();
-                        encoded.set('form-name', form.getAttribute('name') || 'Quote');
-                        for (const [k, v] of formData.entries()) {
-                            if (v instanceof File) continue;
-                            encoded.append(k, v);
-                        }
-                        const response = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encoded.toString() });
-                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
-                    }
-                } else {
-                    // Fallback: log and show success
-                    console.log('Form data:', Object.fromEntries(formData.entries()));
-                    showSuccess();
-                }
+        // If Netlify form is enabled, post to current path
+        const isNetlify = form.hasAttribute('data-netlify');
+        if (isNetlify) {
+          // Check if this is the intake form (use webhook processing)
+          const isIntakeForm = form.getAttribute('name') === 'Customer Intake';
+          
+          if (isIntakeForm) {
+            // Use webhook processing for intake form
+            const formObject = Object.fromEntries(formData.entries());
+            const response = await fetch('/.netlify/functions/process-intake', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formObject)
+            });
+            
+            if (response.ok) {
+              const result = await response.json();
+              if (result.success) {
+                showIntakeSuccess(result.calendlyLink);
+              } else {
+                showError(result.message || 'Submission failed. Please try again or call us at (555) 555-0199.');
+              }
+            } else {
+              showError('Submission failed. Please try again or call us at (555) 555-0199.');
+            }
+          } else {
+            // Use standard Netlify form processing for other forms
+            const fileInput = form.querySelector('input[type="file"]');
+            const hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
+            if (hasFile) {
+              if (!formData.get('form-name')) {
+                formData.set('form-name', form.getAttribute('name') || 'Quote');
+              }
+              const response = await fetch('/', { method: 'POST', body: formData });
+              if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
+            } else {
+              const encoded = new URLSearchParams();
+              encoded.set('form-name', form.getAttribute('name') || 'Quote');
+              for (const [k, v] of formData.entries()) {
+                if (v instanceof File) continue;
+                encoded.append(k, v);
+              }
+              const response = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encoded.toString() });
+              if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
+            }
+          }
+        } else {
+          // Fallback: log and show success
+          console.log('Form data:', Object.fromEntries(formData.entries()));
+          showSuccess();
+        }
             } catch (error) {
                 console.error(error);
                 showError('Network error. Please try again or call us at (555) 555-0199.');
@@ -358,6 +383,26 @@
     function showError(message) {
         // Simple error display - in production, enhance this
         alert(message);
+    }
+
+    function showIntakeSuccess(calendlyLink) {
+        if (quoteForm && formSuccess) {
+            quoteForm.style.display = 'none';
+            formSuccess.removeAttribute('hidden');
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Update success message with Calendly link
+            const successMessage = formSuccess.querySelector('p');
+            if (successMessage && calendlyLink) {
+                successMessage.innerHTML = `
+                    Your intake form has been received! We'll review everything and confirm your installation schedule within 24 hours.
+                    <br><br>
+                    <a href="${calendlyLink}" target="_blank" style="background: #d97706; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px;">
+                        Schedule Your Installation Now
+                    </a>
+                `;
+            }
+        }
     }
 
     // ===== ADDRESS AUTOCOMPLETE STUB =====
