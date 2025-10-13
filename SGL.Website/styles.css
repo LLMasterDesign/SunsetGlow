@@ -183,7 +183,7 @@ a:hover {
 }
 
 .sticky-cta:hover {
-    background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
+    background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     color: var(--white);
@@ -260,7 +260,7 @@ a:hover {
     }
     
     .nav-cta:hover {
-        background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
+        background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 100%);
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     }
@@ -462,7 +462,7 @@ a:hover {
     }
     
     .nav-cta:hover {
-        background: linear-gradient(135deg, var(--orange-light) 0%, var(--sunset-1) 100%);
+        background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 100%);
         transform: translateY(-1px);
     }
 }
@@ -558,7 +558,7 @@ a:hover {
 .badge {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: var(--sunset-1);
+    background: var(--orange);
     color: var(--white);
     border-radius: 2rem;
     font-size: 0.875rem;
@@ -1523,7 +1523,7 @@ p[hidden] {
     color: var(--orange);
     margin: 0 0 var(--spacing-lg) 0;
     padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid var(--sunset-1);
+    border-bottom: 2px solid var(--orange);
 }
 
 .checkbox-group {
@@ -1697,7 +1697,7 @@ p[hidden] {
 .post-category {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: var(--sunset-1);
+    background: var(--orange);
     color: var(--white);
     border-radius: 0.25rem;
     font-size: 0.75rem;
@@ -1989,7 +1989,7 @@ p[hidden] {
 
 /* === Festive accents (no external assets) === */
 .string-lights {
-    --bulb: var(--sunset-1);
+    --bulb: var(--orange);
     --bulb2: var(--orange-light);
     --bulb3: var(--orange);
     height: 16px;
