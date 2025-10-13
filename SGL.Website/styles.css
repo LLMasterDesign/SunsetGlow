@@ -5,25 +5,13 @@
 
 /* CSS VARIABLES */
 :root {
-    --sunset-1: #FFCC33;
-    --sunset-2: #FF9933;
-    --sunset-3: #FF9933;
-    --gold: #F4D03F;
-    --royal-blue: #2C3E50;
-    --warm-gray: #8B7355;
-    --ink: #FFFFFF;
-    --ink-light: #E8F0F4;
-    --cloud: #FEF9E7;
+    /* SIMPLE 5-COLOR THEME */
+    --charcoal-blue: #2C3E50;
+    --orange: #FF9933;
+    --orange-light: #FFCC33;
     --white: #FFFFFF;
-    --gray-100: #F8F9FA;
-    --gray-200: #E9ECEF;
-    --gray-300: #DEE2E6;
-    --gray-800: #495057;
-    
-    --primary: #2C3E50;
-    --primary-dark: #1a2d3a;
-    --primary-light: #e8f0f4;
-    --secondary: #2C3E50;
+    --grey: #6C757D;
+    --grey-light: #ADB5BD;
     
     --success: #22C55E;
     --error: #EF4444;
@@ -68,8 +56,8 @@ body {
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.6;
-    color: var(--ink);
-    background: #2C3E50;
+    color: var(--white);
+    background: var(--charcoal-blue);
     overflow-x: hidden;
     touch-action: manipulation;
 }
@@ -92,7 +80,7 @@ p, h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--ink);
+    background: var(--charcoal-blue);
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-md);
     text-decoration: none;
@@ -121,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--ink);
+    color: var(--white);
     letter-spacing: -0.02em;
 }
 
@@ -146,17 +134,17 @@ p {
 
 strong {
     font-weight: 600;
-    color: var(--ink);
+    color: var(--white);
 }
 
 a {
-    color: var(--sunset-3);
+    color: var(--orange);
     text-decoration: none;
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--sunset-2);
+    color: var(--orange-light);
 }
 
 /* LAYOUT */
@@ -180,7 +168,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%);
+    background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%);
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius);
@@ -229,8 +217,8 @@ a:hover {
 
 /* HEADER */
 .site-header {
-    background: #2C3E50;
-    border-bottom: 1px solid var(--gray-200);
+    background: var(--charcoal-blue);
+    border-bottom: 1px solid var(--grey);
     position: sticky;
     top: 0;
     z-index: 50;
@@ -258,7 +246,7 @@ a:hover {
         top: 1rem;
         right: 1rem;
         z-index: 1000;
-        background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%) !important;
+        background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%) !important;
         color: var(--white) !important;
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--border-radius);
@@ -310,14 +298,14 @@ a:hover {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--ink);
+    color: var(--white);
     text-decoration: none;
     z-index: 20;
     position: relative;
 }
 
 .logo:hover {
-    color: var(--sunset-3);
+    color: var(--orange);
 }
 
 .nav-toggle {
@@ -338,7 +326,7 @@ a:hover {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--ink);
+    background: var(--charcoal-blue);
     position: relative;
 }
 
@@ -348,7 +336,7 @@ a:hover {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: var(--ink);
+    background: var(--charcoal-blue);
     transition: var(--transition);
 }
 
@@ -408,7 +396,7 @@ a:hover {
 .nav-link {
     display: block;
     padding: var(--spacing-sm) 0;
-    color: var(--ink);
+    color: var(--white);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -446,7 +434,7 @@ a:hover {
     .nav-link {
         display: block;
         padding: var(--spacing-sm) 0;
-        color: var(--ink);
+        color: var(--white);
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s ease;
@@ -462,7 +450,7 @@ a:hover {
         margin-top: 0;
         position: static;
         display: inline-block;
-        background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%) !important;
+        background: linear-gradient(135deg, var(--orange) 0%, var(--sunset-2) 100%) !important;
         color: var(--white) !important;
         padding: var(--spacing-md) var(--spacing-lg);
         border-radius: var(--border-radius);
@@ -490,11 +478,11 @@ a:hover {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--sunset-3);
+    color: var(--orange);
 }
 
 .nav-link.active {
-    color: var(--sunset-3);
+    color: var(--orange);
     font-weight: 600;
 }
 
@@ -522,12 +510,12 @@ a:hover {
 }
 
 .btn-primary {
-    background: var(--sunset-3);
+    background: var(--orange);
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background: var(--sunset-2);
+    background: var(--orange-light);
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
@@ -535,25 +523,25 @@ a:hover {
 
 .btn-secondary {
     background: var(--white);
-    color: var(--sunset-3);
-    border-color: var(--sunset-3);
+    color: var(--orange);
+    border-color: var(--orange);
 }
 
 .btn-secondary:hover {
-    background: var(--sunset-3);
+    background: var(--orange);
     color: var(--white);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--ink);
+    color: var(--white);
     border-color: var(--gray-300);
 }
 
 .btn-outline:hover {
     background: var(--cloud);
-    border-color: var(--sunset-3);
-    color: var(--sunset-3);
+    border-color: var(--orange);
+    color: var(--orange);
 }
 
 .btn-lg {
@@ -571,7 +559,7 @@ a:hover {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     background: var(--sunset-1);
-    color: var(--ink);
+    color: var(--white);
     border-radius: 2rem;
     font-size: 0.875rem;
     font-weight: 600;
@@ -616,7 +604,7 @@ a:hover {
 
 /* HERO */
 .hero {
-    background: linear-gradient(135deg, #2C3E50 0%, #1a2d3a 100%);
+    background: var(--charcoal-blue);
     padding: var(--spacing-2xl) 0 var(--spacing-xl);
     text-align: center;
     position: relative;
@@ -662,7 +650,7 @@ a:hover {
 
 /* PAGE HERO */
 .page-hero {
-    background: #2C3E50;
+    background: var(--charcoal-blue);
     padding: var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -731,7 +719,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--sunset-3);
+    color: var(--orange);
 }
 
 .card-icon svg {
@@ -767,7 +755,7 @@ section {
 
 /* VALUE PROPS */
 .value-props {
-    background: #2C3E50;
+    background: var(--charcoal-blue);
 }
 
 .card-value {
@@ -789,7 +777,7 @@ section {
 }
 
 .card-featured {
-    border-color: var(--sunset-3);
+    border-color: var(--orange);
     border-width: 2px;
 }
 
@@ -798,7 +786,7 @@ section {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--sunset-3);
+    background: var(--orange);
     color: var(--white);
     padding: 0.25rem 1rem;
     border-radius: 2rem;
@@ -832,7 +820,7 @@ section {
 
 .package-price strong {
     font-size: 1.25rem;
-    color: var(--sunset-3);
+    color: var(--orange);
     display: block;
 }
 
@@ -871,7 +859,7 @@ section {
 }
 
 .service-package.package-featured {
-    border: 2px solid var(--sunset-3);
+    border: 2px solid var(--orange);
 }
 
 .package-header {
@@ -892,7 +880,7 @@ section {
 
 .package-includes h4 {
     margin-bottom: var(--spacing-md);
-    color: var(--ink);
+    color: var(--white);
 }
 
 .package-includes ul {
@@ -915,7 +903,7 @@ section {
 
 /* ADD-ONS */
 .addons {
-    background: var(--cloud);
+    background: var(--charcoal-blue);
 }
 
 /* PROCESS */
@@ -1140,7 +1128,7 @@ section {
 }
 
 .card-testimonial {
-    border-left: 4px solid var(--sunset-3);
+    border-left: 4px solid var(--orange);
 }
 
 .testimonial-text {
@@ -1152,7 +1140,7 @@ section {
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--ink);
+    color: var(--white);
     margin: 0;
 }
 
@@ -1227,7 +1215,7 @@ section {
 }
 
 .value-item h3 {
-    color: var(--sunset-3);
+    color: var(--orange);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1285,7 +1273,7 @@ section {
 }
 
 .business-content h2 {
-    color: var(--ink);
+    color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1329,11 +1317,11 @@ section {
 .contact-item strong {
     display: block;
     margin-bottom: var(--spacing-xs);
-    color: var(--ink);
+    color: var(--white);
 }
 
 .contact-item a {
-    color: var(--sunset-3);
+    color: var(--orange);
 }
 
 .contact-item p {
@@ -1411,7 +1399,7 @@ section {
 
 .discount-card p {
     margin: 0 0 var(--spacing-md) 0;
-    color: var(--ink);
+    color: var(--white);
     font-weight: 500;
 }
 
@@ -1532,7 +1520,7 @@ p[hidden] {
 .form-section-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--sunset-3);
+    color: var(--orange);
     margin: 0 0 var(--spacing-lg) 0;
     padding-bottom: var(--spacing-sm);
     border-bottom: 2px solid var(--sunset-1);
@@ -1555,7 +1543,7 @@ p[hidden] {
     display: block;
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
-    color: var(--ink);
+    color: var(--white);
 }
 
 .required {
@@ -1572,7 +1560,7 @@ p[hidden] {
 }
 
 .form-input:focus {
-    border-color: var(--sunset-3);
+    border-color: var(--orange);
     outline: none;
 }
 
@@ -1673,7 +1661,7 @@ p[hidden] {
 }
 
 .faq-question {
-    color: var(--ink);
+    color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1710,7 +1698,7 @@ p[hidden] {
     display: inline-block;
     padding: 0.25rem 0.75rem;
     background: var(--sunset-1);
-    color: var(--ink);
+    color: var(--white);
     border-radius: 0.25rem;
     font-size: 0.75rem;
     font-weight: 600;
@@ -1755,12 +1743,12 @@ p[hidden] {
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--sunset-3);
+    color: var(--orange);
 }
 
 /* NEWSLETTER */
 .newsletter {
-    background: var(--sunset-3);
+    background: var(--orange);
     color: var(--white);
     text-align: center;
 }
@@ -1843,7 +1831,7 @@ p[hidden] {
 
 /* FOOTER */
 .site-footer {
-    background: #2C3E50;
+    background: var(--charcoal-blue);
     color: var(--white);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
 }
@@ -1982,7 +1970,7 @@ p[hidden] {
 }
 
 .modal-close:hover {
-    color: var(--ink);
+    color: var(--white);
 }
 
 .modal-actions {
@@ -2003,7 +1991,7 @@ p[hidden] {
 .string-lights {
     --bulb: var(--sunset-1);
     --bulb2: var(--sunset-2);
-    --bulb3: var(--sunset-3);
+    --bulb3: var(--orange);
     height: 16px;
     background:
       radial-gradient(circle at 8px 8px, var(--bulb) 0 4px, transparent 5px) 0 0/64px 16px,
@@ -2033,12 +2021,12 @@ p[hidden] {
 }
 
 .hero.festive .hero-title {
-    color: var(--ink);
+    color: var(--white);
     text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .hero.festive .hero-subtitle {
-    color: var(--ink);
+    color: var(--white);
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
