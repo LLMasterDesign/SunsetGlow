@@ -616,7 +616,7 @@ a:hover {
 
 /* HERO */
 .hero {
-    background: linear-gradient(135deg, var(--cloud) 0%, var(--white) 100%);
+    background: linear-gradient(135deg, #2C3E50 0%, #1a2d3a 100%);
     padding: var(--spacing-2xl) 0 var(--spacing-xl);
     text-align: center;
     position: relative;
@@ -662,7 +662,7 @@ a:hover {
 
 /* PAGE HERO */
 .page-hero {
-    background: var(--cloud);
+    background: #2C3E50;
     padding: var(--spacing-2xl) 0;
     text-align: center;
 }
@@ -767,7 +767,7 @@ section {
 
 /* VALUE PROPS */
 .value-props {
-    background: var(--cloud);
+    background: #2C3E50;
 }
 
 .card-value {
