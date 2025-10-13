@@ -1114,6 +1114,72 @@ section {
         top: 10px;
         right: 10px;
     }
+    
+    /* Mobile form optimizations */
+    .contact-form {
+        padding: var(--spacing-sm);
+    }
+    
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-section {
+        margin: 0 0 0.75rem 0;
+    }
+    
+    .form-section-title {
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .form-input {
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-textarea {
+        min-height: 60px;
+    }
+    
+    .form-label {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .checkbox-group {
+        gap: 0.5rem;
+    }
+    
+    .checkbox-label {
+        font-size: 0.9rem;
+    }
+    
+    .form-row {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .form-row .form-group {
+        flex: 1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .multi-year-section {
+        padding: var(--spacing-sm);
+    }
+    
+    .discount-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .discount-options {
+        gap: 0.5rem;
+    }
+    
+    .discount-option {
+        font-size: 0.9rem;
+    }
 }
 
 .gallery-placeholder {
@@ -1511,30 +1577,30 @@ p[hidden] {
 
 .contact-form {
     background: var(--cloud);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     border-radius: var(--border-radius-lg);
 }
 
 .form-group {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .form-section {
     border: none;
     padding: 0;
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0 0 var(--spacing-sm) 0;
 }
 
 .form-section:last-of-type {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .form-section-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--sunset-3);
-    margin: 0 0 var(--spacing-lg) 0;
-    padding-bottom: var(--spacing-sm);
+    margin: 0 0 var(--spacing-xs) 0;
+    padding-bottom: 0.25rem;
     border-bottom: 2px solid var(--sunset-1);
 }
 
@@ -1564,7 +1630,7 @@ p[hidden] {
 
 .form-input {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.5rem;
     border: 2px solid var(--gray-300);
     border-radius: var(--border-radius);
     background: var(--white);
@@ -1582,7 +1648,22 @@ p[hidden] {
 
 .form-textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 80px;
+}
+
+.form-row {
+    display: block;
+}
+
+@media (min-width: 769px) {
+    .form-row {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+    
+    .form-row .form-group {
+        flex: 1;
+    }
 }
 
 .form-error {
