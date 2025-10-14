@@ -2472,14 +2472,16 @@ p[hidden] {
     font-size: 0.875rem;
     transition: all 0.3s ease;
     white-space: nowrap;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
 }
 
 .header-quote-btn:hover {
     background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     color: var(--white);
+    border-color: var(--sunset-1);
 }
 
 /* Desktop header layout */
@@ -2510,36 +2512,42 @@ p[hidden] {
     .header-content {
         display: flex !important;
         align-items: center !important;
-        justify-content: space-between !important;
+        justify-content: flex-start !important;
         padding: var(--spacing-sm) 0 !important;
         position: relative !important;
+        gap: var(--spacing-sm) !important;
     }
     
-    /* Logo takes available space */
+    /* Logo positioned left with limited space */
     .logo {
-        flex: 1 !important;
-        margin-right: var(--spacing-sm) !important;
+        flex: 0 0 auto !important;
+        margin-right: 0 !important;
+        max-width: 40% !important;
+        font-size: 1rem !important;
     }
     
-    /* Quote button in header */
+    /* Quote button positioned after logo */
     .header-quote-btn {
-        font-size: 0.75rem !important;
-        padding: 0.4rem 0.8rem !important;
-        margin-right: var(--spacing-sm) !important;
+        font-size: 0.7rem !important;
+        padding: 0.35rem 0.7rem !important;
+        margin-right: 0 !important;
         order: 2 !important;
+        flex: 0 0 auto !important;
+        background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
     }
     
-    /* Hamburger menu positioning */
+    /* Hamburger menu positioned far right */
     .nav-toggle {
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        transform: none !important;
-        z-index: 10 !important;
-        background: none !important;
-        border-radius: 0 !important;
-        padding: var(--spacing-xs) !important;
-        box-shadow: none !important;
+        position: absolute !important;
+        right: 0.5rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 4px !important;
+        padding: 8px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
         order: 3 !important;
     }
     
@@ -2560,5 +2568,26 @@ p[hidden] {
     /* Hide the old sticky quote button */
     .sticky-cta {
         display: none !important;
+    }
+    
+    /* Ensure mobile nav works properly */
+    .main-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: var(--white) !important;
+        z-index: 1000 !important;
+        display: none !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+        padding: 4rem 1rem 1rem !important;
+        overflow-y: auto !important;
+    }
+    
+    .main-nav.active {
+        display: flex !important;
     }
 }
