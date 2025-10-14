@@ -2508,47 +2508,63 @@ p[hidden] {
    MOBILE-ONLY FIXES - DO NOT AFFECT DESKTOP
    =================================== */
 @media (max-width: 767px) {
-    /* Header layout for mobile */
+    /* Header layout for mobile with golden ratio */
     .header-content {
         display: flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        justify-content: space-between !important;
         padding: var(--spacing-sm) 0 !important;
         position: relative !important;
-        gap: var(--spacing-sm) !important;
+        gap: 0.5rem !important;
+        width: 100% !important;
     }
     
-    /* Logo positioned left with limited space */
+    /* Logo - golden ratio 8/13 of available space */
     .logo {
-        flex: 0 0 auto !important;
+        flex: 8 1 0 !important;
         margin-right: 0 !important;
-        max-width: 40% !important;
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        min-width: 0 !important;
     }
     
-    /* Quote button positioned after logo */
+    .logo-text {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* Quote button - golden ratio 3/13 of available space */
     .header-quote-btn {
-        font-size: 0.7rem !important;
-        padding: 0.35rem 0.7rem !important;
-        margin-right: 0 !important;
+        font-size: 0.65rem !important;
+        padding: 0.3rem 0.6rem !important;
+        margin: 0 !important;
         order: 2 !important;
-        flex: 0 0 auto !important;
+        flex: 3 1 0 !important;
         background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%) !important;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        min-width: 0 !important;
     }
     
-    /* Hamburger menu positioned far right */
+    /* Hamburger menu - golden ratio 2/13 of available space */
     .nav-toggle {
-        position: absolute !important;
-        right: 0.5rem !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
         z-index: 1001 !important;
         background: rgba(255, 255, 255, 0.95) !important;
         border-radius: 4px !important;
-        padding: 8px !important;
+        padding: 6px !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
         order: 3 !important;
+        flex: 2 1 0 !important;
+        min-width: 44px !important;
+        max-width: 50px !important;
     }
     
     /* Make hamburger more visible */
