@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Layout Test</title>
+    <link rel="stylesheet" href="./SGL.Website/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .test-content {
+            height: 200vh;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Get Quote Button -->
+    <a href="#" class="sticky-cta">Get Quote</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link active">Home</a></li>
+                        <li><a href="#" class="nav-link">Services</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="test-content">
+            <h1>Mobile Layout Test</h1>
+            <p>This page tests the mobile layout to ensure the hamburger menu is not hidden behind the quote button.</p>
+            <p>Scroll down to test the sticky behavior.</p>
+            <p>On mobile viewport (width < 768px), you should see:</p>
+            <ul>
+                <li>Hamburger menu on the right side of the header</li>
+                <li>Quote button positioned to the left of the hamburger menu</li>
+                <li>No overlap between the two elements</li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="./SGL.Website/script.js"></script>
+</body>
+</html>
