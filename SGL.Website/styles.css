@@ -2460,32 +2460,87 @@ p[hidden] {
 }
 
 /* ===================================
+   HEADER QUOTE BUTTON - IN TOP BAR
+   =================================== */
+.header-quote-btn {
+    background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-quote-btn:hover {
+    background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--white);
+}
+
+/* Desktop header layout */
+@media (min-width: 768px) {
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-md);
+    }
+    
+    .header-quote-btn {
+        order: 2;
+        margin-left: auto;
+        margin-right: var(--spacing-md);
+    }
+    
+    .nav-toggle {
+        display: none;
+    }
+}
+
+/* ===================================
    MOBILE-ONLY FIXES - DO NOT AFFECT DESKTOP
    =================================== */
 @media (max-width: 767px) {
-    /* Ensure hamburger menu is always visible and accessible */
-    .nav-toggle {
-        position: absolute !important;
-        right: 0.5rem !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        z-index: 9999 !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-radius: 4px !important;
-        padding: 8px !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-    }
-    
-    /* Position quote button to avoid hamburger overlap */
-    .sticky-cta {
-        right: 4.5rem !important;
-        z-index: 9998 !important;
-    }
-    
-    /* Ensure header has enough space */
+    /* Header layout for mobile */
     .header-content {
-        padding-right: 120px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: var(--spacing-sm) 0 !important;
         position: relative !important;
+    }
+    
+    /* Logo takes available space */
+    .logo {
+        flex: 1 !important;
+        margin-right: var(--spacing-sm) !important;
+    }
+    
+    /* Quote button in header */
+    .header-quote-btn {
+        font-size: 0.75rem !important;
+        padding: 0.4rem 0.8rem !important;
+        margin-right: var(--spacing-sm) !important;
+        order: 2 !important;
+    }
+    
+    /* Hamburger menu positioning */
+    .nav-toggle {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        z-index: 10 !important;
+        background: none !important;
+        border-radius: 0 !important;
+        padding: var(--spacing-xs) !important;
+        box-shadow: none !important;
+        order: 3 !important;
     }
     
     /* Make hamburger more visible */
@@ -2500,5 +2555,10 @@ p[hidden] {
         background: var(--ink) !important;
         width: 20px !important;
         height: 2px !important;
+    }
+    
+    /* Hide the old sticky quote button */
+    .sticky-cta {
+        display: none !important;
     }
 }
