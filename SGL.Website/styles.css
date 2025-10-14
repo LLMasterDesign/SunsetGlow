@@ -2508,56 +2508,57 @@ p[hidden] {
    MOBILE-ONLY FIXES - DO NOT AFFECT DESKTOP
    =================================== */
 @media (max-width: 767px) {
-    /* Header layout for mobile with golden ratio: 8:5:3:2 */
+    /* Header layout for mobile with adjusted golden ratio: 9:4:4:1 */
     .header-content {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        padding: var(--spacing-sm) 0 !important;
+        padding: var(--spacing-xs) 0 !important;
         position: relative !important;
         gap: 0 !important;
         width: 100% !important;
     }
     
-    /* Logo - golden ratio 8/18 of available space */
+    /* Logo - golden ratio 9/18 of available space */
     .logo {
-        flex: 8 1 0 !important;
+        flex: 9 1 0 !important;
         margin-right: 0 !important;
-        font-size: 0.9rem !important;
+        font-size: 0.85rem !important;
         white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
         min-width: 0 !important;
     }
     
     .logo-text {
         white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
     }
     
-    /* Spacer - golden ratio 5/18 of available space (between title and quote) */
+    /* Spacer - golden ratio 4/18 of available space (between title and quote) */
     .header-content::after {
         content: '' !important;
-        flex: 5 1 0 !important;
-        min-width: 0.5rem !important;
+        flex: 4 1 0 !important;
+        min-width: 0.3rem !important;
     }
     
-    /* Quote button - golden ratio 3/18 of available space */
+    /* Quote button - golden ratio 4/18 of available space */
     .header-quote-btn {
-        font-size: 0.65rem !important;
-        padding: 0.3rem 0.6rem !important;
+        font-size: 0.7rem !important;
+        padding: 0.4rem 0.8rem !important;
         margin: 0 !important;
         order: 2 !important;
-        flex: 3 1 0 !important;
+        flex: 4 1 0 !important;
         background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%) !important;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
         white-space: nowrap !important;
         text-align: center !important;
         min-width: 0 !important;
+        margin-right: 0.3rem !important;
     }
     
-    /* Hamburger menu - golden ratio 2/18 of available space */
+    /* Hamburger menu - golden ratio 1/18 of available space */
     .nav-toggle {
         position: relative !important;
         right: auto !important;
@@ -2569,9 +2570,9 @@ p[hidden] {
         padding: 6px !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
         order: 3 !important;
-        flex: 2 1 0 !important;
-        min-width: 44px !important;
-        max-width: 50px !important;
+        flex: 1 1 0 !important;
+        min-width: 40px !important;
+        max-width: 44px !important;
     }
     
     /* Make hamburger more visible */
