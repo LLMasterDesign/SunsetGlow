@@ -2458,3 +2458,47 @@ p[hidden] {
     font-style: italic;
     color: var(--ink-light);
 }
+
+/* ===================================
+   MOBILE-ONLY FIXES - DO NOT AFFECT DESKTOP
+   =================================== */
+@media (max-width: 767px) {
+    /* Ensure hamburger menu is always visible and accessible */
+    .nav-toggle {
+        position: absolute !important;
+        right: 0.5rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 9999 !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 4px !important;
+        padding: 8px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    /* Position quote button to avoid hamburger overlap */
+    .sticky-cta {
+        right: 4.5rem !important;
+        z-index: 9998 !important;
+    }
+    
+    /* Ensure header has enough space */
+    .header-content {
+        padding-right: 120px !important;
+        position: relative !important;
+    }
+    
+    /* Make hamburger more visible */
+    .hamburger {
+        background: var(--ink) !important;
+        width: 20px !important;
+        height: 2px !important;
+    }
+    
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--ink) !important;
+        width: 20px !important;
+        height: 2px !important;
+    }
+}
