@@ -766,12 +766,10 @@
         
         packageButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const package = this.getAttribute('data-package');
-                // For now, just scroll to the pricing section
-                // In a full implementation, this could open a modal or navigate to a detailed page
-                const pricingSection = document.querySelector('.pricing-structure');
-                if (pricingSection) {
-                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                const package = this.getAttribute('data-open-package');
+                const modal = document.getElementById('package-' + package);
+                if (modal) {
+                    openModal(modal);
                 }
             });
         });

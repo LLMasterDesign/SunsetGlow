@@ -152,7 +152,7 @@
                                 <li>One repair visit included</li>
                             </ul>
                         </div>
-                        <button class="btn btn-outline package-details-btn" data-package="essential">View Details & Pricing</button>
+                        <button class="btn btn-outline package-details-btn" data-open-package="essential">View Details & Pricing</button>
                     </div>
 
                     <div class="package-card featured-package">
@@ -170,7 +170,7 @@
                                 <li>Optional storage</li>
                             </ul>
                         </div>
-                        <button class="btn btn-primary package-details-btn" data-package="enhanced">View Details & Pricing</button>
+                        <button class="btn btn-primary package-details-btn" data-open-package="enhanced">View Details & Pricing</button>
                     </div>
 
                     <div class="package-card">
@@ -187,7 +187,7 @@
                                 <li>Priority scheduling</li>
                             </ul>
                         </div>
-                        <button class="btn btn-outline package-details-btn" data-package="premium">View Details & Pricing</button>
+                        <button class="btn btn-outline package-details-btn" data-open-package="premium">View Details & Pricing</button>
                     </div>
                 </div>
             </div>
@@ -322,6 +322,127 @@
             </div>
         </div>
     </footer>
+
+    <!-- Package Details Modals -->
+    <div id="package-essential" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Essential Package Details</h2>
+                <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Perfect for first-time customers or smaller homes. Clean, professional roofline lighting that highlights your home's architecture.</p>
+                
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>Professional roofline installation</li>
+                    <li>Commercial-grade LED lights</li>
+                    <li>Custom color consultation</li>
+                    <li>End-of-season removal</li>
+                    <li>One complimentary repair visit</li>
+                    <li>Safe ladder work by trained teams</li>
+                </ul>
+                
+                <h3>Pricing by Style:</h3>
+                <div class="modal-pricing">
+                    <div class="pricing-item">
+                        <strong>Heritage Style:</strong> Starting at $800
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Laurie Style:</strong> Starting at $850
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Woodstock Style:</strong> Starting at $900
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <a href="contact.html" class="btn btn-primary">Get Your Free Estimate</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="package-enhanced" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Enhanced Package Details</h2>
+                <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Our most popular choice. Roofline lighting plus tree wrapping and accent lighting for a complete holiday transformation.</p>
+                
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>Everything in Essential Package</li>
+                    <li>Accent lighting for windows, doors, or columns</li>
+                    <li>Tree wrapping (up to 3 trees)</li>
+                    <li>Optional off-season storage</li>
+                    <li><strong>Unlimited</strong> repair visits during the season</li>
+                    <li>Priority scheduling for multi-year contracts</li>
+                </ul>
+                
+                <h3>Pricing by Style:</h3>
+                <div class="modal-pricing">
+                    <div class="pricing-item">
+                        <strong>Heritage Style:</strong> Starting at $1,400
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Laurie Style:</strong> Starting at $1,500
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Woodstock Style:</strong> Starting at $1,600
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <a href="contact.html" class="btn btn-primary">Get Your Free Estimate</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="package-premium" class="modal" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2 class="modal-title">Premium Package Details</h2>
+                <button class="modal-close" data-close-modal aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Complete property transformation with custom design, animations, and extensive coverage. The ultimate holiday lighting experience.</p>
+                
+                <h3>What's Included:</h3>
+                <ul>
+                    <li>Everything in Enhanced Package</li>
+                    <li>Full property lighting design</li>
+                    <li>Custom animation programming</li>
+                    <li>Extensive tree wrapping (5+ trees)</li>
+                    <li>Pathway and landscape lighting</li>
+                    <li>Architectural accent lighting</li>
+                    <li>Priority install scheduling</li>
+                    <li>Year-round support and maintenance</li>
+                    <li>Complimentary design refresh consultation each year</li>
+                </ul>
+                
+                <h3>Pricing by Style:</h3>
+                <div class="modal-pricing">
+                    <div class="pricing-item">
+                        <strong>Heritage Style:</strong> Starting at $2,400
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Laurie Style:</strong> Starting at $2,600
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Woodstock Style:</strong> Starting at $2,800
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <a href="contact.html" class="btn btn-primary">Get Your Free Estimate</a>
+            </div>
+        </div>
+    </div>
 
     <script src="./script.js"></script>
 </body>
