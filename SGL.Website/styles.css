@@ -2508,7 +2508,7 @@ p[hidden] {
    MOBILE-ONLY FIXES - DO NOT AFFECT DESKTOP
    =================================== */
 @media (max-width: 767px) {
-    /* Header layout for mobile with golden ratio including spacing */
+    /* Header layout for mobile with golden ratio: 8:5:3:2 */
     .header-content {
         display: flex !important;
         align-items: center !important;
@@ -2536,10 +2536,10 @@ p[hidden] {
         text-overflow: ellipsis !important;
     }
     
-    /* Spacer 1 - golden ratio 2.5/18 of available space */
+    /* Spacer - golden ratio 5/18 of available space (between title and quote) */
     .header-content::after {
         content: '' !important;
-        flex: 2.5 1 0 !important;
+        flex: 5 1 0 !important;
         min-width: 0.5rem !important;
     }
     
@@ -2557,14 +2557,6 @@ p[hidden] {
         min-width: 0 !important;
     }
     
-    /* Spacer 2 - golden ratio 2.5/18 of available space */
-    .header-content::before {
-        content: '' !important;
-        flex: 2.5 1 0 !important;
-        min-width: 0.5rem !important;
-        order: 3 !important;
-    }
-    
     /* Hamburger menu - golden ratio 2/18 of available space */
     .nav-toggle {
         position: relative !important;
@@ -2576,7 +2568,7 @@ p[hidden] {
         border-radius: 4px !important;
         padding: 6px !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
-        order: 4 !important;
+        order: 3 !important;
         flex: 2 1 0 !important;
         min-width: 44px !important;
         max-width: 50px !important;
