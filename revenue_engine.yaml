@@ -1,0 +1,92 @@
+//▙▖▙▖▞▞▙▂ REVENUE • ENGINE
+meta:
+  purpose: "Lead generation, conversion, and retention."
+  metric: "cost_per_lead, close_rate, jobs_per_week, retention_rate"
+  gate_type: "soft" # can stage while compliance verifies
+
+channels:
+  neighborhood_presence:
+    description: "Low-cost local trust signals"
+    entries:
+      - key: "yard_signs"
+        status: "planned"
+        priority: 1
+        qty: 50
+        unit_cost: 6
+        vendor: "Uline or local print"
+        note: "Phone + URL + Veteran-owned"
+      - key: "door_hangers"
+        status: "planned"
+        priority: 2
+        qty: 300
+        unit_cost: 0.45
+        vendor: "GotPrint"
+        note: "Target roofline-rich streets"
+
+  digital:
+    description: "Trackable inbound leads"
+    entries:
+      - key: "google_ads_bootstrap"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 600
+        vendor: "Google"
+        note: "Tight radius, call extensions, conversion tracking"
+      - key: "facebook_local_groups"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 0
+        vendor: "Facebook"
+        note: "Before-after photos, booking link"
+      - key: "tracking_phone_number"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 15
+        vendor: "Twilio or CallRail"
+        note: "Call attribution per channel"
+
+  web_stack:
+    description: "Site, booking, and CRM"
+    entries:
+      - key: "site_hosting_dns"
+        status: "active"
+        priority: 1
+        qty: 1
+        unit_cost: 10
+        vendor: "Netlify or equivalent"
+        note: "Uptime and SSL"
+      - key: "booking_form_and_crm"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 20
+        vendor: "Tally, Jotform, or HubSpot starter"
+        note: "Auto-confirm emails and task reminders"
+
+offers:
+  core_packages:
+    - name: "Basic 60ft"
+      price: 800
+      expected_mix: "30%"
+    - name: "Enhanced 80ft"
+      price: 1400
+      expected_mix: "50%"
+    - name: "Premium 120ft"
+      price: 2400
+      expected_mix: "20%"
+  retention:
+    referral_credit: 100
+    review_request: "48h post-install"
+    takedown_included: true
+
+controls:
+  kpi_targets:
+    cpl_max: 35
+    close_rate_min: "35%"
+    jobs_per_week_target: 10
+    retention_rate_target: "65%"
+  exports: ["lead_report.csv", "channel_roi.md"]
+//▚▚▂▂ END • REVENUE

@@ -1,0 +1,20 @@
+//▙▖▙▖▞▞▙▂ FUNDING • META • SCHEMA
+meta:
+  project: "Sunset Glow Holiday Lighting"
+  owner: "Lucius Larz"
+  date: "2025-10-15"
+  currency: "USD"
+  schema_version: "fund.1.0"
+
+enums:
+  status: ["planned", "quoted", "ordered", "received", "active", "verified"]
+  priority: [1, 2, 3] # 1 = must-have, 2 = should-have, 3 = nice-to-have
+  gate: ["hard", "soft"] # hard = cannot start without, soft = improves ops
+
+totals:
+  # fill by script later; keep keys for consistency
+  operations_subtotal: 0
+  compliance_subtotal: 0
+  revenue_engine_subtotal: 0
+  grand_total: 0
+//▚▚▂▂ END • META
