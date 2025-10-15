@@ -4,26 +4,49 @@
     <loc>https://sunsetglowlighting.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2025-01-02</lastmod>
   </url>
   <url>
     <loc>https://sunsetglowlighting.com/services.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
   </url>
   <url>
     <loc>https://sunsetglowlighting.com/about.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+    <lastmod>2025-01-02</lastmod>
   </url>
   <url>
     <loc>https://sunsetglowlighting.com/contact.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <lastmod>2025-01-02</lastmod>
   </url>
   <url>
     <loc>https://sunsetglowlighting.com/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2025-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://sunsetglowlighting.com/intake.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://sunsetglowlighting.com/service-book.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-01-02</lastmod>
+  </url>
+  <url>
+    <loc>https://sunsetglowlighting.com/thanks.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-01-02</lastmod>
   </url>
 </urlset>
 

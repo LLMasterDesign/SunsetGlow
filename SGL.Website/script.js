@@ -173,7 +173,7 @@
                             formData.set('form-name', form.getAttribute('name') || 'Quote');
                         }
                         const response = await fetch('/', { method: 'POST', body: formData });
-                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
+                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (469) 290-8088.'); }
                     } else {
                         const encoded = new URLSearchParams();
                         encoded.set('form-name', form.getAttribute('name') || 'Quote');
@@ -182,7 +182,7 @@
                             encoded.append(k, v);
                         }
                         const response = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: encoded.toString() });
-                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (555) 555-0199.'); }
+                        if (response.ok) { showSuccess(); } else { showError('Submission failed. Please try again or call us at (469) 290-8088.'); }
                     }
                 } else {
                     // Fallback: log and show success
@@ -191,7 +191,7 @@
                 }
             } catch (error) {
                 console.error(error);
-                showError('Network error. Please try again or call us at (555) 555-0199.');
+                showError('Network error. Please try again or call us at (469) 290-8088.');
             }
         });
         }
