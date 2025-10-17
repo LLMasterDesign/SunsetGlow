@@ -9,6 +9,15 @@
   # Ensure Node.js is available if needed in the future
   NODE_VERSION = "18"
 
+# Environment variables for production
+[context.production.environment]
+  SUPABASE_URL = "your-supabase-url"
+  SUPABASE_ANON_KEY = "your-supabase-anon-key"
+  EMAIL_USER = "your-email@gmail.com"
+  EMAIL_PASS = "your-app-password"
+  BUSINESS_EMAIL = "business@sunsetglowlighting.com"
+  CALENDLY_WEBHOOK_SECRET = "your-calendly-webhook-secret"
+
 # Redirect rules
 [[redirects]]
   # Redirect www to non-www (or vice versa if preferred)
