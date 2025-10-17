@@ -1,0 +1,172 @@
+//▙▖▙▖▞▞▙▂ OPERATIONS • WORK SMARTER
+meta:
+  purpose: "Capacity, speed, and safety-on-site."
+  metric: "jobs_per_week, hours_per_install, safety_incidents=0"
+  gate_type: "soft" # ops items improve throughput; compliance controls hard start
+
+items:
+  vehicle_platform:
+    description: "Primary vehicle setup and ladder transport"
+    entries:
+      - key: "ladder_rack"
+        status: "quoted"
+        priority: 1
+        qty: 1
+        unit_cost: 220
+        vendor: "Harbor Freight or equivalent"
+        receipt_path: null
+        note: "Secure transport for 24 ft ladder"
+      - key: "tie_downs_and_straps"
+        status: "planned"
+        priority: 1
+        qty: 4
+        unit_cost: 12
+        vendor: "Local hardware"
+        receipt_path: null
+        note: "DOT-safe securing"
+
+  ladders_and_access:
+    description: "Reach and stable footing"
+    entries:
+      - key: "ladder_24ft_fiberglass"
+        status: "quoted"
+        priority: 1
+        qty: 1
+        unit_cost: 260
+        vendor: "Werner"
+        receipt_path: null
+        note: "Primary roofline access"
+      - key: "ladder_6ft_step"
+        status: "planned"
+        priority: 2
+        qty: 1
+        unit_cost: 110
+        vendor: "Werner"
+        receipt_path: null
+        note: "Porches and low eaves"
+      - key: "ladder_levelers_and_feet"
+        status: "planned"
+        priority: 2
+        qty: 1
+        unit_cost: 75
+        vendor: "Werner/PIAA"
+        receipt_path: null
+        note: "Stability on uneven ground"
+
+  safety_kit:
+    description: "Zero-injury mandate"
+    entries:
+      - key: "harness_and_lanyard"
+        status: "quoted"
+        priority: 1
+        qty: 1
+        unit_cost: 180
+        vendor: "3M DBI-SALA"
+        receipt_path: null
+        note: "Fall protection"
+      - key: "roof_anchor_temporary"
+        status: "planned"
+        priority: 1
+        qty: 2
+        unit_cost: 45
+        vendor: "Guardian"
+        receipt_path: null
+        note: "Install and remove same day"
+      - key: "hi_vis_vests_gloves_helmets"
+        status: "planned"
+        priority: 1
+        qty: 2
+        unit_cost: 35
+        vendor: "Local PPE"
+        receipt_path: null
+        note: "Crew safety and visibility"
+
+  tools_core:
+    description: "Essential install tools"
+    entries:
+      - key: "cordless_drill_driver_set"
+        status: "quoted"
+        priority: 1
+        qty: 1
+        unit_cost: 180
+        vendor: "DeWalt/Milwaukee"
+        receipt_path: null
+        note: "Bit kit included"
+      - key: "extension_cords_outdoor"
+        status: "planned"
+        priority: 1
+        qty: 4
+        unit_cost: 22
+        vendor: "Outdoor-rated"
+        receipt_path: null
+        note: "12–14 gauge"
+      - key: "clip_bins_and_labeling"
+        status: "planned"
+        priority: 2
+        qty: 6
+        unit_cost: 9
+        vendor: "Home Depot"
+        receipt_path: null
+        note: "Faster loadout and QC"
+
+  inventory_kits:
+    description: "Revenue-critical install kits staged by footage"
+    entries:
+      - key: "tier1_60ft_led_c9_warm_white"
+        status: "planned"
+        priority: 1
+        qty: 3
+        unit_cost: 240
+        vendor: "Pro-grade supplier"
+        receipt_path: null
+        note: "Lights, clips, timers per kit"
+      - key: "tier2_80ft_led_c9_warm_white"
+        status: "planned"
+        priority: 1
+        qty: 3
+        unit_cost: 320
+        vendor: "Pro-grade supplier"
+        receipt_path: null
+        note: "Most popular"
+      - key: "tier3_120ft_led_c9_warm_white"
+        status: "planned"
+        priority: 2
+        qty: 1
+        unit_cost: 520
+        vendor: "Pro-grade supplier"
+        receipt_path: null
+        note: "Large estates; stock 1 to start"
+
+  crew_and_flow:
+    description: "People-time and routing"
+    entries:
+      - key: "crew_startup_float"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 400
+        vendor: "Payroll buffer"
+        receipt_path: null
+        note: "First two weeks cushion"
+      - key: "fuel_buffer"
+        status: "planned"
+        priority: 1
+        qty: 1
+        unit_cost: 200
+        vendor: "Fuel"
+        receipt_path: null
+        note: "Jobs radius Princeton–McKinney–Prosper"
+      - key: "routing_app_subscription"
+        status: "planned"
+        priority: 2
+        qty: 1
+        unit_cost: 20
+        vendor: "Route4Me or similar"
+        receipt_path: null
+        note: "Reduce windshield time"
+
+controls:
+  sum_check: true
+  require_receipts: true
+  export_targets: ["funding_breakdown.csv", "ops_packing_list.csv"]
+//▚▚▂▂ END • OPERATIONS

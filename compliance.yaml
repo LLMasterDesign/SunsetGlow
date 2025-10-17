@@ -1,0 +1,66 @@
+//▙▖▙▖▞▞▙▂ COMPLIANCE • HARD GATES
+meta:
+  purpose: "Operate legal, insured, and documented."
+  gate_type: "hard" # must be verified before any field work
+
+gates:
+  - key: "insurance_general_liability"
+    status: "quoted"
+    priority: 1
+    premium: 1200
+    carrier: null
+    policy_number: null
+    binder_on_file: false
+    docs:
+      - "binder.pdf"
+      - "policy_declarations.pdf"
+    note: "Certificate available for customers upon request"
+  - key: "workers_comp"
+    status: "planned"
+    priority: 1
+    premium: 0
+    carrier: null
+    policy_number: null
+    binder_on_file: false
+    docs: []
+    note: "Activate if crew hired as W2; otherwise OAI rules apply"
+  - key: "llc_filing_texas"
+    status: "planned"
+    priority: 1
+    fee: 300
+    state: "TX"
+    sos_tracking: null
+    docs: ["articles_of_organization.pdf"]
+    note: "Submit immediately after funding"
+  - key: "ein"
+    status: "planned"
+    priority: 1
+    fee: 0
+    issuer: "IRS"
+    confirmation_letter: null
+    docs: ["ein_confirmation.pdf"]
+    note: "Same-day issuance online"
+  - key: "business_bank_account"
+    status: "planned"
+    priority: 1
+    bank: null
+    account_last4: null
+    docs: ["signature_card.pdf"]
+    note: "Segregate funds. No commingling."
+  - key: "customer_contract_and_waiver"
+    status: "planned"
+    priority: 1
+    template_path: "contracts/customer_agreement_v1.md"
+    counsel_reviewed: false
+    docs: ["contract_v1.pdf", "waiver_v1.pdf"]
+    note: "Scope, property photo doc, payment, takedown, and damage terms"
+
+controls:
+  start_permission:
+    rule: "all gates with priority 1 must be status==verified"
+    computed_flag: false
+  audit:
+    weekly_uploads_required: true
+    auditor_contact: "family_investor@local"
+  exports: ["compliance_status.md"]
+//▚▚▂▂ END • COMPLIANCE
