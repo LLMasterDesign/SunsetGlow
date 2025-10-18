@@ -564,7 +564,7 @@
 
     // ===== SCROLL TO TOP BUTTON (OPTIONAL) =====
     // Uncomment to add a scroll-to-top button
-    /*
+    
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '↑';
     scrollTopBtn.className = 'scroll-top-btn';
@@ -604,7 +604,13 @@
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    */
+
+    // === Sticky Nav Scroll Effect ===
+    window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    });
 
     // ===== MOBILE PERFORMANCE OPTIMIZATIONS =====
     // Add touch-friendly interactions
