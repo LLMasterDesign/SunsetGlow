@@ -250,37 +250,6 @@ a:hover {
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
-
-<<<<<<< HEAD
-.site-header h1,
-.site-header h2,
-.site-header h3,
-.site-header h4,
-.site-header h5,
-.site-header h6,
-.site-header p,
-.site-header a,
-.site-header .logo {
-    color: var(--white);
-}
-
-/* Sticky CTA button for mobile */
-.nav-cta {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 100;
-    display: none;
-    box-shadow: var(--shadow-lg);
-    border-radius: 2rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-}
-
-=======
-/* Mobile Navigation Layout */
->>>>>>> origin/main
 @media (max-width: 767px) {
     .header-content {
         position: relative;
@@ -300,15 +269,7 @@ a:hover {
         top: 0.75rem;
         right: 0.5rem;
         z-index: 1000;
-<<<<<<< HEAD
-        background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%) !important;
-        color: var(--white) !important;
-        padding: var(--spacing-md) var(--spacing-lg);
-=======
-        background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%);
-        color: var(--white);
-        padding: 0.5rem 0.75rem;
->>>>>>> origin/main
+
         border-radius: var(--border-radius);
         text-decoration: none;
         font-weight: 600;
@@ -320,13 +281,7 @@ a:hover {
         display: inline-block;
     }
     
-<<<<<<< HEAD
-    .nav-cta:hover {
-        background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 100%);
-=======
-    .sticky-cta:hover {
-        background: linear-gradient(135deg, var(--sunset-2) 0%, var(--sunset-1) 100%);
->>>>>>> origin/main
+
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         color: var(--white);
@@ -486,56 +441,6 @@ a:hover {
     transform: rotate(-45deg);
     bottom: 0;
 }
-
-<<<<<<< HEAD
-.main-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--charcoal-blue);
-    border-top: 1px solid var(--grey);
-    padding: var(--spacing-md);
-    display: none;
-    box-shadow: var(--shadow-md);
-    z-index: 100;
-}
-
-.main-nav.active {
-    display: block;
-}
-
-.nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list li {
-    margin-bottom: var(--spacing-sm);
-}
-
-.nav-list li:last-child {
-    margin-bottom: 0;
-}
-
-.nav-link {
-    display: block;
-    padding: var(--spacing-sm) 0;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary);
-}
-
-=======
-/* Desktop Navigation */
->>>>>>> origin/main
 @media (min-width: 768px) {
     .main-nav {
         position: static;
@@ -573,60 +478,7 @@ a:hover {
     
     .nav-link:hover,
     .nav-link.active {
-<<<<<<< HEAD
-        color: var(--primary);
-    }
-    
-    .nav-cta {
-        margin-top: 0;
-        position: static;
-        display: inline-block;
-        background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%) !important;
-        color: var(--white) !important;
-        padding: var(--spacing-md) var(--spacing-lg);
-        border-radius: var(--border-radius);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-        z-index: 10;
-    }
-    
-    .nav-cta:hover {
-        background: linear-gradient(135deg, var(--orange-light) 0%, var(--orange) 100%);
-        transform: translateY(-1px);
-    }
-}
 
-
-.nav-link {
-    display: block;
-    padding: var(--spacing-xs) 0;
-    color: var(--grey);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-link:hover,
-.nav-link:focus {
-    color: var(--orange);
-}
-
-.nav-link.active {
-    color: var(--orange);
-    font-weight: 600;
-}
-
-.nav-cta {
-    margin-top: var(--spacing-md);
-}
-
-@media (min-width: 768px) {
-    .nav-cta {
-        margin-top: 0;
-=======
-        color: var(--sunset-3);
->>>>>>> origin/main
     }
 }
 
@@ -745,49 +597,6 @@ a:hover {
     overflow: visible;
     margin-top: 1rem;
 }
-
-<<<<<<< HEAD
-.hero h1,
-.hero h2,
-.hero h3,
-.hero h4,
-.hero h5,
-.hero h6,
-.hero p,
-.hero a {
-    color: var(--white);
-=======
-/* Mobile Parallax Effects */
-@media (max-width: 767px) {
-    .hero {
-        padding: var(--spacing-lg) 0;
-        min-height: 60vh;
-        display: flex;
-        align-items: center;
-    }
-    
-    .hero-title {
-        font-size: clamp(1.75rem, 6vw, 2.5rem);
-        line-height: 1.1;
-        margin-bottom: var(--spacing-sm);
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .hero-cta {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .hero-cta .btn {
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-    }
->>>>>>> origin/main
 }
 
 .hero-container {
@@ -828,13 +637,7 @@ a:hover {
 
 /* PAGE HERO */
 .page-hero {
-<<<<<<< HEAD
-    background: var(--charcoal-blue);
-    padding: var(--spacing-2xl) 0;
-=======
-    background: var(--cloud);
-    padding: var(--spacing-lg) 0;
->>>>>>> origin/main
+
     text-align: center;
 }
 
@@ -2472,8 +2275,6 @@ p[hidden] {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
 }
-
-
 /* === Festive accents (no external assets) === */
 .string-lights {
     --bulb: var(--orange);
