@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Investment opportunities in Sunset Glow Lighting. $1,000-$5,000 investment tiers with 2 years of service at 50% discount.">
+    <title>Investment Opportunities | Sunset Glow Lighting</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .investment-hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: var(--white);
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .investment-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .investment-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .investment-hero h1 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+        
+        .investment-hero .lead {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+        }
+        
+        .roi-highlight {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-md) var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .roi-highlight strong {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--gold);
+        }
+        
+        .investment-tiers {
+            background: var(--white);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .tier-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .tier-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .tier-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .tier-card {
+            background: var(--white);
+            border: 3px solid var(--gray-300);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--sunset-3);
+        }
+        
+        .tier-card.featured {
+            border-color: var(--sunset-3);
+            border-width: 4px;
+            background: linear-gradient(135deg, rgba(230, 126, 34, 0.03) 0%, var(--white) 100%);
+        }
+        
+        .tier-badge {
+            position: absolute;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            background: var(--sunset-3);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .tier-name {
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--ink);
+        }
+        
+        .tier-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-md);
+            line-height: 1;
+        }
+        
+        .tier-description {
+            color: var(--ink-light);
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+        
+        .tier-features {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .tier-features li {
+            padding: var(--spacing-sm) 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--ink);
+            line-height: 1.6;
+        }
+        
+        .tier-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .tier-features li strong {
+            color: var(--sunset-3);
+        }
+        
+        .breakdown-section {
+            background: var(--cloud);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .breakdown-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        @media (min-width: 768px) {
+            .breakdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .breakdown-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .breakdown-card h3 {
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+        
+        .breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .breakdown-table tr {
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .breakdown-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .breakdown-table td {
+            padding: var(--spacing-sm) 0;
+            line-height: 1.6;
+        }
+        
+        .breakdown-table td:first-child {
+            color: var(--ink);
+            font-weight: 500;
+        }
+        
+        .breakdown-table td:last-child {
+            text-align: right;
+            color: var(--sunset-3);
+            font-weight: 700;
+        }
+        
+        .breakdown-total {
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 3px solid var(--sunset-3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .breakdown-total .amount {
+            font-size: 1.75rem;
+            color: var(--sunset-3);
+        }
+        
+        .roi-calculator {
+            background: var(--white);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .calculator-card {
+            max-width: 900px;
+            margin: var(--spacing-xl) auto 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-2xl);
+            color: var(--white);
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.3);
+        }
+        
+        .calculator-card h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-xl);
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .roi-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .roi-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .roi-box {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .roi-box-title {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.9;
+        }
+        
+        .roi-box-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .roi-box-note {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .benefit-value-calc {
+            margin-top: var(--spacing-xl);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            color: var(--ink);
+        }
+        
+        .benefit-value-calc h4 {
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .value-breakdown {
+            display: grid;
+            gap: var(--spacing-sm);
+        }
+        
+        .value-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .value-row:last-child {
+            border-bottom: none;
+        }
+        
+        .value-row.total {
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 3px solid var(--sunset-3);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .value-row .amount {
+            color: var(--sunset-3);
+            font-weight: 700;
+        }
+        
+        .value-row.total .amount {
+            font-size: 1.5rem;
+            color: var(--success);
+        }
+        
+        .investor-perks {
+            background: var(--cloud);
+            padding: var(--spacing-3xl) 0;
+        }
+        
+        .perks-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+        
+        @media (min-width: 640px) {
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .perks-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .perk-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .perk-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .perk-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .perk-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .perk-description {
+            color: var(--ink-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .investment-cta {
+            background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+            color: var(--white);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+        
+        .cta-box {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h2 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+        }
+        
+        .cta-box p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+        
+        .btn-investment {
+            background: var(--white);
+            color: var(--sunset-3);
+            border: 3px solid var(--white);
+            font-size: 1.125rem;
+            padding: 1.25rem 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-investment:hover {
+            background: var(--gold);
+            color: var(--ink);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .disclosure {
+            background: var(--white);
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .disclosure-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+        
+        .disclosure h4 {
+            color: var(--ink);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="blog.html" class="nav-link">Resources</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Investment Hero -->
+        <section class="investment-hero">
+            <div class="container">
+                <div class="investment-hero-content">
+                    <h1>Invest in Excellence.<br>Light Up Your Future.</h1>
+                    <p class="lead">Join Sunset Glow Lighting as an investor and receive 2 years of premium holiday lighting services at 50% off—while supporting a veteran-owned, high-growth business.</p>
+                    <div class="roi-highlight">
+                        <strong>$1,000 - $5,000 Investment Tiers</strong>
+                        <div>Immediate Service Benefits + Business Equity</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Tiers -->
+        <section class="investment-tiers">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Choose Your Investment Tier</h2>
+                    <p class="section-subtitle">Each tier includes 2 years of holiday lighting service at 50% discount + supporting our veteran-owned business growth</p>
+                </div>
+                
+                <div class="tier-grid">
+                    <!-- Starter Tier -->
+                    <div class="tier-card">
+                        <h3 class="tier-name">Starter</h3>
+                        <div class="tier-amount">$1,000</div>
+                        <p class="tier-description">Perfect for supporting our operational foundation and covering essential startup costs.</p>
+                        <ul class="tier-features">
+                            <li><strong>2 Years Service:</strong> Basic Package at 50% off ($800/year → $400/year)</li>
+                            <li><strong>Total Service Value:</strong> $800 savings over 2 years</li>
+                            <li><strong>Covers:</strong> Business bank account, oil change, partial articles of incorporation</li>
+                            <li><strong>ROI:</strong> 80% return via service savings</li>
+                            <li>Investor appreciation gift</li>
+                            <li>Quarterly business updates</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-primary btn-block">Invest $1,000</a>
+                    </div>
+
+                    <!-- Builder Tier -->
+                    <div class="tier-card featured">
+                        <div class="tier-badge">Most Popular</div>
+                        <h3 class="tier-name">Builder</h3>
+                        <div class="tier-amount">$2,500</div>
+                        <p class="tier-description">Help us acquire essential equipment and establish our service infrastructure.</p>
+                        <ul class="tier-features">
+                            <li><strong>2 Years Service:</strong> Enhanced Package at 50% off ($1,400/year → $700/year)</li>
+                            <li><strong>Total Service Value:</strong> $1,400 savings over 2 years</li>
+                            <li><strong>Covers:</strong> Ladder rack ($350), articles of incorporation, DBA filing, business account, vehicle maintenance</li>
+                            <li><strong>ROI:</strong> 56% return via service savings</li>
+                            <li>Priority scheduling for installs</li>
+                            <li>VIP investor updates & appreciation event</li>
+                            <li>Option for additional service year at 30% off</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-primary btn-block">Invest $2,500</a>
+                    </div>
+
+                    <!-- Growth Tier -->
+                    <div class="tier-card">
+                        <h3 class="tier-name">Growth</h3>
+                        <div class="tier-amount">$3,500</div>
+                        <p class="tier-description">Fuel our expansion with complete operational setup including marketing materials.</p>
+                        <ul class="tier-features">
+                            <li><strong>2 Years Service:</strong> Premium Package at 50% off ($2,400/year → $1,200/year)</li>
+                            <li><strong>Total Service Value:</strong> $2,400 savings over 2 years</li>
+                            <li><strong>Covers:</strong> All Builder tier + new tires ($600), marketing materials (car magnets & signs)</li>
+                            <li><strong>ROI:</strong> 69% return via service savings</li>
+                            <li>Priority + expedited scheduling</li>
+                            <li>Complimentary design consultation</li>
+                            <li>Investor recognition on website</li>
+                            <li>3rd year service at 40% off</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-primary btn-block">Invest $3,500</a>
+                    </div>
+
+                    <!-- Founder Tier -->
+                    <div class="tier-card">
+                        <div class="tier-badge">Premium</div>
+                        <h3 class="tier-name">Founder</h3>
+                        <div class="tier-amount">$5,000</div>
+                        <p class="tier-description">Maximum impact investment covering all startup needs plus initial inventory and labor fund.</p>
+                        <ul class="tier-features">
+                            <li><strong>2 Years Service:</strong> Custom Package at 50% off (up to $3,000/year → $1,500/year)</li>
+                            <li><strong>Total Service Value:</strong> $3,000 savings over 2 years</li>
+                            <li><strong>Covers:</strong> Complete startup package + inventory supplies + initial labor fund</li>
+                            <li><strong>ROI:</strong> 60% return via service savings</li>
+                            <li>VIP priority scheduling (first in line)</li>
+                            <li>Lifetime 25% service discount after Year 2</li>
+                            <li>Named as Founding Investor</li>
+                            <li>Exclusive annual investor dinner</li>
+                            <li>Quarterly profit-sharing updates</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-primary btn-block">Invest $5,000</a>
+                    </div>
+
+                    <!-- Custom Tier -->
+                    <div class="tier-card">
+                        <h3 class="tier-name">Custom</h3>
+                        <div class="tier-amount">$1K-$5K</div>
+                        <p class="tier-description">Design your own investment package tailored to your service needs and investment goals.</p>
+                        <ul class="tier-features">
+                            <li>Flexible service package selection</li>
+                            <li>Customizable investment allocation</li>
+                            <li>2 years at 50% discount (any package)</li>
+                            <li>Negotiable equity or profit-sharing terms</li>
+                            <li>Personalized investor benefits</li>
+                            <li>Direct consultation with founder</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-outline btn-block">Design Custom Plan</a>
+                    </div>
+
+                    <!-- Joint Venture Tier -->
+                    <div class="tier-card">
+                        <div class="tier-badge">Partner</div>
+                        <h3 class="tier-name">Joint Venture</h3>
+                        <div class="tier-amount">$3K+</div>
+                        <p class="tier-description">Become a business partner with ongoing involvement and equity stake in SGL's success.</p>
+                        <ul class="tier-features">
+                            <li><strong>Equity Stake:</strong> Negotiable ownership percentage</li>
+                            <li><strong>Service Benefits:</strong> 2 years free Premium service (full value)</li>
+                            <li><strong>Partnership Role:</strong> Advisory capacity or active operations</li>
+                            <li><strong>Profit Sharing:</strong> Quarterly distributions based on performance</li>
+                            <li>Strategic planning input</li>
+                            <li>Access to financial reports</li>
+                            <li>Co-branding opportunities</li>
+                            <li>Long-term growth participation</li>
+                        </ul>
+                        <a href="#investment-form" class="btn btn-primary btn-block">Discuss Partnership</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Breakdown -->
+        <section class="breakdown-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Where Your Investment Goes</h2>
+                    <p class="section-subtitle">Complete transparency on how we'll use your capital to build a thriving business</p>
+                </div>
+                
+                <div class="breakdown-grid">
+                    <!-- Essential Operations -->
+                    <div class="breakdown-card">
+                        <h3>💼 Essential Operations</h3>
+                        <table class="breakdown-table">
+                            <tr>
+                                <td>Business Bank Account</td>
+                                <td>$250</td>
+                            </tr>
+                            <tr>
+                                <td>Articles of Incorporation</td>
+                                <td>$300</td>
+                            </tr>
+                            <tr>
+                                <td>DBA Filing (Holiday Lighting)</td>
+                                <td>$50</td>
+                            </tr>
+                            <tr>
+                                <td>Collin County Tax Registration</td>
+                                <td>$75</td>
+                            </tr>
+                            <tr>
+                                <td>Registered Agent Service (Annual)</td>
+                                <td>$125</td>
+                            </tr>
+                        </table>
+                        <div class="breakdown-total">
+                            <span>Subtotal:</span>
+                            <span class="amount">$800</span>
+                        </div>
+                    </div>
+
+                    <!-- Equipment & Vehicle -->
+                    <div class="breakdown-card">
+                        <h3>🚗 Equipment & Vehicle</h3>
+                        <table class="breakdown-table">
+                            <tr>
+                                <td>Ladder Rack (Professional)</td>
+                                <td>$350</td>
+                            </tr>
+                            <tr>
+                                <td>Vehicle Oil Change & Maintenance</td>
+                                <td>$110</td>
+                            </tr>
+                            <tr>
+                                <td>New Tires (Set of 4)</td>
+                                <td>$600</td>
+                            </tr>
+                            <tr>
+                                <td>Tool Kit & Safety Equipment</td>
+                                <td>$200</td>
+                            </tr>
+                        </table>
+                        <div class="breakdown-total">
+                            <span>Subtotal:</span>
+                            <span class="amount">$1,260</span>
+                        </div>
+                    </div>
+
+                    <!-- Marketing & Branding -->
+                    <div class="breakdown-card">
+                        <h3>📢 Marketing & Branding</h3>
+                        <table class="breakdown-table">
+                            <tr>
+                                <td>Vehicle Magnets (2x Professional)</td>
+                                <td>$150</td>
+                            </tr>
+                            <tr>
+                                <td>Yard Signs (25x Double-sided)</td>
+                                <td>$200</td>
+                            </tr>
+                            <tr>
+                                <td>Business Cards & Flyers</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Door Hangers (500x)</td>
+                                <td>$150</td>
+                            </tr>
+                            <tr>
+                                <td>Digital Marketing (Google/Facebook Ads)</td>
+                                <td>$400</td>
+                            </tr>
+                        </table>
+                        <div class="breakdown-total">
+                            <span>Subtotal:</span>
+                            <span class="amount">$1,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Inventory & Supplies -->
+                    <div class="breakdown-card">
+                        <h3>💡 Inventory & Supplies</h3>
+                        <table class="breakdown-table">
+                            <tr>
+                                <td>LED Light Strings (Initial Stock)</td>
+                                <td>$800</td>
+                            </tr>
+                            <tr>
+                                <td>Clips, Hooks & Hardware</td>
+                                <td>$200</td>
+                            </tr>
+                            <tr>
+                                <td>Timers & Controllers</td>
+                                <td>$150</td>
+                            </tr>
+                            <tr>
+                                <td>Extension Cords & Connectors</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>Storage Bins & Organization</td>
+                                <td>$150</td>
+                            </tr>
+                        </table>
+                        <div class="breakdown-total">
+                            <span>Subtotal:</span>
+                            <span class="amount">$1,400</span>
+                        </div>
+                    </div>
+
+                    <!-- Labor & Operating Fund -->
+                    <div class="breakdown-card">
+                        <h3>👷 Labor & Operating Fund</h3>
+                        <table class="breakdown-table">
+                            <tr>
+                                <td>Initial Crew Wages (First 5 Jobs)</td>
+                                <td>$600</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel & Vehicle Expenses</td>
+                                <td>$200</td>
+                            </tr>
+                            <tr>
+                                <td>Insurance (Liability, 3 months)</td>
+                                <td>$300</td>
+                            </tr>
+                            <tr>
+                                <td>Software & CRM Tools</td>
+                                <td>$100</td>
+                            </tr>
+                        </table>
+                        <div class="breakdown-total">
+                            <span>Subtotal:</span>
+                            <span class="amount">$1,200</span>
+                        </div>
+                    </div>
+
+                    <!-- Grand Total -->
+                    <div class="breakdown-card" style="background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%); color: var(--white); grid-column: 1 / -1;">
+                        <h3 style="color: var(--white); font-size: 2rem;">💰 Total Startup Investment Need</h3>
+                        <div style="font-size: 3rem; font-weight: 800; text-align: center; margin: var(--spacing-lg) 0; color: var(--gold);">
+                            $4,660
+                        </div>
+                        <p style="text-align: center; font-size: 1.125rem; margin: 0; opacity: 0.95;">
+                            Your investment directly funds these critical startup costs, getting SGL operational and profitable faster.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROI Calculator -->
+        <section class="roi-calculator">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Your Return on Investment</h2>
+                    <p class="section-subtitle">Real numbers showing how your investment pays back through service value</p>
+                </div>
+                
+                <div class="calculator-card">
+                    <h3>Builder Tier Example: $2,500 Investment</h3>
+                    
+                    <div class="roi-grid">
+                        <div class="roi-box">
+                            <div class="roi-box-title">Investment Amount</div>
+                            <div class="roi-box-value">$2,500</div>
+                            <div class="roi-box-note">One-time payment</div>
+                        </div>
+                        
+                        <div class="roi-box">
+                            <div class="roi-box-title">Service Value Received</div>
+                            <div class="roi-box-value">$2,800</div>
+                            <div class="roi-box-note">2 years @ $1,400/year</div>
+                        </div>
+                        
+                        <div class="roi-box">
+                            <div class="roi-box-title">You Pay for Service</div>
+                            <div class="roi-box-value">$1,400</div>
+                            <div class="roi-box-note">50% discount ($700/year)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-value-calc">
+                        <h4>💰 Total Value Breakdown</h4>
+                        <div class="value-breakdown">
+                            <div class="value-row">
+                                <span>Your Total Investment</span>
+                                <span class="amount">$2,500</span>
+                            </div>
+                            <div class="value-row">
+                                <span>Service Payments (2 years @ $700/year)</span>
+                                <span class="amount">$1,400</span>
+                            </div>
+                            <div class="value-row">
+                                <span><strong>Your Total Out-of-Pocket</strong></span>
+                                <span class="amount"><strong>$3,900</strong></span>
+                            </div>
+                            <div class="value-row">
+                                <span>Full Retail Service Value (2 years @ $1,400/year)</span>
+                                <span class="amount">$2,800</span>
+                            </div>
+                            <div class="value-row">
+                                <span>You Saved with 50% Discount</span>
+                                <span class="amount">$1,400</span>
+                            </div>
+                            <div class="value-row total">
+                                <span>💎 Effective Investment After Savings</span>
+                                <span class="amount">$1,100</span>
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: var(--spacing-md); color: var(--ink-light); font-style: italic;">
+                            Plus you're supporting a veteran-owned business + potential equity/profit sharing opportunities
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investor Perks -->
+        <section class="investor-perks">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Exclusive Investor Benefits</h2>
+                    <p class="section-subtitle">Beyond service discounts, enjoy these premium perks</p>
+                </div>
+                
+                <div class="perks-grid">
+                    <div class="perk-card">
+                        <div class="perk-icon">🎯</div>
+                        <h3 class="perk-title">Priority Scheduling</h3>
+                        <p class="perk-description">Get first choice of install dates during peak season. No waiting lists.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">📊</div>
+                        <h3 class="perk-title">Business Updates</h3>
+                        <p class="perk-description">Quarterly financial reports and growth metrics. See your investment at work.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">🎁</div>
+                        <h3 class="perk-title">Investor Gifts</h3>
+                        <p class="perk-description">Exclusive SGL merchandise, holiday appreciation packages, and special perks.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">🤝</div>
+                        <h3 class="perk-title">Referral Rewards</h3>
+                        <p class="perk-description">Enhanced referral bonuses—earn more when you send us customers.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">⭐</div>
+                        <h3 class="perk-title">VIP Service</h3>
+                        <p class="perk-description">White-glove treatment, free design consultations, priority repairs.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">🏆</div>
+                        <h3 class="perk-title">Founding Recognition</h3>
+                        <p class="perk-description">Named on our website and materials as a founding investor (optional).</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">🍽️</div>
+                        <h3 class="perk-title">Annual Dinner</h3>
+                        <p class="perk-description">Exclusive investor appreciation dinner with business updates and networking.</p>
+                    </div>
+                    
+                    <div class="perk-card">
+                        <div class="perk-icon">💰</div>
+                        <h3 class="perk-title">Future Discounts</h3>
+                        <p class="perk-description">Lifetime discounts on services after initial 2-year period (tier-dependent).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment CTA -->
+        <section class="investment-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Ready to Invest in Excellence?</h2>
+                    <p>Join Sunset Glow Lighting today and secure your 2 years of holiday magic at 50% off while supporting a veteran-owned, mission-driven business.</p>
+                    <div class="cta-buttons">
+                        <a href="#investment-form" class="btn btn-investment">Schedule Investment Call</a>
+                        <a href="contact.html" class="btn btn-investment">Ask Questions First</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Form -->
+        <section id="investment-form" style="background: var(--white); padding: var(--spacing-3xl) 0;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Start Your Investment Journey</h2>
+                    <p class="section-subtitle">Fill out this form and we'll contact you within 24 hours to discuss details</p>
+                </div>
+                
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <form class="contact-form" name="Investment" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" novalidate>
+                        <input type="hidden" name="form-name" value="Investment">
+                        <p hidden>
+                            <label>Don't fill this out: <input name="bot-field"></label>
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="inv-name" class="form-label">Full Name <span class="required">*</span></label>
+                            <input type="text" id="inv-name" name="name" class="form-input" required aria-required="true">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inv-email" class="form-label">Email <span class="required">*</span></label>
+                            <input type="email" id="inv-email" name="email" class="form-input" required aria-required="true">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inv-phone" class="form-label">Phone <span class="required">*</span></label>
+                            <input type="tel" id="inv-phone" name="phone" class="form-input" required aria-required="true" placeholder="(555) 555-0199">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inv-tier" class="form-label">Investment Tier <span class="required">*</span></label>
+                            <select id="inv-tier" name="tier" class="form-input" required aria-required="true">
+                                <option value="">Select your tier</option>
+                                <option value="starter">Starter - $1,000</option>
+                                <option value="builder">Builder - $2,500 (Most Popular)</option>
+                                <option value="growth">Growth - $3,500</option>
+                                <option value="founder">Founder - $5,000</option>
+                                <option value="custom">Custom - $1K-$5K</option>
+                                <option value="jv">Joint Venture - $3K+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inv-address" class="form-label">Property Address (for service)</label>
+                            <input type="text" id="inv-address" name="address" class="form-input" placeholder="Street address where service will be provided">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inv-message" class="form-label">Questions or Special Requests</label>
+                            <textarea id="inv-message" name="message" class="form-input form-textarea" rows="5" placeholder="Tell us about your investment goals, questions, or any custom arrangements you'd like to discuss..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-label">
+                                <input type="checkbox" id="inv-accredited" name="accredited" value="yes">
+                                <div>
+                                    <strong>I am an accredited investor</strong>
+                                    <div class="form-help">Check if you meet SEC accredited investor requirements (optional)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-label">
+                                <input type="checkbox" id="inv-consent" name="consent" value="yes" required>
+                                <div>
+                                    <strong>I agree to be contacted <span class="required">*</span></strong>
+                                    <div class="form-help">I consent to being contacted about investment opportunities and service details</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit Investment Inquiry</button>
+                        
+                        <p class="form-privacy">
+                            Your information is confidential and will only be used to discuss investment opportunities. We respect your privacy.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disclosure -->
+        <section class="disclosure">
+            <div class="container">
+                <div class="disclosure-content">
+                    <h4>⚖️ Investment Disclosure</h4>
+                    <p>
+                        <strong>Not a Securities Offering:</strong> The investment opportunities presented on this page are structured as business capital contributions in exchange for service benefits and potential profit-sharing arrangements. This is not a public securities offering and is limited to a small number of qualified investors.
+                    </p>
+                    <p>
+                        <strong>Service Benefits:</strong> All investment tiers include 2 years of holiday lighting services at 50% discount. Service availability is subject to scheduling and operational capacity. Standard terms and conditions apply.
+                    </p>
+                    <p>
+                        <strong>Risk Acknowledgment:</strong> Investment in a startup business carries inherent risks including potential loss of capital. Service benefits are guaranteed, but equity returns (if applicable) are not guaranteed and depend on business performance.
+                    </p>
+                    <p>
+                        <strong>Tax Considerations:</strong> Consult with your tax advisor regarding treatment of investment contributions and service benefits. SGL is not providing tax advice.
+                    </p>
+                    <p>
+                        <strong>Use of Funds:</strong> Investment capital will be used for business operations as described on this page. Sunset Glow Lighting reserves the right to allocate funds as needed for optimal business growth and sustainability.
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>Questions?</strong> Contact us at <a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a> or call <a href="tel:+15555550199">(555) 555-0199</a> to discuss investment details with our founder.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Sunset Glow Lighting</h3>
+                    <p class="footer-text">Veteran-owned holiday lighting serving Princeton and surrounding communities.</p>
+                    <div class="footer-badges">
+                        <span class="badge badge-sm">Veteran-Owned</span>
+                        <span class="badge badge-sm">Insured</span>
+                        <span class="badge badge-sm">10 Years Experience</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Service Area</h3>
+                    <ul class="footer-list">
+                        <li>Princeton, TX</li>
+                        <li>Melissa, TX</li>
+                        <li>Anna, TX</li>
+                        <li>McKinney, TX</li>
+                        <li>Lucas, TX</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-list">
+                        <li><a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></li>
+                        <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sunset Glow Lighting. All rights reserved. | <a href="investor.html" style="color: var(--gray-300);">Investor Opportunities</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
