@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Investment opportunities in Sunset Glow Holiday Lighting. Join us in bringing holiday magic to Princeton, TX and surrounding communities.">
+    <title>Investment Opportunities | Sunset Glow Holiday Lighting</title>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#D9663A">
+    <link rel="canonical" href="https://sunsetglowlighting.com/investment.html">
+    <meta property="og:site_name" content="Sunset Glow Lighting">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Investment Opportunities | Sunset Glow Holiday Lighting">
+    <meta property="og:description" content="Investment opportunities in Sunset Glow Holiday Lighting. Join us in bringing holiday magic to Princeton, TX and surrounding communities.">
+    <meta property="og:url" content="https://sunsetglowlighting.com/investment.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Investment Opportunities | Sunset Glow Holiday Lighting">
+    <meta name="twitter:description" content="Investment opportunities in Sunset Glow Holiday Lighting. Join us in bringing holiday magic to Princeton, TX and surrounding communities.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .investment-hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            color: var(--white);
+            padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investment-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .investment-hero .hero-title {
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .investment-hero .hero-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .investment-tiers {
+            background: var(--white);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .tiers-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        @media (min-width: 768px) {
+            .tiers-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .tier-card {
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            border-color: var(--sunset-3);
+        }
+
+        .tier-card.featured {
+            border-color: var(--sunset-3);
+            border-width: 3px;
+            position: relative;
+        }
+
+        .tier-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--sunset-3);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tier-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sunset-3);
+            margin: var(--spacing-md) 0;
+            line-height: 1;
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--ink);
+        }
+
+        .tier-benefits {
+            list-style: none;
+            text-align: left;
+            margin: var(--spacing-lg) 0;
+            flex-grow: 1;
+        }
+
+        .tier-benefits li {
+            padding: var(--spacing-xs) 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--ink-light);
+        }
+
+        .tier-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .tier-highlight {
+            background: var(--cloud);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-md);
+            border-left: 4px solid var(--sunset-3);
+        }
+
+        .tier-highlight strong {
+            color: var(--sunset-3);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .use-of-funds {
+            background: var(--cloud);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .funds-breakdown {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        @media (min-width: 768px) {
+            .funds-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .funds-category {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--sunset-3);
+        }
+
+        .funds-category h3 {
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+
+        .funds-list {
+            list-style: none;
+        }
+
+        .funds-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .funds-item:last-child {
+            border-bottom: none;
+        }
+
+        .funds-item-name {
+            color: var(--ink);
+            flex: 1;
+        }
+
+        .funds-item-amount {
+            font-weight: 700;
+            color: var(--sunset-3);
+            margin-left: var(--spacing-md);
+        }
+
+        .funds-item-optional {
+            font-size: 0.875rem;
+            color: var(--ink-light);
+            font-style: italic;
+        }
+
+        .funds-total {
+            background: var(--sunset-3);
+            color: var(--white);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .funds-total h3 {
+            color: var(--white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .funds-total-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: var(--spacing-md) 0;
+        }
+
+        .why-invest {
+            background: var(--white);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .why-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        @media (min-width: 640px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .why-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .why-card {
+            background: var(--cloud);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .why-title {
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .why-text {
+            color: var(--ink-light);
+            margin: 0;
+        }
+
+        .investment-cta {
+            background: linear-gradient(135deg, var(--sunset-3) 0%, var(--sunset-2) 100%);
+            color: var(--white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .investment-cta h2 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .investment-cta p {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .investment-cta .btn-primary {
+            background: var(--white);
+            color: var(--sunset-3);
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+        }
+
+        .investment-cta .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .business-info {
+            background: var(--cloud);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .business-info-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .business-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--sunset-3);
+        }
+
+        .info-card h3 {
+            color: var(--sunset-3);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .info-card p {
+            color: var(--ink-light);
+            margin: 0;
+        }
+
+        .info-card strong {
+            color: var(--ink);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Sunset Glow Lighting</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="blog.html" class="nav-link">Resources</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-cta">Get Estimate</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="investment-hero">
+            <div class="container">
+                <h1 class="hero-title">Invest in Holiday Magic</h1>
+                <p class="hero-subtitle">Join us in building Sunset Glow Holiday Lighting into a thriving business that brings joy and wonder to families across Princeton, TX and surrounding communities. Your investment fuels our growth and brings you exclusive benefits.</p>
+            </div>
+        </section>
+
+        <section class="investment-tiers">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Investment Opportunities</h2>
+                    <p class="section-subtitle">Choose your investment level and receive exclusive benefits while supporting our business growth.</p>
+                </div>
+                
+                <div class="tiers-grid">
+                    <div class="tier-card">
+                        <div class="tier-name">Starter</div>
+                        <div class="tier-amount">$1,000</div>
+                        <ul class="tier-benefits">
+                            <li>Two years of service at <strong>50% discount</strong> for both years</li>
+                            <li>$1,200 home service value included</li>
+                            <li>Priority scheduling for installations</li>
+                            <li>Annual business update reports</li>
+                            <li>Recognition as a founding investor</li>
+                        </ul>
+                        <div class="tier-highlight">
+                            <strong>Total Value: $2,400+</strong>
+                            <span style="font-size: 0.875rem; color: var(--ink-light);">Two years of premium holiday lighting service</span>
+                        </div>
+                    </div>
+
+                    <div class="tier-card featured">
+                        <div class="tier-badge">Most Popular</div>
+                        <div class="tier-name">Growth</div>
+                        <div class="tier-amount">$2,500</div>
+                        <ul class="tier-benefits">
+                            <li>Two years of service at <strong>50% discount</strong> for both years</li>
+                            <li>$1,200 home service value included</li>
+                            <li>Priority scheduling for installations</li>
+                            <li>Quarterly business update reports</li>
+                            <li>Featured recognition as a key investor</li>
+                            <li>Exclusive access to new service offerings</li>
+                        </ul>
+                        <div class="tier-highlight">
+                            <strong>Total Value: $2,400+</strong>
+                            <span style="font-size: 0.875rem; color: var(--ink-light);">Plus premium investor benefits</span>
+                        </div>
+                    </div>
+
+                    <div class="tier-card">
+                        <div class="tier-name">Premium</div>
+                        <div class="tier-amount">$5,000</div>
+                        <ul class="tier-benefits">
+                            <li>Two years of service at <strong>50% discount</strong> for both years</li>
+                            <li>$1,200 home service value included</li>
+                            <li>Priority scheduling for installations</li>
+                            <li>Monthly business update reports</li>
+                            <li>Premium recognition as a major investor</li>
+                            <li>Exclusive access to new service offerings</li>
+                            <li>Consultation on business expansion decisions</li>
+                            <li>Invitation to annual investor appreciation event</li>
+                        </ul>
+                        <div class="tier-highlight">
+                            <strong>Total Value: $2,400+</strong>
+                            <span style="font-size: 0.875rem; color: var(--ink-light);">Plus VIP investor experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-of-funds">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How Your Investment Will Be Used</h2>
+                    <p class="section-subtitle">Every dollar is strategically allocated to build a strong foundation and accelerate growth.</p>
+                </div>
+                
+                <div class="funds-breakdown">
+                    <div class="funds-category">
+                        <h3>Essential Equipment</h3>
+                        <ul class="funds-list">
+                            <li class="funds-item">
+                                <span class="funds-item-name">Ladder Rack</span>
+                                <span class="funds-item-amount">$350</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Oil Change</span>
+                                <span class="funds-item-amount">$110</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Tires (Optional)</span>
+                                <span class="funds-item-amount">$600</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="funds-category">
+                        <h3>Business Setup</h3>
+                        <ul class="funds-list">
+                            <li class="funds-item">
+                                <span class="funds-item-name">Articles of Incorporation</span>
+                                <span class="funds-item-amount">$300</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">DBA: Sunset Glow Holiday Lighting</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Collin County Tax & RA Service</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Business Bank Account</span>
+                                <span class="funds-item-amount">$250</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Invoice System Setup</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="funds-category">
+                        <h3>Marketing & Branding</h3>
+                        <ul class="funds-list">
+                            <li class="funds-item">
+                                <span class="funds-item-name">Car Magnet</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Yard Signs</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Other Marketing Materials</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="funds-category">
+                        <h3>Operations & Growth</h3>
+                        <ul class="funds-list">
+                            <li class="funds-item">
+                                <span class="funds-item-name">Main Supplies & Inventory</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Joint Venture & Labor Coverage</span>
+                                <span class="funds-item-amount">TBD</span>
+                            </li>
+                            <li class="funds-item">
+                                <span class="funds-item-name">Operating Capital Reserve</span>
+                                <span class="funds-item-amount">Remainder</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="funds-total">
+                    <h3>Investment Range</h3>
+                    <div class="funds-total-amount">$1,000 - $5,000</div>
+                    <p style="margin: 0; opacity: 0.9;">Flexible investment levels to match your commitment and goals</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-info">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Business Foundation</h2>
+                    <p class="section-subtitle">We're building on a solid foundation with established credentials and clear vision.</p>
+                </div>
+                
+                <div class="business-info-grid">
+                    <div class="info-card">
+                        <h3>Legal Structure</h3>
+                        <p><strong>EIN:</strong> Established under Sunset Glow Lighting</p>
+                        <p><strong>DBA:</strong> Sunset Glow Holiday Lighting (to be filed)</p>
+                        <p><strong>Status:</strong> Articles of Incorporation in process</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Service Area</h3>
+                        <p>Serving <strong>Princeton, Melissa, Anna, McKinney, and Lucas, TX</strong> with professional holiday lighting services.</p>
+                        <p>Veteran-owned business with 10+ years of experience in holiday lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-invest">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Invest in Sunset Glow Holiday Lighting?</h2>
+                    <p class="section-subtitle">Join us in building a business that creates lasting memories and brings communities together.</p>
+                </div>
+                
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">📈</div>
+                        <h3 class="why-title">Proven Market</h3>
+                        <p class="why-text">Holiday lighting is a recurring, seasonal business with consistent demand. Our service area is growing rapidly with new homes and families.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🎯</div>
+                        <h3 class="why-title">Clear Value Proposition</h3>
+                        <p class="why-text">Professional installation, maintenance, and removal saves customers time while delivering stunning results they can't achieve themselves.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">⭐</div>
+                        <h3 class="why-title">Veteran-Owned</h3>
+                        <p class="why-text">Military precision, attention to detail, and commitment to excellence. You're investing in a business built on strong values and work ethic.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🏠</div>
+                        <h3 class="why-title">Recurring Revenue</h3>
+                        <p class="why-text">Multi-year contracts and seasonal repeat customers create predictable revenue streams. Happy customers return year after year.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">💡</div>
+                        <h3 class="why-title">Low Competition</h3>
+                        <p class="why-text">Professional holiday lighting services are in high demand but limited supply in our service area. We're positioned for growth.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">🤝</div>
+                        <h3 class="why-title">Immediate Benefits</h3>
+                        <p class="why-text">Your investment comes with immediate value: two years of premium service at 50% off, worth over $2,400 in service value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="investment-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Invest in Holiday Magic?</h2>
+                    <p>Join us in building Sunset Glow Holiday Lighting into a thriving business. Your investment fuels our growth while providing you with exceptional value and exclusive benefits.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Schedule an Investment Discussion</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Sunset Glow Lighting</h3>
+                    <p class="footer-text">Veteran-owned holiday lighting serving Princeton and surrounding communities.</p>
+                    <div class="footer-badges">
+                        <span class="badge badge-sm">Veteran-Owned</span>
+                        <span class="badge badge-sm">Insured</span>
+                        <span class="badge badge-sm">10 Years Experience</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Service Area</h3>
+                    <ul class="footer-list">
+                        <li>Princeton, TX</li>
+                        <li>Melissa, TX</li>
+                        <li>Anna, TX</li>
+                        <li>McKinney, TX</li>
+                        <li>Lucas, TX</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-list">
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Contact</h3>
+                    <ul class="footer-list">
+                        <li><a href="mailto:hello@sunsetglowlighting.com">hello@sunsetglowlighting.com</a></li>
+                        <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sunset Glow Lighting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
